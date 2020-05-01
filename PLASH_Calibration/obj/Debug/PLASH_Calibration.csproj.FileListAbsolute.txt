@@ -1,0 +1,10 @@
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\PLASH_Calibration.exe.config
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\PLASH_Calibration.exe
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\PLASH_Calibration.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\DMP_Hydrology.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\DMP_Hydrology.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.csprojAssemblyReference.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.csproj.CoreCompileInputs.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.csproj.CopyComplete
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.exe
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.pdb

@@ -1,0 +1,14 @@
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\DMP_Hydrology.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\DMP_Hydrology.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\System.ValueTuple.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\UnitsNet.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\System.ValueTuple.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\UnitsNet.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\UnitsNet.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\USP_Hydrology.csprojAssemblyReference.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\USP_Hydrology.csproj.CoreCompileInputs.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\USP_Hydrology.csproj.CopyComplete
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\DMP_Hydrology.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\DMP_Hydrology.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\EPPlus.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\EPPlus.xml
