@@ -1,0 +1,10 @@
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\bin\Debug\PLASHFilePick.exe.config
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\bin\Debug\PLASHFilePick.exe
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\bin\Debug\PLASHFilePick.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.csprojAssemblyReference.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.Form1.resources
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.Properties.Resources.resources
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.csproj.GenerateResource.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.csproj.CoreCompileInputs.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.exe
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASHFilePick\obj\Debug\PLASHFilePick.pdb

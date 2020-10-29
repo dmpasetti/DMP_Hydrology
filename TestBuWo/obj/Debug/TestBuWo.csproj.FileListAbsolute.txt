@@ -1,0 +1,12 @@
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\obj\Debug\TestBuWo.csprojAssemblyReference.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\obj\Debug\TestBuWo.csproj.CoreCompileInputs.cache
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\TestBuWo.exe.config
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\TestBuWo.exe
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\TestBuWo.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\DMP_Hydrology.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\EPPlus.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\DMP_Hydrology.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\bin\Debug\EPPlus.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\obj\Debug\TestBuWo.csproj.CopyComplete
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\obj\Debug\TestBuWo.exe
+D:\VisualStudio_Mestrado\DMP_Hydrology\TestBuWo\obj\Debug\TestBuWo.pdb

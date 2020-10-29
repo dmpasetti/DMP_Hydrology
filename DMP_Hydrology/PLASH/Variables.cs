@@ -17,6 +17,9 @@ namespace USP_Hydrology
             public double FLT_StreamLength;
             public double FLT_AvgSlope;
             public Input TimeSeries;
+            
+            public Parameters InputParameters;
+
         }
 
         
@@ -28,6 +31,7 @@ namespace USP_Hydrology
             public double FLT_AI; // = 0.02;     //Impervious Area Fraction (km2/km2)
             
             public double FLT_AP; // = 0.95;    //Pervious Area Fraction (km2/km2)
+
 
             public double FLT_DI; // = 5;      //Maximum Impervious Detention (mm)
             public double FLT_IP; // = 3;      //Maximum Interception (mm)
@@ -48,6 +52,10 @@ namespace USP_Hydrology
             public double FLT_kSub { get => Math.Pow((Math.Pow(0.5, 1 / (FLT_KSub * 24))), FLT_TimeStep); }
             public double FLT_kCan { get => Math.Pow((Math.Pow(0.5, 1 / FLT_KCan)), FLT_TimeStep); }
             public double FLT_pp { get => FLT_PP * (FLT_TimeStep / 24); }
+
+            public double FLT_CalibrationFraction;
+
+            public bool BOOL_ValidSimulation;               
         }
 
         
@@ -121,6 +129,9 @@ namespace USP_Hydrology
             public double[] FLT_Arr_QBas_Calc;
             public double[] FLT_Arr_QSup_Calc;
             public double[] FLT_Arr_Qt_Calc;
+            public double[] FLT_Arr_Qt_Calibration;
+            public double[] FLT_Arr_Qt_Up;
+            public double[] FLT_Arr_Qt_Up_Obs;
         }
 
         public void InitReservoir()
@@ -175,6 +186,7 @@ namespace USP_Hydrology
                 FLT_Arr_QBas_Calc = new double[GetSimulationLength],
                 FLT_Arr_QSup_Calc = new double[GetSimulationLength],
                 FLT_Arr_Qt_Calc = new double[GetSimulationLength],
+                FLT_Arr_Qt_Calibration = new double[GetSimulationLength]
             };
         }
     }

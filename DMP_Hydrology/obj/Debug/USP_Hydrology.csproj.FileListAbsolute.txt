@@ -12,3 +12,13 @@ D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\DMP_Hydrology.dll
 D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\obj\Debug\DMP_Hydrology.pdb
 D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\EPPlus.dll
 D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\EPPlus.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\MathNet.Numerics.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\MathNet.Numerics.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\LabSid.Sabesp.Hydrology.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\Flee.Net45.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\LabSid.AcquaNet.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\GAF.47.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\LabSid.Sabesp.Hydrology.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\LabSid.AcquaNet.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\glpk465x32.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\DMP_Hydrology\bin\Debug\glpk465x64.dll

@@ -79,9 +79,10 @@ namespace USP_Hydrology
                 double FLT_S2 = 2 * WS.GetParameters.FLT_CH * (WS.GetParameters.FLT_PS - (i > 0 ? WS.GetReservoir.FLT_Arr_SoilMoisture[i - 1] : WS.GetParameters.FLT_UI)) * (WS.GetParameters.FLT_FS + (i > 0 ? WS.GetReservoir.FLT_Arr_RSup[i - 1] : RSup0) + WS.GetReservoir.FLT_Arr_EESup[i] - WS.GetReservoir.FLT_Arr_ERSup[i]);
                 //double FLT_S2 = 2 * WS.GetParameters.FLT_CH * (WS.GetParameters.FLT_PS - WS.GetParameters.FLT_UI) * (WS.GetParameters.FLT_FS + (i > 0 ? WS.GetReservoir.FLT_Arr_RSup[i - 1] : RSup0) + WS.GetReservoir.FLT_Arr_EESup[i] - WS.GetReservoir.FLT_Arr_ERSup[i]);
                 double FLT_it = (FLT_S2 / (2 * (i > 0 ? WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i - 1] : 0))) + WS.GetParameters.FLT_CH;
-                double FLT_it1 = (FLT_S2 / (2 * ((i > 0 ? WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i - 1] : 0) + WS.GetInput.FLT_Arr_PrecipSeries[i]))) + WS.GetParameters.FLT_CH;
+                double FLT_it1 = (FLT_S2 / (2 * ((i > 0 ? WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i - 1] : 0) + WS.GetInput.FLT_Arr_PrecipSeries[i]))) + WS.GetParameters.FLT_CH;                
                 double FLT_Puddling = Math.Max((WS.GetReservoir.FLT_Arr_EESup[i] - WS.GetReservoir.FLT_Arr_ERSup[i]) / WS.GetParameters.FLT_TimeStep, 0);
-                
+                if (Double.IsNaN(FLT_it)) { FLT_it = 0; }
+                if (Double.IsNaN(FLT_it1)) { FLT_it1 = 0; }
                 //Infiltration 
                 if (FLT_it1 > FLT_Puddling)
                 {
@@ -110,6 +111,7 @@ namespace USP_Hydrology
                     double FLT_W_1 = (FLT_Sigma_1 + Math.Log(1 + FLT_Sigma_1 + FLT_Sigma * FLT_Sigma_2)) / (Math.Pow((1 + FLT_Sigma_1 + FLT_Sigma * FLT_Sigma_2), -1) - 1);
                     WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i] = Math.Max((FLT_S2 * (-1 - FLT_W_1)) / (2 * WS.GetParameters.FLT_CH), 0);
                 }
+                if (Double.IsNaN(WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i])) { WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i] = 0; }
                 WS.GetReservoir.FLT_Arr_Infiltration[i] = Math.Max(WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i] - (i > 0 ? WS.GetReservoir.FLT_Arr_Infiltration_Cumulative[i - 1] : 0), 0);
 
                 //END Infiltration
@@ -140,6 +142,7 @@ namespace USP_Hydrology
                 {
                     FLT_SoilOverflow = WS.GetReservoir.FLT_Arr_RSol[i] - WS.GetParameters.FLT_CS;
                     WS.GetReservoir.FLT_Arr_RSol[i] = WS.GetParameters.FLT_CS;
+                    WS.GetReservoir.FLT_Arr_ESSol[i] += FLT_SoilOverflow;
                 }
 
                 WS.GetReservoir.FLT_Arr_SoilMoisture[i] =  WS.GetParameters.FLT_PS * (WS.GetReservoir.FLT_Arr_RSol[i] / WS.GetParameters.FLT_CS);
@@ -171,15 +174,82 @@ namespace USP_Hydrology
                 #endregion Channel Reservoir
 
                 #region Total Flow
+
+
+
                 WS.GetOutput.FLT_Arr_QBas_Calc[i] = WS.GetReservoir.FLT_Arr_ESSub[i] * (WS.GetParameters.FLT_AD / (3.6 * WS.GetParameters.FLT_TimeStep));
-                WS.GetOutput.FLT_Arr_QSup_Calc[i] = WS.GetInput.FLT_Arr_QtUpstream[i] + WS.GetReservoir.FLT_Arr_ESCan[i] * (WS.GetParameters.FLT_AD / (3.6 * WS.GetParameters.FLT_TimeStep)) * (1 - WS.GetParameters.FLT_AP - WS.GetParameters.FLT_AI);
-                WS.GetOutput.FLT_Arr_Qt_Calc[i] = WS.GetOutput.FLT_Arr_QSup_Calc[i] + WS.GetOutput.FLT_Arr_QBas_Calc[i];
+                WS.GetOutput.FLT_Arr_QSup_Calc[i] = WS.GetReservoir.FLT_Arr_ESCan[i] * (WS.GetParameters.FLT_AD / (3.6 * WS.GetParameters.FLT_TimeStep)) * (1 - WS.GetParameters.FLT_AP - WS.GetParameters.FLT_AI);
+                WS.GetOutput.FLT_Arr_Qt_Calc[i] = WS.GetOutput.FLT_Arr_QSup_Calc[i] + WS.GetOutput.FLT_Arr_QBas_Calc[i] + WS.GetInput.FLT_Arr_QtUpstream[i];
+                WS.GetOutput.FLT_Arr_Qt_Calibration[i] = WS.GetParameters.FLT_CalibrationFraction * (WS.GetOutput.FLT_Arr_QSup_Calc[i] + WS.GetOutput.FLT_Arr_QBas_Calc[i]) + WS.GetInput.FLT_Arr_QtUpstream[i];
 
                 #endregion Total Flow
 
             }
-
+            WS.GetParameters.BOOL_ValidSimulation = ValidateSimulation(WS);
+            
 
         }
+
+        public static void SimulateTree(List<NodeExternal> Tree, bool Calibration = false, double[]ArrayCalibration = null)
+        {
+            ParametersFromInput(Tree);
+
+            if (Calibration) {
+                //GAGetParametersSingle(Tree, ArrayCalibration);
+                GAGetParametersMultiple(Tree, ArrayCalibration);                
+                //foreach(NodeExternal _node in Tree)
+                //{
+                //    _node.GetPLASH.GetParameters.FLT_CH = PLASHKFromCN(_node.OBJ_UInput.FLT_AvgCN);
+                //}
+            }
+
+
+            List<NodeExternal> OrderedTree = Tree.OrderBy(x => x.OBJ_Node.INT_Level).ToList();
+
+            foreach (NodeExternal _node in OrderedTree)
+            {
+                double[] QUp = new double[_node.GetPLASH.GetSimulationLength]; ;
+                if (_node.OBJ_UInput.TimeSeries.FLT_Arr_QtUpstream != null)                
+                {
+                    List<double> QupList = new List<double>();
+                    foreach(double _val in _node.OBJ_UInput.TimeSeries.FLT_Arr_QtUpstream)
+                    {
+                        QupList.Add(_val);
+                    }
+                    QUp = QupList.ToArray();
+                }
+                if (_node.OBJ_Node.INT_Level > 1)
+                {
+                    List<PLASH> LstUpstreamWS = new List<PLASH>();
+                    foreach (NodeExternal _obj in OrderedTree)
+                    {
+                        if (_obj.OBJ_Node.OBJ_Downstream != null)
+                        {
+                            if (_obj.OBJ_Node.OBJ_Downstream.ID_Watershed == _node.OBJ_Node.ID_Watershed)
+                            {
+                                LstUpstreamWS.Add(_obj.GetPLASH);
+                            }
+                        }
+                    }
+                    foreach (PLASH _sim in LstUpstreamWS)
+                    {
+                        QUp = QUp.Zip(_sim.GetOutput.FLT_Arr_Qt_Calc, (x, y) => x + y).ToArray();
+                    }
+                }
+                _node.GetMusk_OLD.FLT_Arr_InputFlow = QUp;
+                Muskingum_Daniel[] DividedReach = Muskingum_Daniel.DivideReach(_node.GetMusk_OLD);
+                double[] DampenedArray = Muskingum_Daniel.DampingSimulation(DividedReach);
+                _node.GetPLASH.GetInput.FLT_Arr_QtUpstream = DampenedArray;
+
+                if (_node.GetPLASH.GetInput.FLT_Arr_QtUpstream == null)
+                {
+                    var dummy = 0;
+                }
+                Run(_node.GetPLASH);
+            }
+        }
+
+
+
     }
 }

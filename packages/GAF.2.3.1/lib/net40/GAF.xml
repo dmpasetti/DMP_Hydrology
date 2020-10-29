@@ -1,0 +1,2316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GAF</name>
+    </assembly>
+    <members>
+        <member name="T:GAF.FitnessFunction">
+            <summary>
+            This is the delegate definition for the Fitness function.
+            </summary>
+            <param name="solution"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GAF.Chromosome">
+            <summary>
+            This clas represents a chromosome.
+            </summary>
+        </member>
+        <member name="F:GAF.Chromosome._id">
+            <summary>
+            This is the delegate type that is passed to the Evaluate function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Chromosome.#ctor">
+            <summary>
+            Constructor. Create a Chromosome with no Genes.
+            </summary>
+        </member>
+        <member name="M:GAF.Chromosome.#ctor(System.Int32)">
+            <summary>
+            Constructor. Specify the chromosome length, i.e. the number of genes.
+            </summary>
+            <param name="length"></param>
+        </member>
+        <member name="M:GAF.Chromosome.#ctor(System.String)">
+            <summary>
+            Constructor that accepts a binary string.
+            </summary>
+            <param name="binaryString"></param>
+        </member>
+        <member name="M:GAF.Chromosome.#ctor(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Constructor that acceps a list or array of real numbers.
+            </summary>
+            <param name="reals"></param>
+        </member>
+        <member name="M:GAF.Chromosome.#ctor(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Constructor that acceps list or array of integer numbers.
+            </summary>
+            <param name="ints"></param>
+        </member>
+        <member name="M:GAF.Chromosome.#ctor(System.Collections.Generic.IEnumerable{GAF.Gene})">
+            <summary>
+            Constructor that acceps list or array of Genes.
+            </summary>
+            <param name="genes"></param>
+        </member>
+        <member name="M:GAF.Chromosome.Add(GAF.Gene)">
+            <summary>
+            Add the specified gene.
+            </summary>
+            <param name="gene">Gene.</param>
+        </member>
+        <member name="M:GAF.Chromosome.AddRange(System.Collections.Generic.List{GAF.Gene})">
+            <summary>
+            Adds a range of genes to the Chromosome.
+            </summary>
+            <param name="genes"></param>
+        </member>
+        <member name="M:GAF.Chromosome.Clear">
+            <summary>
+            Removes all the Genes from the Chromosome.
+            </summary>
+        </member>
+        <member name="M:GAF.Chromosome.LastGene">
+            <summary>
+            Returns the Last gene in the chromosome. 
+            Helper method that is typically used when Non-pheno type genes exist within the chromosome.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Chromosome.FirstGene">
+            <summary>
+            Returns the Last gene in the chromosome.
+            Helper method that is typically used when Non-pheno type genes exist within the chromosome.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Chromosome.Count">
+            <summary>
+            Returns the number of genes in the chromosome.
+            </summary>
+        </member>
+        <member name="M:GAF.Chromosome.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns the enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Chromosome.Id">
+            <summary>
+            Returns the globally unique ID for this chromosome.
+            </summary>
+        </member>
+        <member name="P:GAF.Chromosome.EvaluatedByOperator">
+            <summary>
+            Internal property used to indicate whether this chromosome was evaluated by an operator.
+            This is used to prevent unnessesary evaluations occuring.
+            </summary>
+        </member>
+        <member name="P:GAF.Chromosome.Fitness">
+            <summary>
+            Stores the fitness value of the most recent evaluation.
+            </summary>
+        </member>
+        <member name="P:GAF.Chromosome.FitnessNormalised">
+            <summary>
+            Stores the linearly normalised fitness value of the most recent evaluation.
+            </summary>
+        </member>
+        <member name="P:GAF.Chromosome.Genes">
+            <summary>
+            Returns the genes.
+            </summary>
+        </member>
+        <member name="P:GAF.Chromosome.IsElite">
+            <summary>
+            This gets set by the selection process and is available for use by
+            custom Genetic Operators to determine if the Chromosome was selected 
+            as an Elite chromosome.
+            </summary>
+        </member>
+        <member name="M:GAF.Chromosome.ToBinaryString">
+            <summary>
+            Returns a binary string representation of the Chromosome.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Chromosome.ToBinaryString(System.Int32,System.Int32)">
+            <summary>
+            Returns a binary string representation of the Chromosome. 
+            </summary>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Chromosome.ToString">
+            <summary>
+            Returns a string representation of the Chromosome.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Chromosome.DeepClone(System.Boolean)">
+            <summary>
+            Returns a DeepClone of the current instance with the option of clearing the fitness.
+            </summary>
+            <returns>The clone.</returns>
+            <param name="clearFitness">Reset fitness.</param>
+        </member>
+        <member name="M:GAF.Chromosome.DeepClone">
+            <summary>
+            Returns a DeepClone of the current instance.
+            </summary>
+            <returns>The clone.</returns>
+        </member>
+        <member name="M:GAF.Chromosome.ClearFitness">
+            <summary>
+            Resets the fitness value this method also clears the normalised fitness.
+            </summary>
+            <returns>The fitness.</returns>
+        </member>
+        <member name="M:GAF.Chromosome.Evaluate(GAF.FitnessFunction)">
+            <summary>
+            Evaluates the Chromosome by invoking the specified delegate method.
+            The fitness function should return a higher 
+            value for those chromosomes that are deemed fitter.
+            </summary>
+            <param name="fitnessFunctionDelegate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Chromosome.NewId">
+            <summary>
+            Creates a new GUID for the Chromosome
+            </summary>
+        </member>
+        <member name="M:GAF.Chromosome.AddRangeCloned(System.Collections.Generic.IEnumerable{GAF.Gene})">
+            <summary>
+            Clones and adds the specified range.
+            </summary>
+            <param name="genes">Genes.</param>
+        </member>
+        <member name="M:GAF.Chromosome.CompareTo(GAF.Chromosome)">
+            <summary>
+            IComparable implementation.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Chromosome.Tag">
+            <summary>
+            Gets or sets the tag property. The tag property is designed to store chromosome meta data
+            and can be used for any purpose.
+            Typically the tag property would be used to pass any chromosome related data to the fitness function.
+            </summary>
+            <value>The tag.</value>
+        </member>
+        <member name="T:GAF.Exceptions.EvaluationException">
+            <summary>
+            Chromosome exception.
+            </summary>
+        </member>
+        <member name="M:GAF.Exceptions.EvaluationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Exceptions.EvaluationException"/> class.
+            </summary>
+        </member>
+        <member name="M:GAF.Exceptions.EvaluationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Exceptions.EvaluationException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:GAF.Exceptions.EvaluationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Exceptions.EvaluationException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+            <param name="inner">Inner.</param>
+        </member>
+        <member name="T:GAF.Exceptions.SocketException">
+            <summary>
+            Custom exception used to indicate an exception with a socket. See the inner exception and message for full exception details.
+            </summary>
+        </member>
+        <member name="M:GAF.Exceptions.SocketException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:GAF.Exceptions.SocketException.#ctor(System.String)">
+            <summary>
+            Constructor accepting a message.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GAF.Exceptions.SocketException.#ctor(System.String,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message.
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:GAF.Exceptions.SocketException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor accepting a message and inner exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:GAF.Exceptions.SocketException.#ctor(System.String,System.Exception,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message and inner exception.
+            </summary>
+            <param name="format"></param>
+            <param name="innerException"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:GAF.Operators.CustomObjectMutate">
+            <summary>
+            The Custom Object Mutation Operator, when enabled, traverses each gene 
+            in the population and, based on the probability applies a custom method
+            to the GeneType object genes. The aim of this opperator is to allow
+            mutation of custom objects by inheriting this class in other projects.
+            This operator can only be used with genes of type Object.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.#ctor">
+            <summary>
+            Internal Constructor for unit Testing.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.#ctor(System.Double)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="P:GAF.Operators.CustomObjectMutate.Enabled">
+            <summary>
+            Enabled property. Diabling this operator will cause the population to 'pass through' unaltered.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CustomObjectMutate.RequiresEvaluatedPopulation">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:GAF.Operators.CustomObjectMutate"/> requires evaluated population.
+            </summary>
+            <value><c>true</c> if requires evaluated population; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly.
+            
+            This method is virtual and allows the consumer to override and extend 
+            the functionality of the operator to be extended        /// </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.Mutate(GAF.Chromosome)">
+            <summary>
+            Internal Method for Unit test purposes.
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.Mutate(GAF.Chromosome,System.Double)">
+            <summary>
+            This method is virtual and allows the consumer to override and extend 
+            the functionality of the operator to be extended within a derived class.
+            </summary>
+            <param name="child"></param>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.CustomMutate(System.Object)">
+            <summary>
+            Override this function to mutate an object.
+            </summary>
+            <returns>Object.</returns>
+            <param name="objectValue">Object value.</param>
+        </member>
+        <member name="M:GAF.Operators.CustomObjectMutate.GetOperatorInvokedEvaluations">
+            <summary>
+            Returns the number of evaluations performed by this operator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Operators.CustomObjectMutate.MutationProbability">
+            <summary>
+            Sets/gets the Mutation probabilty. The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CustomObjectMutate.AllowDuplicates">
+            <summary>
+            Sets/Gets whether duplicates are allowed in the population. 
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.BinaryMutate">
+            <summary>
+            The Binary Mutation Operator, when enabled, traverses each gene 
+            in the population and, based on the probability swaps a gene 
+            from one state to the other. The aim of this opperator is to 
+            better reflect nature and add diversity to the population.
+            This operator cannot be used with genes of type Object.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.BinaryMutate.#ctor(System.Double)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="M:GAF.Operators.BinaryMutate.#ctor(System.Double,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="mutationProbability"></param>
+            <param name="allowDuplicates"></param>
+        </member>
+        <member name="M:GAF.Operators.BinaryMutate.Mutate(GAF.Chromosome)">
+            <summary>
+            Method to Mutate the specified child in derived classes. The method would not normally
+            be called directly. It will be called by the framework as required.
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="M:GAF.Operators.BinaryMutate.MutateGene(GAF.Gene)">
+            <summary>
+            Mutates the gene.
+            </summary>
+            <param name="gene">Gene.</param>
+        </member>
+        <member name="P:GAF.Operators.BinaryMutate.AllowDuplicates">
+            <summary>
+            Sets/Gets whether duplicates are allowed in the population. 
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.Copy">
+            <summary>
+            This operator will append the selected percentatge of solutions (Chromosomes) from the 
+            current population to the new population. The selected number (%) of solutions will be copied
+            to the new population as long as there is space within the population. Irrespective of the 
+            specified percentage to copy, This operator will only copy as many as required to fill the population.
+            This operator does not consider duplicates,however if the current population is unique, this will be 
+            maintained.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.Copy.#ctor">
+            <summary>
+            Constructor used for Unit Testing.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.Copy.#ctor(GAF.Operators.CopyMethod)">
+            <summary>
+            Fills any spare capaity by copying the solutions from the current population to the new population
+            using the specified copy method.
+            </summary>
+            <param name="copyMethod"></param>
+        </member>
+        <member name="M:GAF.Operators.Copy.#ctor(System.Int32)">
+            <summary>
+            Copies the specified percentage of solutions from the current population to the new population
+            using the 'Fittest' copy method. 
+            </summary>
+            <param name="copyPercentage"></param>
+        </member>
+        <member name="M:GAF.Operators.Copy.#ctor(System.Int32,GAF.Operators.CopyMethod)">
+            <summary>
+            Copies the specified percentage of solutions from the current population to the new population
+            using the specified copy method. 
+            </summary>
+            <param name="copyPercentage"></param>
+            <param name="copyMethod"></param>
+        </member>
+        <member name="M:GAF.Operators.Copy.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="P:GAF.Operators.Copy.Percentage">
+            <summary>
+            Sets/Gets the Percentage value of copy. The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.Copy.CopyMethod">
+            <summary>
+            Sets/Gets the Copy Method of copy. The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.CopyMethod">
+            <summary>
+            Enum representing the method to be used for the Copy operator.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.CopyMethod.Random">
+            <summary>
+            A random selection of solutions are copied.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.CopyMethod.Fittest">
+            <summary>
+            The fittest solutions are copied.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.CrossoverType">
+            <summary>
+            Enum that defines the type of Crossover to be implemented.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.CrossoverType.SinglePoint">
+            <summary>
+            A single random point is selected for each parent chromosome and one part is swapped between them.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.CrossoverType.DoublePoint">
+            <summary>
+            Two points are selected to determine a centre section in each parent, this is swapped between them.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.CrossoverType.DoublePointOrdered">
+            <summary>
+            A single parent is used to create a child however the order of a second parent determines how the 
+            chromosome is arranged. This method only works with cromosomes that have a unique set of genes (by Value).
+            For this to be useable with custom object based genes, the Equals method should be overriden in the gene definition to return a value. 
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.Elite">
+            <summary>
+            The Elite operator, when enabled, ensures that a specified percentage of the fittest 
+            chromosomes are passed to the next generation without modification.
+            
+            The Elite operator ensures that each generation produces a solution that is at least 
+            as good as that produced by the previous generation.
+            
+            This operator will append the selected percentatge of solutions (Chromosomes) from the 
+            current population to the new population. The selected number (%) of solutions will be copied
+            to the new population as long as there is space within the population, irrespective of the 
+            specified percentage to copy. 
+            
+            This operator will only copy as many as are required to fill the population.
+            This operator does not consider duplicates. To maintain a unique population, ensure that this operator
+            is used before any operators that modify the solutions.
+            
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.Elite.#ctor(System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="elitismPercentage"></param>
+        </member>
+        <member name="M:GAF.Operators.Elite.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="P:GAF.Operators.Elite.Percentage">
+            <summary>
+            Sets/Gets the Percentage Elites. The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.Memory">
+            <summary>
+            This class, relies on the new population being fully populated and is designed to be the last operator in the chain.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.Memory.#ctor(System.Int32,System.Int32)">
+            <summary>
+            This memory operator is designed to store recently identified solutions.
+            The operator stores the fittest solution determined and stores this after
+            a period of generations determined by the generationalUpdatePeriod parameter.
+            Once the memory is full, older solutions are overwritten.
+            </summary>
+            <param name="memorySize"></param>
+            <param name="generationalUpdatePeriod"></param>
+        </member>
+        <member name="P:GAF.Operators.Memory.MemorySize">
+            <summary>
+            Gets or sets the size of the memory.
+            If this property is changed when the operator is enabled and the GA is running
+            will cause the memory to clear before being re-created at its new size.
+            </summary>
+            <value>The size of the memory.</value>
+        </member>
+        <member name="P:GAF.Operators.Memory.GenerationalUpdatePeriod">
+            <summary>
+            Gets or sets the generational update period.
+            </summary>
+            <value>The generational update period.</value>
+        </member>
+        <member name="M:GAF.Operators.Memory.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="M:GAF.Operators.Memory.GetOperatorInvokedEvaluations">
+            <summary>
+            Returns the number of evaluations performed by this operator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GAF.Operators.OperatorException">
+            <summary>
+            Custom exception used to indicate an exception with an operator. See the inner exception and message for full exception details.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.OperatorException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.OperatorException.#ctor(System.String)">
+            <summary>
+            Constructor accepting a message.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GAF.Operators.OperatorException.#ctor(System.String,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message.
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:GAF.Operators.OperatorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor accepting a message and inner exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:GAF.Operators.OperatorException.#ctor(System.String,System.Exception,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message and inner exception.
+            </summary>
+            <param name="format"></param>
+            <param name="innerException"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:GAF.Operators.RandomReplace">
+            <summary>
+            This operator will replace the weakest solutions in the new population 
+            with the selected amount (by percentatge) of randomly generated solutions 
+            (Chromosomes) from the current population. Any chromosome marked as Elite
+            will not be replaced. Therefore, 50% of a population of 100 that has 10
+            'Elites' will replace 45 solutions.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.#ctor">
+            <summary>
+            Replaces the whole population with randomly generated solutions.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.#ctor(System.Boolean)">
+            <summary>
+            Replaces the whole population with randomly generated solutions.
+            </summary>/// <param name="allowDuplicates">If set to <c>true</c> allow duplicates.</param>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.#ctor(System.Int32)">
+            <summary>
+            Replaces the specified number of the weakest individuals, with randomly generated ones.
+            </summary>
+            <param name="percentageToReplace">Set the number to replace.</param>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Replaces the specified number of the weakest individuals, with randomly generated ones.
+            </summary>
+            <param name="percentageToReplace">Set the number to replace.</param>
+            <param name="allowDuplicates"></param>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.Replace(GAF.Population,GAF.Population@,System.Int32,System.Boolean,GAF.FitnessFunction)">
+            <summary>
+            Helper Method marked as Internal for Unit Testing purposes.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="percentage"></param>
+            <param name="allowDuplicates"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.CreateUniqueChromosome(System.Int32,GAF.Population)">
+            <summary>
+            Creates a random unique Binary Gene. The RandomReplacement operator can only be used with Binary Genes. 
+            </summary>
+            <returns>The unique chromosome.</returns>
+            <param name="chromosomeLength">Chromosome length.</param>
+            <param name="population">Population.</param>
+        </member>
+        <member name="M:GAF.Operators.RandomReplace.GetOperatorInvokedEvaluations">
+            <summary>
+            Returns the number of evaluations performed by this operator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Operators.RandomReplace.Percentage">
+            <summary>
+            Sets/Gets the Percentage number to be replaced. The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.RandomReplace.AllowDuplicates">
+            <summary>
+            Sets/Gets whether duplicates are allowed in the population. 
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.SwapMutate">
+            <summary>
+            Th Swap Mutate operator, when enabled, traverses each gene in the population and, 
+            based on the probability swaps one gene in the chromosome with another. 
+            The aim of this operator is to provide mutation without changing any gene values.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.SwapMutate.#ctor(System.Double)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="M:GAF.Operators.SwapMutate.Mutate(GAF.Chromosome)">
+            <summary>
+            This method is virtual and allows the consumer to override and extend 
+            the functionality of the operator to be extended within a derived class.
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="M:GAF.Operators.SwapMutate.Mutate(GAF.Chromosome,System.Int32,System.Int32)">
+            <summary>
+            Exposed for Unit Testing.
+            </summary>
+            <param name="chromosome">Genes.</param>
+            <param name="first">First.</param>
+            <param name="second">Second.</param>
+        </member>
+        <member name="M:GAF.Operators.SwapMutate.MutateGene(GAF.Gene)">
+            <summary>
+            Mutates the gene.
+            </summary>
+            <param name="gene">Gene.</param>
+        </member>
+        <member name="M:GAF.Operators.SwapMutate.GetSwapPoints(GAF.Chromosome)">
+            <summary>
+            Gets the swap points.
+            </summary>
+            <returns>The swap points.</returns>
+            <param name="chromosome">Gene.</param>
+        </member>
+        <member name="T:GAF.Operators.CrossoverEventArgs">
+            <summary>
+            Event arguments for the Crossover events.
+            </summary>
+            
+        </member>
+        <member name="M:GAF.Operators.CrossoverEventArgs.#ctor(GAF.Operators.CrossoverData,GAF.Chromosome,GAF.Chromosome,GAF.Chromosome,GAF.Chromosome)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Operators.CrossoverEventArgs"/> class.
+            </summary>
+            <param name="crossoverResult">Crossover result.</param>
+            <param name="parent1">Parent1.</param>
+            <param name="parent2">Parent2.</param>
+            <param name="child1">Child1.</param>
+            <param name="child2">Child2.</param>
+        </member>
+        <member name="P:GAF.Operators.CrossoverEventArgs.CrossoverData">
+            <summary>
+            Returns the crossover result.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CrossoverEventArgs.Parent1">
+            <summary>
+            Gets parent 1.
+            </summary>
+            <value>The first parent.</value>
+        </member>
+        <member name="P:GAF.Operators.CrossoverEventArgs.Parent2">
+            <summary>
+            Gets parent 2.
+            </summary>
+            <value>The second parent.</value>
+        </member>
+        <member name="P:GAF.Operators.CrossoverEventArgs.Child1">
+            <summary>
+            Gets child 1.
+            </summary>
+            <value>The first child.</value>
+        </member>
+        <member name="P:GAF.Operators.CrossoverEventArgs.Child2">
+            <summary>
+            Gets child 2.
+            </summary>
+            <value>The second child.</value>
+        </member>
+        <member name="T:GAF.Operators.ReplacementMethod">
+            <summary>
+            Enum that defines the Replacement Method used within the Genetic Algorithm.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.ReplacementMethod.GenerationalReplacement">
+            <summary>
+            Generational Replacement.
+            </summary>
+        </member>
+        <member name="F:GAF.Operators.ReplacementMethod.DeleteLast">
+            <summary>
+            Deletes the weakest solutions.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.MutateBase">
+            <summary>
+            A derived operator, when enabled, traverses each gene 
+            in the population and, based on the probability applies a custom method
+            to the GeneType object genes. The aim of this opperator is to allow
+            mutation of custom objects by inheriting this class in other projects.
+            This operator can only be used with genes of type Object.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.MutateBase.#ctor(System.Double)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="M:GAF.Operators.MutateBase.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly as
+            it will be called by the framework as required.
+            This method is virtual and allows the derived class to override and extend 
+            the functionality of the method.       
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="M:GAF.Operators.MutateBase.Mutate(GAF.Chromosome,System.Double)">
+            <summary>
+            Internal method to assist with unit testing. 
+            </summary>
+            <param name="child">Child.</param>
+            <param name="mutationProbability">Mutation probability.</param>
+        </member>
+        <member name="M:GAF.Operators.MutateBase.Mutate(GAF.Chromosome)">
+            <summary>
+            This is the default behaviour for mutate, the method calls the MutateGene
+            method for each gene selected (by probability) in the chromosome. 
+            The method is virtual and can be overriden in derived classes.
+            </summary>
+            <param name="child">Child.</param>
+        </member>
+        <member name="M:GAF.Operators.MutateBase.MutateGene(GAF.Gene)">
+            <summary>
+            Mutates the gene.
+            </summary>
+            <param name="gene">Child.</param>
+        </member>
+        <member name="P:GAF.Operators.MutateBase.MutationProbability">
+            <summary>
+            Sets/gets the Mutation probabilty. The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.OperatorBase">
+            <summary>
+            Operator base class.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.OperatorBase.#ctor">
+            <summary>
+            Called by derived classes when initializing.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.OperatorBase.Enabled">
+            <summary>
+            Enabled property. Diabling this operator will cause the population to 'pass through' unaltered.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.OperatorBase.RequiresEvaluatedPopulation">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:GAF.Operators.OperatorBase"/> requires evaluated population.
+            </summary>
+            <value><c>true</c> if requires evaluated population; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GAF.Operators.OperatorBase.NewPopulation">
+            <summary>
+            Gets or sets the new population.
+            </summary>
+            <value>The new population.</value>
+        </member>
+        <member name="P:GAF.Operators.OperatorBase.CurrentPopulation">
+            <summary>
+            Gets or sets the current population.
+            </summary>
+            <value>The current population.</value>
+        </member>
+        <member name="P:GAF.Operators.OperatorBase.FitnessFunction">
+            <summary>
+            Gets or sets the fitness function.
+            </summary>
+            <value>The fitness function.</value>
+        </member>
+        <member name="E:GAF.Operators.OperatorBase.OnLogging">
+            <summary>
+            Event definition for the LoggingEventHandler event handler.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.OperatorBase.GetOperatorInvokedEvaluations">
+            <summary>
+            Returns the number of evaluations performed by this operator.
+            Default behaviour returns zero, override in derived class where appropriate.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Operators.OperatorBase.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            This is the method that invokes the operator. This should not be called explicitly as
+            it will be called by the framework as required.
+            This method is virtual and allows the derived class to override and extend 
+            the functionality of the method. 
+            <param name="currentPopulation">Current population.</param>
+            <param name="newPopulation">New population.</param>
+            <param name="fitnessFunctionDelegate">Fitness function delegate.</param>
+        </member>
+        <member name="T:GAF.Operators.CrossoverData">
+            <summary>
+            Data object used to pass data via the Crossover event arguments.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CrossoverData.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Operators.CrossoverData"/> class.
+            </summary>
+            <param name="chromosomeLength">Chromosome length.</param>
+        </member>
+        <member name="P:GAF.Operators.CrossoverData.Points">
+            <summary>
+            Returns a list of crossover points. For single point crossover 
+            one point would be present, 
+            for double point crossover methods two would be present.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CrossoverData.ChromosomeLength">
+            <summary>
+            Gets the length of the chromosome.
+            </summary>
+            <value>The length of the chromosome.</value>
+        </member>
+        <member name="T:GAF.Operators.CrossoverBase">
+            <summary>
+            This operator will expand the new population to the same size 
+            as the current population using the Crossover genetic operation.
+            Properties of the class allow for a single or double point crossover
+            and either 'Generational' or 'Delete Last' replacement mechanism.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.CrossoverBase.CrossoverCompleteHandler">
+            <summary>
+            Delegage definition for the CrossoverComplete event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:GAF.Operators.CrossoverBase.OnCrossoverComplete">
+            <summary>
+            Event definition for the CrossoverComplete event handler.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.#ctor(System.Double,System.Boolean,GAF.Operators.CrossoverType,GAF.Operators.ReplacementMethod)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="crossOverProbability"></param>
+            <param name="allowDuplicates"></param>
+            <param name="crossoverType"></param>
+            <param name="replacementMethod"></param>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This is the method that invokes the operator. This should not normally be called explicitly.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnessFunctionDelegate"></param>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.GetOperatorInvokedEvaluations">
+            <summary>
+            Returns the number of evaluations that were undertaken as part of the operators Invocation.
+            For example the 'Steady State' reproduction method, compares new childrem with those already
+            in the population and therefore performs the analysis as part of the operators invocation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.PerformCrossover(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,GAF.Chromosome@,GAF.Chromosome@)">
+            <summary>
+            Performs a crossover.
+            </summary>
+            <param name="p1">P1.</param>
+            <param name="p2">P2.</param>
+            <param name="crossoverData">Crossover data.</param>
+            <param name="c1">C1.</param>
+            <param name="c2">C2.</param>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.PerformCrossoverSinglePoint(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,System.Collections.Generic.List{GAF.Gene}@,System.Collections.Generic.List{GAF.Gene}@)">
+            <summary>
+            Abstract Method
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.PerformCrossoverDoublePoint(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,System.Collections.Generic.List{GAF.Gene}@,System.Collections.Generic.List{GAF.Gene}@)">
+            <summary>
+            Abstract Method
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.PerformCrossoverDoublePointOrdered(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,System.Collections.Generic.List{GAF.Gene}@,System.Collections.Generic.List{GAF.Gene}@)">
+            <summary>
+            Abstract Method
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.CrossoverBase.AddChild(GAF.Chromosome)">
+            <summary>
+            Adds a child to the new population depending upon the criteria set in relation to replacement
+            method and duplicate handling. The method updates the evaluation count and returns true if a 
+            child was added to the new population.
+            </summary>
+            <param name="child"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Operators.CrossoverBase.AllowDuplicates">
+            <summary>
+            Sets/Gets whether duplicates are allowed in the population. 
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CrossoverBase.CrossoverType">
+            <summary>
+            Sets/Gets the type of crossover operation. 
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CrossoverBase.ReplacementMethod">
+            <summary>
+            Sets/Gets the method used for the deletion of chromosomes from the population.
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="P:GAF.Operators.CrossoverBase.CrossoverProbability">
+            <summary>
+            Sets/gets the current crossover probability. 
+            The setting and getting of this property is thread safe.
+            </summary>
+        </member>
+        <member name="T:GAF.Operators.Crossover">
+            <summary>
+            Crossover.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.Crossover.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:GAF.Operators.Crossover.#ctor(System.Double)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="crossOverProbability"></param>
+        </member>
+        <member name="M:GAF.Operators.Crossover.#ctor(System.Double,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="crossOverProbability"></param>
+            <param name="allowDuplicates"></param>
+        </member>
+        <member name="M:GAF.Operators.Crossover.#ctor(System.Double,System.Boolean,GAF.Operators.CrossoverType)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="crossOverProbability"></param>
+            <param name="allowDuplicates"></param>
+            <param name="crossoverType"></param>
+        </member>
+        <member name="M:GAF.Operators.Crossover.#ctor(System.Double,System.Boolean,GAF.Operators.CrossoverType,GAF.Operators.ReplacementMethod)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="crossOverProbability"></param>
+            <param name="allowDuplicates"></param>
+            <param name="crossoverType"></param>
+            <param name="replacementMethod"></param>
+        </member>
+        <member name="M:GAF.Operators.Crossover.PerformCrossoverSinglePoint(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,System.Collections.Generic.List{GAF.Gene}@,System.Collections.Generic.List{GAF.Gene}@)">
+            <summary>
+            Performs a single point crossover.
+            </summary>
+            <param name="p1">P1.</param>
+            <param name="p2">P2.</param>
+            <param name="crossoverData">Crossover data.</param>
+            <param name="cg1">Cg1.</param>
+            <param name="cg2">Cg2.</param>
+        </member>
+        <member name="M:GAF.Operators.Crossover.PerformCrossoverDoublePoint(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,System.Collections.Generic.List{GAF.Gene}@,System.Collections.Generic.List{GAF.Gene}@)">
+            <summary>
+            Performs a double point crossover.
+            </summary>
+            <param name="p1">P1.</param>
+            <param name="p2">P2.</param>
+            <param name="crossoverData">Crossover data.</param>
+            <param name="cg1">Cg1.</param>
+            <param name="cg2">Cg2.</param>
+        </member>
+        <member name="M:GAF.Operators.Crossover.PerformCrossoverDoublePointOrdered(GAF.Chromosome,GAF.Chromosome,GAF.Operators.CrossoverData,System.Collections.Generic.List{GAF.Gene}@,System.Collections.Generic.List{GAF.Gene}@)">
+            <summary>
+            Performs a double point ordered crossover.
+            </summary>
+            <param name="p1">P1.</param>
+            <param name="p2">P2.</param>
+            <param name="crossoverData">Crossover data.</param>
+            <param name="cg1">Cg1.</param>
+            <param name="cg2">Cg2.</param>
+        </member>
+        <member name="T:GAF.GeneType">
+            <summary>
+            An Enum definition that indicates the gene type.
+            </summary>
+        </member>
+        <member name="F:GAF.GeneType.Binary">
+            <summary>
+            Binary genes within the chromosome.
+            </summary>
+        </member>
+        <member name="F:GAF.GeneType.Integer">
+            <summary>
+            Genes as integers within the chromosome.
+            </summary>
+        </member>
+        <member name="F:GAF.GeneType.Real">
+            <summary>
+            Genes as real numbers (double) within the chromosome.
+            </summary>
+        </member>
+        <member name="F:GAF.GeneType.Object">
+            <summary>
+            Custom object provided as a gene.
+            </summary>
+        </member>
+        <member name="T:GAF.Gene">
+            <summary>
+            This class represents a gene.
+            </summary>
+        </member>
+        <member name="M:GAF.Gene.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:GAF.Gene.#ctor(System.Object)">
+            <summary>
+            Constructor that accepts an object as a gene type. Passing a boolean, 
+            integer or double will set the GeneType appropriately. 
+            Any other type will be considered to be an object.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="P:GAF.Gene.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GAF.Gene.ObjectValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GAF.Gene.GeneType">
+            <summary>
+            Returns the Gene Type.
+            </summary>
+        </member>
+        <member name="P:GAF.Gene.BinaryValue">
+            <summary>
+            Returns a ObjectValue of 0 or 1 as an integer. For genes 
+            based on Real numbers, a ObjectValue greater than 0 will 
+            return a 1. For object based genes 1 will be returned for
+            non-null objects and 0 for null objects.
+            </summary>
+        </member>
+        <member name="P:GAF.Gene.RealValue">
+            <summary>
+            Returns the Real number ObjectValue. For genes based on 
+            binary numbers, 0 or 1 will be returned as a double.
+            For object based genes NaN will be returned.
+            </summary>
+        </member>
+        <member name="M:GAF.Gene.DeepClone">
+            <summary>
+            Returns a new object, cloned from this instance.
+            </summary>
+            <returns>The clone.</returns>
+        </member>
+        <member name="M:GAF.Gene.GetHashCode">
+            <summary>
+            Serves as a hash function for a <see cref="T:GAF.Gene"/> object.
+            </summary>
+            <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.</returns>
+        </member>
+        <member name="M:GAF.Gene.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:GAF.Gene"/>.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with the current <see cref="T:GAF.Gene"/>.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:GAF.Gene"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:GAF.TerminateFunction">
+            <summary>
+            Delegate definition for the Terminate function.
+            </summary>
+            <param name="population"></param>
+            <param name="currentGeneration"></param>
+            <param name="currentEvaluation"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GAF.GeneticAlgorithm">
+            <summary>
+            Main Generic Algorithm controller class.
+            </summary>
+        </member>
+        <member name="T:GAF.GeneticAlgorithm.InitialEvaluationCompleteHandler">
+            <summary>
+            Delegate definition for the InitialEvaluationComplete event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:GAF.GeneticAlgorithm.OnInitialEvaluationComplete">
+            <summary>
+            Event definition for the InitialEvaluationComplete event handler.
+            </summary>
+        </member>
+        <member name="T:GAF.GeneticAlgorithm.GenerationCompleteHandler">
+            <summary>
+            Delegate definition for the GenerationComplete event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:GAF.GeneticAlgorithm.OnGenerationComplete">
+            <summary>
+            Event definition for the GenerationComplete event handler.
+            </summary>
+        </member>
+        <member name="T:GAF.GeneticAlgorithm.OperatorCompleteHandler">
+            <summary>
+            Delegate definition for the OnOperatorComplete event handler.
+            </summary>
+        </member>
+        <member name="E:GAF.GeneticAlgorithm.OnOperatorComplete">
+            <summary>
+            Event definition for the OnOperatorComplete event handler.
+            </summary>
+        </member>
+        <member name="T:GAF.GeneticAlgorithm.RunExceptionHandler">
+            <summary>
+            Delegate definition for the RunException event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:GAF.GeneticAlgorithm.OnRunException">
+            <summary>
+            Event definition for the RunException event handler.
+            </summary>
+        </member>
+        <member name="T:GAF.GeneticAlgorithm.RunCompleteHandler">
+            <summary>
+            Delegate definition for the RunComplete event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:GAF.GeneticAlgorithm.OnRunComplete">
+            <summary>
+            Event definition for the RunComplete event handler.
+            </summary>
+        </member>
+        <member name="E:GAF.GeneticAlgorithm.OnLogging">
+            <summary>
+            Event definition for the LoggingEventHandler event handler.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.GeneticAlgorithm"/> class.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.#ctor(GAF.Population,GAF.FitnessFunction)">
+            <summary>
+            Constuctor, requires a configured Population object.
+            </summary>/// <param name="population">Population.</param>
+            <param name="fitnessFunctionDelegate">Fitness function delegate.</param>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.Run(System.Int64)">
+            <summary>
+            Main method for executing the GA. The GA runs until the number of evaluations 
+            have reached the value specified in the maxEvaluations parameter.
+            This method runs syncronously.
+            </summary>
+            <param name="maxEvaluations">Max evaluations.</param>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.Run(GAF.TerminateFunction)">
+            <summary>
+            Main method for executing the GA. The GA runs until the
+            Terminate function returns true. 
+            This method runs syncronously.
+            </summary>
+            <param name="terminateFunction">Terminate function.</param>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.Halt">
+            <summary>
+            Set to true to force the GA to stop running. The GA will halt in a clean fashion.
+            This method is typically used to control the RunAsync methods.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.Resume">
+            <summary>
+            Resume this GA from a paused state.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.Pause">
+            <summary>
+            Pauses the GA if it is running.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.RunAsync(System.Int32)">
+            <summary>
+            Runs the algorithn for the specified number of generations.
+            </summary>
+            <param name="maxEvaluations"></param>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.RunAsync(GAF.TerminateFunction)">
+            <summary>
+            Runs the algorithm the specified number of times. Each run executes until the specified delegate function returns true.
+            </summary>
+            <param name="terminateFunction"></param>
+        </member>
+        <member name="M:GAF.GeneticAlgorithm.MainTask(System.Int64,GAF.TerminateFunction,System.Threading.CancellationToken)">
+            <summary>
+            Main run routine of genetic algorithm.
+            </summary>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.Operators">
+            <summary>
+            Sets/Gets a list of the Operators that are applied.
+            </summary>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.Evaluations">
+            <summary>
+            Thread safe private property
+            </summary>
+            <value>The evaluations.</value>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.Population">
+            <summary>
+            Returns the current population.
+            </summary>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.IsRunning">
+            <summary>
+            Gets the running state of the GA.
+            </summary>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.IsPaused">
+            <summary>
+            Gets the paused state of the GA.
+            </summary>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.FitnessFunction">
+            <summary>
+            Gets the fitness function.
+            </summary>
+            <value>The fitness function.</value>
+        </member>
+        <member name="P:GAF.GeneticAlgorithm.TerminateFunction">
+            <summary>
+            Gets or sets the terminate function.
+            </summary>
+            <value>The terminate function.</value>
+        </member>
+        <member name="T:GAF.IGeneticOperator">
+            <summary>
+            This is the interface that should be implemented when creating custom genetic operators.
+            </summary>
+            <remarks>An operator shoult only NOT change
+            the currentPopulation. It IS acceptable for an operator to return a new
+            population with a different number of chromosomes than the current population.
+            </remarks>
+        </member>
+        <member name="M:GAF.IGeneticOperator.Invoke(GAF.Population,GAF.Population@,GAF.FitnessFunction)">
+            <summary>
+            This method should be used to perform the operation. The the 'currentPopulation' variable will be in an 
+            unknown state following the call.
+            </summary>
+            <param name="currentPopulation"></param>
+            <param name="newPopulation"></param>
+            <param name="fitnesFunctionDelegate"></param>
+            <returns>Population</returns>
+        </member>
+        <member name="M:GAF.IGeneticOperator.GetOperatorInvokedEvaluations">
+            <summary>
+            This method should return the number of evaluations that were carried out, 
+            i.e. the number of times the fitness function was called during the Invoke method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.IGeneticOperator.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:GAF.IGeneticOperator"/> is enabled.
+            </summary>
+            <value><c>true</c> if enabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GAF.IGeneticOperator.RequiresEvaluatedPopulation">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:GAF.IGeneticOperator"/> reqires evaluated population.
+            </summary>
+            <value><c>true</c> if reqires evaluated population; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:GAF.InitialisationType">
+            <summary>
+            Internal as there is only one option, and therefore cannot be set by the consumer.
+            Provided as an enumerator for future use.
+            </summary>
+        </member>
+        <member name="T:GAF.ParentSelectionMethod">
+            <summary>
+            Parent selection method.
+            </summary>
+        </member>
+        <member name="F:GAF.ParentSelectionMethod.FitnessProportionateSelection">
+            <summary>
+            Fitness Proportional (Roulette Wheel).
+            </summary>
+        </member>
+        <member name="F:GAF.ParentSelectionMethod.StochasticUniversalSampling">
+            <summary>
+            Stochastic Universal Sampling.
+            </summary>
+        </member>
+        <member name="F:GAF.ParentSelectionMethod.TournamentSelection">
+            <summary>
+            Tournament Selection.
+            </summary>
+        </member>
+        <member name="T:GAF.Population">
+            <summary>
+            This class represents a population of solutions.
+            </summary>
+        </member>
+        <member name="T:GAF.Population.EvaluationBeginHandler">
+            <summary>
+            Delegate definition for the EvaluationBeginHandler event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:GAF.Population.OnEvaluationBegin">
+            <summary>
+            Event definition for the EvaluationBeginHandler event handler.
+            </summary>
+        </member>
+        <member name="E:GAF.Population.OnLogging">
+            <summary>
+            Event definition for the LoggingEventHandler event handler.
+            </summary>
+        </member>
+        <member name="M:GAF.Population.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Population"/> class.
+            Uses Linear Normalised fitness and does not re-evaluate those 
+            Chromosomes that have already been evaluated in previous generations.
+            </summary>
+        </member>
+        <member name="M:GAF.Population.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new empty instance of the <see cref="T:GAF.Population"/> class.
+            </summary>
+            <param name="reEvaluateAll">If set to <c>true</c> re evaluate all.</param>
+            <param name="useLinearlyNormalisedFitness">If set to <c>true</c> use linearly normalised fitness.</param>
+        </member>
+        <member name="M:GAF.Population.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Population"/> class.
+            Uses Linear Normalised fitness and does not re-evaluate those 
+            Chromosomes that have already been evaluated in previous generations.
+            </summary>
+            <param name="populationSize"></param>
+            <param name="chromosomeLength"></param>
+        </member>
+        <member name="M:GAF.Population.#ctor(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Constructor for the Population object. 
+            Uses Linear Normalised fitness.
+            </summary>
+            <param name="populationSize"></param>
+            <param name="chromosomeLength"></param>
+            <param name="reEvaluateAll"></param>
+        </member>
+        <member name="M:GAF.Population.#ctor(System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Population"/> class.
+            </summary>
+            <param name="populationSize"></param>
+            <param name="chromosomeLength"></param>
+            <param name="reEvaluateAll"></param>
+            <param name="useLinearlyNormalisedFitness"></param>
+        </member>
+        <member name="M:GAF.Population.#ctor(System.Int32,System.Int32,System.Boolean,System.Boolean,GAF.ParentSelectionMethod)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Population"/> class.
+            </summary>
+            <param name="populationSize">Population size.</param>
+            <param name="chromosomeLength">Chromosome length.</param>
+            <param name="reEvaluateAll">If set to <c>true</c> re evaluate all.</param>
+            <param name="useLinearlyNormalisedFitness">If set to <c>true</c> use linearly normalised fitness.</param>
+            <param name="selectionMethod">Selection method.</param>
+        </member>
+        <member name="M:GAF.Population.#ctor(System.Int32,System.Int32,System.Boolean,System.Boolean,GAF.ParentSelectionMethod,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.Population"/> class.
+            </summary>
+            <param name="populationSize"></param>
+            <param name="chromosomeLength"></param>
+            <param name="reEvaluateAll"></param>
+            <param name="useLinearlyNormalisedFitness"></param>
+            <param name="selectionMethod"></param>
+            <param name = "evaluateInParallel"></param>
+        </member>
+        <member name="P:GAF.Population.ChromosomeLength">
+            <summary>
+            Returns the length of the chromosomes used in the population.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.Solutions">
+            <summary>
+            Sets/gets the current list of solutions as Chromosomes.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.InitialisationType">
+            <summary>
+            Sets/Gets the method used to initialise the list of solutions. 
+            The default setting is Random.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.PopulationSize">
+            <summary>
+            Gets the population size.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.TotalFitness">
+            <summary>
+            Returns the total fitness of the population.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.TotalFitnessNormalised">
+            <summary>
+            Returns the total linearly normalised fitness of the population.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.MaximumFitness">
+            <summary>
+            Returns the maximum fitness value for the popluation. Returns -1 if there are no chromosomes in the population.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Population.MinimumFitness">
+            <summary>
+            Returns the minimum fitness value for the popluation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GAF.Population.AverageFitness">
+            <summary>
+            Returns the average (mean) fitness value for the popluation.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.ReEvaluateAll">
+            <summary>
+            Returns whether the evaluation will re-evaluate all chromosomes. 
+            If set to false only chromosomes without a fitness value will be evaluated.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.EvaluateInParallel">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:GAF.Population"/> evaluates
+            the solutions in parallel using the parallel library IF the parallel library is supported.
+            NOTE: The PCL Version of the library does not support parallel evaluations.
+            </summary>
+            <value><c>true</c> if evaluate in parallel; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GAF.Population.LinearlyNormalised">
+            <summary>
+            Returns boolean to indicate whether linear normalisasion is being used.
+            </summary>
+        </member>
+        <member name="P:GAF.Population.ParentSelectionMethod">
+            <summary>
+            Returns the Parent Selection method.
+            </summary>
+        </member>
+        <member name="M:GAF.Population.Evaluate(GAF.FitnessFunction)">
+            <summary>
+            This function evaluates all solutions in the population (see note below). The Fitness property
+            of each solution should be updated by the fitness function. The fitness function should return a higher 
+            value for those solutions that are deemed fitter.
+            Note: If the GAF has been configured to not re-evaluate Elites (Constructor). Only those elites
+            with no previous evaluation will be passed to the fitness function. 
+            </summary>
+            <param name="fitnessFunctionDelegate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.DeleteLast">
+            <summary>
+            Deletes the solution with the worst fitness value.
+            </summary>
+        </member>
+        <member name="M:GAF.Population.SolutionExists(GAF.Chromosome)">
+            <summary>
+            Returns true if the solution exists. Only valid when using binary chromosomes.
+            </summary>
+            <param name="chromosome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.ChromosomeExists(GAF.Chromosome)">
+            <summary>
+            Returns true if the chromosome ID (GUID) matches that passed in. 
+            The comparison takes no account of the chromosome value.
+            </summary>
+            <param name="chromosome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.ToString">
+            <summary>
+            Returns details of population.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.ToCsv">
+            <summary>
+            Returns the fitness of each solution in the population as a comma delimited string.
+            </summary>/// <returns>The csv.</returns>
+        </member>
+        <member name="M:GAF.Population.ToArray">
+            <summary>
+            Returns the fitness of each solution in the population as an array.
+            </summary>/// <returns>The array.</returns>
+        </member>
+        <member name="M:GAF.Population.ToList">
+            <summary>
+            Returns the fitness of each solution in the population as a generic list.
+            </summary>/// <returns>The list.</returns>
+        </member>
+        <member name="M:GAF.Population.GetTopPercent(System.Int32)">
+            <summary>
+            Returns the top n percent of the population based on highest
+            fitness value. This method returns a deep copy of the Solutions 
+            and always returns an even number of solutions.
+            </summary>
+            <param name="percent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.GetTopUniquePercent(System.Int32)">
+            <summary>
+            Gets the top percent from a unique (based on Fitness) set of Solutions.
+            </summary>
+            <returns>The top unique percent.</returns>
+            <param name="percent">Percent.</param>
+        </member>
+        <member name="M:GAF.Population.IsValid">
+            <summary>
+            Returns true if the population is valid.
+            </summary>
+            <returns><c>true</c> if this instance is valid; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:GAF.Population.GetDuplicateCount">
+            <summary>
+            Gets the number of duplicate solutions based on binary string representation.
+            </summary>
+            <returns>The duplicate count.</returns>
+        </member>
+        <member name="M:GAF.Population.GetDuplicates">
+            <summary>
+            Gets the number of duplicate solutions based on binary string representation.
+            </summary>
+            <returns>The duplicate count.</returns>
+        </member>
+        <member name="M:GAF.Population.GetNonElites">
+            <summary>
+            Returns the non-elites.        
+            </summary>
+            <returns>The non elites.</returns>
+        </member>
+        <member name="M:GAF.Population.GetElites">
+            <summary>
+            Returns the elites.
+            </summary>
+            <returns>The elites.</returns>
+        </member>
+        <member name="M:GAF.Population.GetTop(System.Int32)">
+            <summary>
+            Returns the top count of the population based on highest
+            fitness value.        
+            </summary>
+            <param name="count"></param>
+            <returns>The top.</returns>
+        </member>
+        <member name="M:GAF.Population.GetUniqueTop(System.Int32)">
+            <summary>
+            Returns a unique list representing the top unique count of 
+            the population based on highest
+            fitness value.        
+            </summary>
+            <param name="count"></param>
+            <returns>The top.</returns>
+        </member>
+        <member name="M:GAF.Population.GetBottom(System.Int32)">
+            <summary>
+            Returns the top count of the population based on lowest
+            fitness value.
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.SelectParents">
+            <summary>
+            Method to select parents from the population based on the Parent Selection Method setting.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.CreateEmptyCopy">
+            <summary>
+            Returns the empty copy of the population object based on the current instance.
+            </summary>
+            <returns>The empty copy.</returns>
+        </member>
+        <member name="M:GAF.Population.GetFpsSelection">
+            <summary>
+            Returns a Chromosome based on the (Roulette) selection method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Population.ApplyLinearNormalisation">
+            <summary>
+            Applies Linear Normalisation to the fitness values of the population.
+            </summary>
+        </member>
+        <member name="T:GAF.Extensions.IList">
+            <summary>
+            Extension class for the IList&lt;T&gt; type.
+            </summary>
+        </member>
+        <member name="M:GAF.Extensions.IList.ShuffleFast``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            This method performs a simple fast Fisher Yates Shuffle.
+            </summary>
+        </member>
+        <member name="M:GAF.Extensions.IList.ShuffleFast``1(System.Collections.Generic.IList{``0},System.Random)">
+            <summary>
+            This method performs a simple fast Fisher Yates Shuffle.
+            </summary>
+        </member>
+        <member name="T:GAF.Extensions.List">
+            <summary>
+            Extension class for the List&lt;T&gt; type.
+            </summary>
+        </member>
+        <member name="M:GAF.Extensions.List.ToCsv(System.Collections.Generic.List{GAF.Chromosome})">
+            <summary>
+            Creates a CSV formatted string.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Extensions.List.AddRangeCloned(System.Collections.Generic.List{GAF.Gene},System.Collections.Generic.IEnumerable{GAF.Gene})">
+            <summary>
+            Clones and adds the specified range.
+            </summary>
+            <param name="source">Source.</param>
+            <param name="genes">Genes.</param>
+        </member>
+        <member name="M:GAF.Extensions.List.AddCloned(System.Collections.Generic.List{GAF.Gene},GAF.Gene)">
+            <summary>
+            Clones and adds the specified range.
+            </summary>
+            <param name="source">Source.</param>
+            <param name="gene">Gene.</param>
+        </member>
+        <member name="T:GAF.Extensions.ChromosomeExtensions">
+            <summary>
+            Chromosome extensions.
+            </summary>
+        </member>
+        <member name="T:GAF.Math">
+            <summary>
+            This class is a simple math helper class.
+            </summary>
+        </member>
+        <member name="M:GAF.Math.RoundEven(System.Double)">
+            <summary>
+            Rounds a number to r=the nearest even whole number.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Math.Positive(System.Int64)">
+            <summary>
+            Returns a posive integer value, i.e. -10 becomes 10.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GAF.Math.GetRangeConstant(System.Double,System.Int32)">
+            <summary>
+            Returns a range constant that can be used for normalisation.
+            </summary>
+            <returns>The range constant.</returns>
+            <param name="range">Range.</param>
+            <param name="numberOfBits">Number of bits.</param>
+        </member>
+        <member name="M:GAF.Math.AboutEqual(System.Double,System.Double)">
+            <summary>
+            Compares two double values for equality.
+            </summary>
+            <returns><c>true</c>, if equal was abouted, <c>false</c> otherwise.</returns>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+        </member>
+        <member name="M:GAF.Math.ReRange(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Changes the range of a number whilst maintaining ratio.
+            </summary>
+            <returns>The range.</returns>
+            <param name="oldValue">Old value.</param>
+            <param name="oldMin">Old minimum.</param>
+            <param name="oldMax">Old max.</param>
+            <param name="newMin">New minimum.</param>
+            <param name="newMax">New max.</param>
+        </member>
+        <member name="M:GAF.Math.EuclideanDistance(System.Collections.Generic.IList{System.Double},System.Collections.Generic.IList{System.Double})">
+            <summary>
+            Calculates the Euclidean distance between two vector elements.
+            </summary>
+            <returns>The distance.</returns>
+            <param name="vector1">Vector1.</param>
+            <param name="vector2">Vector2.</param>
+        </member>
+        <member name="M:GAF.Math.EuclideanDistance(System.Collections.Generic.IList{System.Int32},System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Calculates the Euclidean distance between two vector elements.
+            </summary>
+            <returns>The distance.</returns>
+            <param name="vector1">Vector1.</param>
+            <param name="vector2">Vector2.</param>
+        </member>
+        <member name="M:GAF.Math.ManhattanDistance(System.Collections.Generic.IList{System.Int32},System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Calculates the Manhattan distance between two vector elements.
+            </summary>
+            <returns>The distance.</returns>
+            <param name="vector1">Vector1.</param>
+            <param name="vector2">Vector2.</param>
+        </member>
+        <member name="M:GAF.Math.ManhattanDistance(System.Collections.Generic.IList{System.Double},System.Collections.Generic.IList{System.Double})">
+            <summary>
+            Calculates the Manhattan distance between two vector elements.
+            </summary>
+            <returns>The distance.</returns>
+            <param name="vector1">Vector1.</param>
+            <param name="vector2">Vector2.</param>
+        </member>
+        <member name="M:GAF.Math.ChebyshevDistance(System.Collections.Generic.IList{System.Int32},System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Calculates the Chebyshevs distance between two vector elements.
+            </summary>
+            <returns>The distance.</returns>
+            <param name="vector1">Vector1.</param>
+            <param name="vector2">Vector2.</param>
+        </member>
+        <member name="M:GAF.Math.ChebyshevDistance(System.Collections.Generic.IList{System.Double},System.Collections.Generic.IList{System.Double})">
+            <summary>
+            Calculates the Chebyshevs distance between two vector elements.
+            </summary>
+            <returns>The distance.</returns>
+            <param name="vector1">Vector1.</param>
+            <param name="vector2">Vector2.</param>
+        </member>
+        <member name="T:GAF.Threading.RandomProvider">
+            <summary>
+            Provides one Random class per thread.
+            </summary>
+        </member>
+        <member name="M:GAF.Threading.RandomProvider.GetThreadRandom">
+            <summary>
+            Returns a thread safe System.Random class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GAF.ChromosomeException">
+            <summary>
+            Chromosome exception.
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeException"/> class
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.ChromosomeException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:GAF.ChromosomeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exception. </param>
+            <param name="inner">The exception that is the cause of thChromosomeExceptionxception. </param>
+        </member>
+        <member name="T:GAF.CrossoverTypeIncompatibleException">
+            <summary>
+            Crossover type incompatible exception.
+            </summary>
+        </member>
+        <member name="M:GAF.CrossoverTypeIncompatibleException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CrossoverTypeIncompatibleException"/> classIncompatibleCrossoverTypeExceptiony>
+            </summary>
+        </member>
+        <member name="M:GAF.CrossoverTypeIncompatibleException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.CrossoverTypeIncompatibleException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:GAF.CrossoverTypeIncompatibleException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CrossoverTypeIncompatibleException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exceptiIncompatibleCrossoverTypeException </param>
+            <param name="inner">The exception that is the cause of the current exception. </param>
+        </member>
+        <member name="T:GAF.GeneException">
+            <summary>
+            Custom exception used to indicate an exception with a gene. See the inner exception and message for full exception details.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneException.#ctor(System.String)">
+            <summary>
+            Constructor accepting a message.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GAF.GeneException.#ctor(System.String,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message.
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:GAF.GeneException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor accepting a message and inner exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:GAF.GeneException.#ctor(System.String,System.Exception,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message and inner exception.
+            </summary>
+            <param name="format"></param>
+            <param name="innerException"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:GAF.GeneCloneException">
+            <summary>
+            Gene clone exception.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneCloneException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GeneCloneException"/> class
+            </summary>
+        </member>
+        <member name="M:GAF.GeneCloneException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GeneCloneException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> thaInconsistentCloneException the exception. </param>
+        </member>
+        <member name="M:GAF.GeneCloneException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GeneCloneException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exception. </param>
+            <param name="inner">TInconsistentCloneExceptionn that is the cause of the current exception. </param>
+        </member>
+        <member name="T:GAF.PopulationException">
+            <summary>
+            Custom exception used to indicate an exception with a population. See the inner exception and message for full exception details.
+            </summary>
+        </member>
+        <member name="M:GAF.PopulationException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:GAF.PopulationException.#ctor(System.String)">
+            <summary>
+            Constructor accepting a message.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GAF.PopulationException.#ctor(System.String,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message.
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:GAF.PopulationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor accepting a message and inner exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:GAF.PopulationException.#ctor(System.String,System.Exception,System.Object[])">
+            <summary>
+            Constructor accepting a formatted message and inner exception.
+            </summary>
+            <param name="format"></param>
+            <param name="innerException"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:GAF.ChromosomeCorruptException">
+            <summary>
+            Chromosome corrupt exception.
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeCorruptException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeCorruptException"/> class
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeCorruptException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeCorruptException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the ChromosomeException </param>
+        </member>
+        <member name="M:GAF.ChromosomeCorruptException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeCorruptException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exception. </param>
+            <param name="inner">The exception that is the cause of thChromosomeExceptionxception. </param>
+        </member>
+        <member name="T:GAF.PopulationSelectionException">
+            <summary>
+            Population selection exception.
+            </summary>
+        </member>
+        <member name="M:GAF.PopulationSelectionException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PopulationSelectionException"/> class
+            </summary>
+        </member>
+        <member name="M:GAF.PopulationSelectionException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PopulationSelectionException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exceptChromosomeException </param>
+        </member>
+        <member name="M:GAF.PopulationSelectionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PopulationSelectionException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exception. </param>
+            <param name="inner">The exception that is the cause of thChromosomeExceptionxception. </param>
+        </member>
+        <member name="T:GAF.GeneTypeException">
+            <summary>
+            Gene type exception.
+            </summary>
+        </member>
+        <member name="M:GAF.GeneTypeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GeneTypeException"/> class
+            </summary>
+        </member>
+        <member name="M:GAF.GeneTypeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GeneTypeException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> thaInconsistentCloneException the exception. </param>
+        </member>
+        <member name="M:GAF.GeneTypeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GeneTypeException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exception. </param>
+            <param name="inner">TInconsistentCloneExceptionn that is the cause of the current exception. </param>
+        </member>
+        <member name="T:GAF.ChromosomeNotUniqueException">
+            <summary>
+            Chromosome not unique exception.
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeNotUniqueException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeNotUniqueException"/> class
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeNotUniqueException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeNotUniqueException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the ChromosomeException </param>
+        </member>
+        <member name="M:GAF.ChromosomeNotUniqueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ChromosomeNotUniqueException"/> class
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the exception. </param>
+            <param name="inner">The exception that is the cause of thChromosomeExceptionxception. </param>
+        </member>
+        <member name="T:GAF.IConsumerFunctions">
+            <summary>
+            This interface is provided to support external programs such as the GAF.Lab GUI application.
+            </summary>
+        </member>
+        <member name="M:GAF.IConsumerFunctions.EvaluateFitness(GAF.Chromosome)">
+            <summary>
+            This method should implement the GA's evaluation function.
+            </summary>
+            <returns>The fitness.</returns>
+            <param name="chromosome">Chromosome.</param>
+        </member>
+        <member name="M:GAF.IConsumerFunctions.TerminateAlgorithm(GAF.Population,System.Int32,System.Int64)">
+            <summary>
+            This method should implement the GA's terminate function.
+            </summary>/// <returns><c>true</c>, if algorithm was terminated, <c>false</c> otherwise.</returns>
+            <param name="population">Population.</param>
+            <param name="currentGeneration">Current generation.</param>
+            <param name="currentEvaluation">Current evaluation.</param>
+        </member>
+        <member name="T:GAF.ExceptionEventArgs">
+            <summary>
+            Event arguments used within the main GA exeption events.
+            </summary>
+        </member>
+        <member name="M:GAF.ExceptionEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name = "method"></param>
+            <param name="message"></param>
+        </member>
+        <member name="P:GAF.ExceptionEventArgs.Message">
+            <summary>
+            Returns the list of Exception messages.
+            </summary>
+        </member>
+        <member name="T:GAF.LoggingEventArgs">
+            <summary>
+            Event arguments used within the logging events.
+            </summary>
+        </member>
+        <member name="M:GAF.LoggingEventArgs.#ctor(System.String,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.LoggingEventArgs"/> class.
+            </summary>
+            <param name="format">Format.</param>
+            <param name="args">Arguments.</param>
+        </member>
+        <member name="M:GAF.LoggingEventArgs.#ctor(System.Boolean,System.String,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.LoggingEventArgs"/> class.
+            </summary>
+            <param name = "isWarning"></param>
+            <param name="format">Format.</param>
+            <param name="args">Arguments.</param>
+        </member>
+        <member name="P:GAF.LoggingEventArgs.Message">
+            <summary>
+            Returns the list of Exception messages.
+            </summary>
+        </member>
+        <member name="P:GAF.LoggingEventArgs.IsWarning">
+            <summary>
+            Gets a value indicating whether this <see cref="T:GAF.LoggingEventArgs"/> is a warning.
+            </summary>
+            <value><c>true</c> if is warning; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:GAF.GaEventArgs">
+            <summary>
+            Event arguments used within the main GA events.
+            </summary>
+        </member>
+        <member name="F:GAF.GaEventArgs._generation">
+            <summary>
+            The generation.
+            </summary>
+        </member>
+        <member name="F:GAF.GaEventArgs._population">
+            <summary>
+            The population.
+            </summary>
+        </member>
+        <member name="F:GAF.GaEventArgs._evaluations">
+            <summary>
+            The evaluations.
+            </summary>
+        </member>
+        <member name="M:GAF.GaEventArgs.#ctor(GAF.Population,System.Int32,System.Int64)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="population"></param>
+            <param name="generation"></param>
+            <param name="evaluations"></param>
+        </member>
+        <member name="P:GAF.GaEventArgs.Population">
+            <summary>
+            Returns the population.
+            </summary>
+        </member>
+        <member name="P:GAF.GaEventArgs.Generation">
+            <summary>
+            Returns the number of the current generation.
+            </summary>
+        </member>
+        <member name="P:GAF.GaEventArgs.Evaluations">
+            <summary>
+            Returns the number of the evaluations undertaken so far.
+            </summary>
+        </member>
+        <member name="T:GAF.GaOperatorEventArgs">
+            <summary>
+            GA operator event arguments.
+            </summary>
+        </member>
+        <member name="M:GAF.GaOperatorEventArgs.#ctor(GAF.IGeneticOperator,GAF.Population,System.Int32,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GAF.GaOperatorEventArgs"/> class.
+            </summary>
+            <param name="geneticOperator">Genetic operator.</param>
+            <param name="population">Population.</param>
+            <param name="generation">Generation.</param>
+            <param name="evaluations">Evaluations.</param>
+        </member>
+        <member name="P:GAF.GaOperatorEventArgs.GeneticOperator">
+            <summary>
+            Gets the genetic operator.
+            </summary>
+            <value>The genetic operator.</value>
+        </member>
+        <member name="T:GAF.EvaluationEventArgs">
+            <summary>
+            Evaluation event arguments.
+            </summary>
+        </member>
+        <member name="M:GAF.EvaluationEventArgs.#ctor(System.Collections.Generic.List{GAF.Chromosome},GAF.FitnessFunction)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name = "solutionsToEvaluate"></param>
+            <param name = "fitnessFunctionDelegate"></param>
+        </member>
+        <member name="P:GAF.EvaluationEventArgs.SolutionsToEvaluate">
+            <summary>
+            Returns the population.
+            </summary>
+        </member>
+        <member name="P:GAF.EvaluationEventArgs.FitnessFunctionDelegate">
+            <summary>
+            Gets the fitness function.
+            </summary>
+            <value>The fitness function.</value>
+        </member>
+        <member name="P:GAF.EvaluationEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether to cancel further evaluations. This property
+            can be used by consumers of the event to stop further evaluations.
+            </summary>
+            <value><c>true</c> to cancel; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GAF.EvaluationEventArgs.Evaluations">
+            <summary>
+            Gets or sets the evaluation count. This property should be used by consumers of the event
+            to update the evaluation count if appropriate.
+            count
+            </summary>
+            <value>The numbe of evaluations undertaken eithin the event.</value>
+        </member>
+        <member name="T:GAF.LoggingEventHandler">
+            <summary>
+            Delegate definition for the LoggingEventHandler event handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:GAF.IFitness">
+            <summary>
+            This interface is provided to support external programs such as the GAF.Lab GUI application.
+            </summary>
+        </member>
+        <member name="M:GAF.IFitness.EvaluateFitness(GAF.Chromosome)">
+            <summary>
+            This method should implement the GA's evaluation function.
+            </summary>
+            <returns>The fitness.</returns>
+            <param name="chromosome">Chromosome.</param>
+        </member>
+        <member name="T:GAF.ChromosomeComparer">
+            <summary>
+            Chromosome comparer.
+            </summary>
+        </member>
+        <member name="M:GAF.ChromosomeComparer.Equals(GAF.Chromosome,GAF.Chromosome)">
+            <summary>
+            Equals the specified x and y.
+            </summary>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+        </member>
+        <member name="M:GAF.ChromosomeComparer.GetHashCode(GAF.Chromosome)">
+            <summary>
+            Gets the hash code.
+            </summary>
+            <returns>The hash code.</returns>
+            <param name="product">Product.</param>
+        </member>
+    </members>
+</doc>

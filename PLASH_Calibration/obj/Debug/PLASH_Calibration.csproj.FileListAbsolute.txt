@@ -8,3 +8,14 @@ D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibra
 D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.csproj.CopyComplete
 D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.exe
 D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\obj\Debug\PLASH_Calibration.pdb
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\Antlr3.Runtime.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\GeneticSharp.Domain.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\GeneticSharp.Extensions.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\GeneticSharp.Infrastructure.Framework.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\NCalc.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\System.Drawing.Common.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\EPPlus.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\Antlr3.Runtime.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\EPPlus.xml
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\MathNet.Numerics.dll
+D:\VisualStudio_Mestrado\DMP_Hydrology\PLASH_Calibration\bin\Debug\MathNet.Numerics.xml
