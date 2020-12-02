@@ -77,6 +77,7 @@
     <Compile Include="SMAPd_Network\Helper.cs" />
     <Compile Include="SMAPd_Network\Simulation.cs" />
     <Compile Include="SMAPd_Network\Variables.cs" />
+    <Compile Include="Tree\ExcelCommunication.cs" />
     <Compile Include="Tree\Tree.cs" />
   </ItemGroup>
   <ItemGroup>

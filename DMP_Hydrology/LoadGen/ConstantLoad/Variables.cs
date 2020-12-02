@@ -9,8 +9,12 @@ namespace USP_Hydrology
 {
     public class ConstantLoad
     {
-        public Mass BODLoad;
-        public Mass PhosporusLoad;
-        public Mass NitrogenLoad;
+        public Mass BODLoad_kgd;
+        public Mass PhosphorusLoad_kgd;
+        public Mass NitrogenLoad_kgd;
+
+        public Mass NonPointBOD_kgd;
+        public Mass NonPointPhosphorus_kgd;
+        public Mass NonPointNitrogen_kgd;
     }
 }

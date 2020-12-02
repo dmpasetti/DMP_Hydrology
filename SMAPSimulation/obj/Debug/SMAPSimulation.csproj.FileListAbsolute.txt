@@ -23,5 +23,3 @@ D:\VisualStudio_Mestrado\DMP_Hydrology\SMAPSimulation\obj\Debug\SMAPSimulation.c
 D:\VisualStudio_Mestrado\DMP_Hydrology\SMAPSimulation\obj\Debug\SMAPSimulation.csproj.CopyComplete
 D:\VisualStudio_Mestrado\DMP_Hydrology\SMAPSimulation\obj\Debug\SMAPSimulation.exe
 D:\VisualStudio_Mestrado\DMP_Hydrology\SMAPSimulation\obj\Debug\SMAPSimulation.pdb
-D:\VisualStudio_Mestrado\DMP_Hydrology\SMAPSimulation\bin\Debug\glpk465x32.dll
-D:\VisualStudio_Mestrado\DMP_Hydrology\SMAPSimulation\bin\Debug\glpk465x64.dll

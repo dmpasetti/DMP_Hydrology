@@ -16,7 +16,7 @@ namespace USP_Hydrology
             {
                 foreach(NodeExternal _node in OrderedTree)
                 {
-                    SMAPd_Network.SMAPd_Input input = _node.GetSMAP.GetInput;
+                    SMAPd_Input input = _node.GetSMAP.GetInput;
                     if (_node.OBJ_Node.INT_Level > 1)
                     {
                         List<NodeExternal> lstNodeUpstream = new List<NodeExternal>();
@@ -24,10 +24,13 @@ namespace USP_Hydrology
                         {
                             if(OrderedTree[j].OBJ_Node.INT_Level < _node.OBJ_Node.INT_Level)
                             {
-                                if(OrderedTree[j].OBJ_Node.OBJ_Downstream.ID_Watershed == _node.OBJ_Node.ID_Watershed)
+                                if(OrderedTree[j].OBJ_Node.OBJ_Downstream != null)
                                 {
-                                    lstNodeUpstream.Add(OrderedTree[j]);
-                                }
+                                    if (OrderedTree[j].OBJ_Node.OBJ_Downstream.ID_Watershed == _node.OBJ_Node.ID_Watershed)
+                                    {
+                                        lstNodeUpstream.Add(OrderedTree[j]);
+                                    }
+                                }                                
                             }
                         }                        
                         VolumeFlow UpstreamFlow = input.UpstreamFlow[i];
@@ -41,13 +44,9 @@ namespace USP_Hydrology
                     else
                     {
                         _node.GetSMAP.SMAPSimulation.SimulationNext(input.Precipitation[i], input.Evapotranspiration[i], null, VolumeFlow.Zero, VolumeFlow.Zero);
-                    }
-                    
+                    }                    
                 }
             }
-
         }
-
-
     }
 }

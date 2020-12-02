@@ -15,10 +15,18 @@ namespace USP_Hydrology
             return Sim.FLT_Arr_Buildup.Sum();
         }
 
+        public static double AveragePeriodLoad(Buildup_Washoff Sim)
+        {
+            return Sim.FLT_Arr_Buildup.Average();
+        }
+
+
         public static double TotalPeriodWashoff(Buildup_Washoff Sim)
         {
             return Sim.FLT_Arr_EffectiveWashoff.Sum();
         }
+
+
 
     }
 }
