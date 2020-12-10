@@ -1924,5 +1924,163 @@ namespace USP_Hydrology
                 package.Save();
             }
         }
+
+
+
+
+        public static void SaveQualityTreeToExcel(List<NodeExternal> Tree, FileInfo OutputFile)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (ExcelPackage package = new ExcelPackage())
+            {
+
+                #region Topologia
+                package.Workbook.Worksheets.Add("Topologia");
+
+                var HeaderRowTopology = new List<string[]>()
+                {
+                    new string[]
+                    {
+                        "Bacia", "Jusante", "Area (km2)",
+                        //"Frac_Imperm (%)", "Frac_Perm (%)",
+                        //"CN_Medio", "Comp_Talv (km)", "Decliv_Media (%)",
+                        "Bacia_Cal", "Frac_Cal"
+                    }
+                };
+
+                var worksheet = package.Workbook.Worksheets["Topologia"];
+                List<object[]> cellDataTopology = new List<object[]>();
+                foreach (NodeExternal _node in Tree)
+                {
+                    //var _TopoParam = _node.OBJ_UInput;
+                    NodeExternal NodeDown = new NodeExternal();
+                    foreach (NodeExternal _obj in Tree)
+                    {
+                        if (_node.OBJ_Node.OBJ_Downstream != null)
+                        {
+                            if (_obj.OBJ_Node.ID_Watershed == _node.OBJ_Node.OBJ_Downstream.ID_Watershed)
+                            {
+                                NodeDown = _obj;
+                            }
+                        }
+                    }
+                    NodeExternal NodeCal = Tree.Where(x => x.OBJ_Node.ID_Watershed == _node.TPL_CalibrationWS.Item1.ID_Watershed).FirstOrDefault();
+                    bool IsNodeCal = _node.OBJ_Node.ID_Watershed == NodeCal.OBJ_Node.ID_Watershed;
+                    string strDown = NodeDown?.STR_Watershed;
+                    string strCal = NodeCal?.STR_Watershed;
+                    cellDataTopology.Add(new object[] {
+                        _node.STR_Watershed, strDown, _node.WatershedArea,
+                        //_TopoParam.FLT_Imperv, _TopoParam.FLT_Perv,
+                        //_TopoParam.FLT_AvgCN, _TopoParam.FLT_StreamLength, _TopoParam.FLT_AvgSlope,
+                        strCal, _node.TPL_CalibrationWS.Item2
+                    });
+                }
+                worksheet.Cells[1, 1].LoadFromArrays(HeaderRowTopology);
+                worksheet.Cells[2, 1].LoadFromArrays(cellDataTopology);
+
+                #endregion Topologia
+
+                
+
+                #region Resultados
+                var HeaderRowResults = new List<string[]>()
+                {
+                    new string[]
+                    {
+                        "Data",
+                        "Carga base (kg/d)", "Carga lavagem (kg/d)", "Carga incremental (kg/d)", "Carga no exutório (kg/d)",
+                        "Polutograma base (mg/l)", "Polutograma lavagem (mg/l)", "Polutograma incremental (mg/l)", "Polutograma no exutório (mg/l)"
+                    }
+                };
+
+                foreach (NodeExternal _node in Tree)
+                {
+                    package.Workbook.Worksheets.Add("Res" + _node.STR_Watershed);
+                    worksheet = package.Workbook.Worksheets["Res" + _node.STR_Watershed];
+                    List<object[]> cellDataResults = new List<object[]>();
+                    var Simulation = _node.GetSMAP.SMAPSimulation.GetSimulation;
+                    var Dates = _node.GetSMAP.GetInput.Time;                    
+                    int _simlength = _node.GetSimulationLength;
+                    var NodeData = _node.BODOutput;
+                    for (int i = 0; i < _simlength; i++)
+                    {
+                        cellDataResults.Add(new object[]
+                        {
+                            Dates[i],
+                            NodeData.ConstantLoadMass[i].Kilograms, NodeData.WashoffMass[i].Kilograms, NodeData.TotalProducedMass[i].Kilograms, NodeData.DownstreamMass[i].Kilograms,
+                            NodeData.ConstantLoadPollutogram[i].MilligramsPerLiter, NodeData.WashoffPollutogram[i].MilligramsPerLiter, NodeData.TotalProducedPollutogram[i].MilligramsPerLiter, NodeData.DownstreamPollutogram[i].MilligramsPerLiter
+                        });
+                    }
+
+                    
+                    worksheet.Cells[1, 1].LoadFromArrays(HeaderRowResults);
+                    worksheet.Cells[2, 1].LoadFromArrays(cellDataResults);
+                    worksheet.Cells[2, 1, _simlength + 2, 1].Style.Numberformat.Format = "dd/mm/yyyy";
+
+                    #endregion Resultados
+
+                    #region Charts
+
+                    //ExcelRangeBase rangeXSeries = worksheet.Cells[2, 1, _simlength + 1, 1];
+                    //ExcelRangeBase rangeSeriesIncremental = worksheet.Cells[2, 13, _simlength + 1, 13];
+                    //ExcelRangeBase rangeSeriesBasic = worksheet.Cells[2, 16, _simlength + 1, 16];
+                    //ExcelRangeBase rangeSeriesTotal = worksheet.Cells[2, 17, _simlength + 1, 17];
+                    //ExcelRangeBase rangeSeriesObs = worksheet.Cells[2, 18, _simlength + 1, 18];
+
+
+                    //var chartResults = worksheet.Drawings.AddScatterChart("Results", eScatterChartType.XYScatterSmoothNoMarkers);
+                    //var seriesQIncrement = chartResults.Series.Add(rangeSeriesIncremental, rangeXSeries);
+                    //var seriesQBasic = chartResults.Series.Add(rangeSeriesBasic, rangeXSeries);
+                    //var seriesQTotal = chartResults.Series.Add(rangeSeriesTotal, rangeXSeries);
+
+                    //if (_node.OBJ_Node.ID_Watershed == _node.TPL_CalibrationWS.Item1.ID_Watershed)
+                    //{
+                    //    var seriesQObs = chartResults.Series.Add(rangeSeriesObs, rangeXSeries);
+                    //    chartResults.Series[3].Header = "Vazão observada";
+                    //}
+
+                    //chartResults.Series[0].Header = "Vazão incremental";
+                    //chartResults.Series[1].Header = "Vazão básica";
+                    //chartResults.Series[2].Header = "Vazão total";
+
+                    //chartResults.Title.Text = "Resumo";
+                    //chartResults.DisplayBlanksAs = eDisplayBlanksAs.Gap;
+                    //chartResults.XAxis.MajorTickMark = eAxisTickMark.In;
+                    //chartResults.XAxis.MinorTickMark = eAxisTickMark.None;
+                    //chartResults.XAxis.MajorUnit = null;
+                    //chartResults.XAxis.Title.Font.Size = 12;
+                    //chartResults.YAxis.MinorTickMark = eAxisTickMark.None;
+                    //chartResults.YAxis.MinValue = 0;
+                    //chartResults.YAxis.Format = "0.0";
+                    //chartResults.YAxis.Title.Text = "Vazão (m³/s)";
+                    //chartResults.YAxis.Title.Font.Size = 12;
+                    //chartResults.YAxis.Title.Rotation = 270;
+                    //chartResults.StyleManager.SetChartStyle(ePresetChartStyle.ScatterChartStyle1, ePresetChartColors.ColorfulPalette1);
+                    //chartResults.RoundedCorners = false;
+                    //chartResults.Legend.Position = eLegendPosition.Right;
+
+                    //var Width = 1200;
+                    //var Height = 600;
+
+                    //var vOffset = 50;
+                    //var hOffset = 50;
+                    //chartResults.SetSize(Width, Height);
+                    //chartResults.SetPosition(vOffset, hOffset);
+
+                    #endregion Charts                    
+                }
+
+                FileInfo excelFile = OutputFile;
+                package.SaveAs(excelFile);
+
+            }
+
+
+        }
+
+
+
+
     }
 }

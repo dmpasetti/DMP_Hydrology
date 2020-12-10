@@ -328,12 +328,15 @@ namespace USP_Hydrology
                 double WatershedArea = 0;
                 foreach(Buildup_Washoff _use in _node.GetBuWo)
                 {
-                    double NonPointLoad = _node.BaseLoad.NonPointBOD_kgd.Kilograms * _use.GetParam.FLT_AreaFraction;
-                    _use.GetParam.FLT_BMax = 1;
-                    ProcessBuWo(_use);
-                    _use.GetParam.FLT_BMax = NonPointLoad / AveragePeriodLoad(_use);
-                    ProcessBuWo(_use);
-                    WatershedArea += _use.GetParam.FLT_Area * _use.GetParam.FLT_AreaFraction;
+                    if(_use.GetParam.STR_UseName != LandUse.Aggregate)
+                    {
+                        double NonPointLoad = _node.BaseLoad.NonPointBOD_kgd.Kilograms * _use.GetParam.FLT_AreaFraction;
+                        _use.GetParam.FLT_BMax = 1;
+                        ProcessBuWo(_use);
+                        _use.GetParam.FLT_BMax = NonPointLoad / AveragePeriodLoad(_use);
+                        ProcessBuWo(_use);
+                        WatershedArea += _use.GetParam.FLT_Area * _use.GetParam.FLT_AreaFraction;
+                    }                    
                 }
                 _node.GetBuWo.Add(AggregateUses(_node.GetBuWo, WatershedArea));
             }

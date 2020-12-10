@@ -17,7 +17,7 @@ namespace PrototypeWatershedSimulation
             FileInfo inputPath = new FileInfo(CurrentDirectory + @"\input.xlsx");
             FileInfo outputPath = new FileInfo(CurrentDirectory + @"\output.xlsx");
             FileInfo summaryPath = new FileInfo(CurrentDirectory + @"\summary.xlsx");
-
+            FileInfo QualityOutputPath = new FileInfo(CurrentDirectory + @"\quality.xlsx");
             //List<NodeExternal> WSTree = Tree.SMAPTreeFromExcel(inputPath);
             List<NodeExternal> WSTreePrototype = Tree.PrototypeTreeFromExcel(inputPath);
 
@@ -34,6 +34,7 @@ namespace PrototypeWatershedSimulation
             //Tree.SavePrototypeTreeToExcel(WSTree, summaryPath);
             //Tree.SavePrototypeTreeToExcel_SMAP(WSTree, summaryPath);
             //Tree.SaveSMAPTreeToExcel(WSTreePrototype, outputPath);
+            Tree.SaveQualityTreeToExcel(WSTreePrototype, QualityOutputPath);
             Tree.SavePrototypeTreeToExcel_SMAP_Qual(WSTreePrototype, summaryPath);
             Console.WriteLine("Done!");
 
