@@ -30,14 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPPlus, Version=5.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.5.1.0\lib\net45\EPPlus.dll</HintPath>
+    <Reference Include="EPPlus, Version=5.6.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.6.1\lib\net45\EPPlus.dll</HintPath>
     </Reference>
-    <Reference Include="MathNet.Numerics, Version=4.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MathNet.Numerics.4.11.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    <Reference Include="MathNet.Numerics, Version=4.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.15.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -55,15 +62,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnitsNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f8601875a1f041da, processorArchitecture=MSIL">
-      <HintPath>..\packages\UnitsNet.4.56.0\lib\net40\UnitsNet.dll</HintPath>
+      <HintPath>..\packages\UnitsNet.4.87.0\lib\net40\UnitsNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoadGen\BuWo\Analytics.cs" />
     <Compile Include="LoadGen\BuWo\BuWo.cs" />
     <Compile Include="LoadGen\BuWo\Helper.cs" />
     <Compile Include="LoadGen\ConstantLoad\Variables.cs" />
     <Compile Include="LoadGen\Pollutogram\Simulation.cs" />
     <Compile Include="LoadGen\Pollutogram\Variables.cs" />
+    <Compile Include="Models\Helper\BitArray.cs" />
+    <Compile Include="Models\Helper\DoubleArray.cs" />
+    <Compile Include="Models\Helper\Interpolation.cs" />
+    <Compile Include="Models\Helper\ObjectiveFunction.cs" />
+    <Compile Include="Models\Helper\Statistic.cs" />
+    <Compile Include="Models\Helper\UnitsNet.cs" />
+    <Compile Include="Models\Model_Muskingum\Simulation.cs" />
+    <Compile Include="Models\Model_Muskingum\Variable.cs" />
+    <Compile Include="Models\Model_SMAPd\Simulation.cs" />
+    <Compile Include="Models\Model_SMAPd\Variable.cs" />
+    <Compile Include="Models\Model_SMAP\Variable.cs" />
     <Compile Include="Muskingum\Simulation.cs" />
     <Compile Include="Muskingum\Variables.cs" />
     <Compile Include="PLASH\Calibration.cs" />
@@ -77,6 +96,7 @@
     <Compile Include="SMAPd_Network\Helper.cs" />
     <Compile Include="SMAPd_Network\Simulation.cs" />
     <Compile Include="SMAPd_Network\Variables.cs" />
+    <Compile Include="Tree\BuildupWashoffAnalysis.cs" />
     <Compile Include="Tree\ExcelCommunication.cs" />
     <Compile Include="Tree\Tree.cs" />
   </ItemGroup>
@@ -88,12 +108,6 @@
     <None Include="Files\Planilha_Input_PLASH_v3.xlsx" />
     <None Include="Files\Planilha_Input_PLASH_v4.xlsx" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Projetos_Labsid\SSD3\LabSid.SSD3.Modelo\LabSid.Sabesp.Hydrology\LabSid.Sabesp.Hydrology.csproj">
-      <Project>{7a39a303-e253-4648-b036-a612f40adbd5}</Project>
-      <Name>LabSid.Sabesp.Hydrology</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

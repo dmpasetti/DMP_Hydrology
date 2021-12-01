@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitsNet;
-using LabSid.Sabesp.Hydrology;
+
 
 namespace USP_Hydrology
 {
     public partial class Pollutogram
     {
         public void SimulateConcentration(VolumeFlow[] Flow) {
-            List<MassConcentration> _arrConst = new List<MassConcentration>();
+            List<MassConcentration> _arrPoint = new List<MassConcentration>();
+            List<MassConcentration> _arrDryNonpoint = new List<MassConcentration>();
             List<MassConcentration> _arrWashoff = new List<MassConcentration>();
             List<MassConcentration> _arrProduced = new List<MassConcentration>();
             List<MassConcentration> _arrDownstream = new List<MassConcentration>();
@@ -19,7 +20,8 @@ namespace USP_Hydrology
             for(int i = 0; i < Flow.Length; i++)
             {
                 Volume DailyVolume = Flow[i].Multiplication(Duration.FromDays(1));
-                _arrConst.Add(MassConcentration.FromKilogramsPerCubicMeter(this.ConstantLoadMass[i].Kilograms / DailyVolume.CubicMeters));
+                _arrPoint.Add(MassConcentration.FromKilogramsPerCubicMeter(this.PointLoadMass[i].Kilograms / DailyVolume.CubicMeters));
+                _arrDryNonpoint.Add(MassConcentration.FromKilogramsPerCubicMeter(this.DryNonPointMass[i].Kilograms / DailyVolume.CubicMeters));
                 if(WashoffMass != null)
                 {
                     _arrWashoff.Add(MassConcentration.FromKilogramsPerCubicMeter(this.WashoffMass[i].Kilograms / DailyVolume.CubicMeters));
@@ -28,7 +30,8 @@ namespace USP_Hydrology
                 _arrDownstream.Add(MassConcentration.FromKilogramsPerCubicMeter(this.DownstreamMass[i].Kilograms / DailyVolume.CubicMeters));
                 
             }
-            this.ConstantLoadPollutogram = _arrConst.ToArray();
+            this.PointLoadPollutogram = _arrPoint.ToArray();
+            this.DryNonPointLoadPollutogram = _arrDryNonpoint.ToArray();
             this.WashoffPollutogram = _arrWashoff.ToArray() ?? null;
             this.TotalProducedPollutogram = _arrProduced.ToArray();
             this.DownstreamPollutogram = _arrDownstream.ToArray();
@@ -38,15 +41,21 @@ namespace USP_Hydrology
         {
             this.WashoffMass = Arraywashoff.Select(x => Mass.FromKilograms(x)).ToArray();
         }
-        private void FillConstLoadMass(Mass Load, int Length)
+        private void FillPointLoadMass(Mass Load, int Length)
         {
-            this.ConstantLoadMass = Enumerable.Repeat(Load, Length).ToArray();
+            this.PointLoadMass = Enumerable.Repeat(Load, Length).ToArray();
         }
+
+        private void FillDryNonPointLoadMass(Mass Load, int Length)
+        {
+            this.DryNonPointMass = Enumerable.Repeat(Load, Length).ToArray();
+        }
+
         private void FillTotalProducedMass()
         {
-            if(this.WashoffMass != null && this.ConstantLoadMass != null)
+            if(this.WashoffMass != null && this.PointLoadMass != null && this.DryNonPointMass != null)
             {
-                this.TotalProducedMass = this.WashoffMass.Zip(this.ConstantLoadMass, (x, y) => x + y).ToArray();
+                this.TotalProducedMass = this.WashoffMass.Zip(this.PointLoadMass, (x, y) => x + y).Zip(this.DryNonPointMass, (z, w) => z + w).ToArray();
             }
         }
         private void FillDownstreamMass()
@@ -54,14 +63,15 @@ namespace USP_Hydrology
             this.DownstreamMass = this.TotalProducedMass.Zip(this.UpstreamMass, (x, y) => x + y).ToArray();
         }
 
-        public static void SimulateTree(List<NodeExternal> Tree)
+        public static void SimulateBODTree(List<NodeExternal> Tree)
         {
             List<NodeExternal> OrderedTree = Tree.OrderBy(x => x.OBJ_Node.INT_Level).ToList();
             foreach (NodeExternal _node in OrderedTree)
             {
                 _node.BODOutput = new Pollutogram();
-                _node.BODOutput.FillConstLoadMass(_node.BaseLoad.BODLoad_kgd, _node.GetSimulationLength);
-                Buildup_Washoff ArrayWashoff = _node.GetBuWo.Where(x => x.GetParam.STR_UseName == Buildup_Washoff.LandUse.Aggregate).FirstOrDefault();
+                _node.BODOutput.FillPointLoadMass(_node.BaseLoad.BODLoad_kgd, _node.GetSimulationLength);
+                _node.BODOutput.FillDryNonPointLoadMass(_node.BaseLoad.DryNonPointBOD_kgd, _node.GetSimulationLength);
+                Buildup_Washoff ArrayWashoff = _node.BuWoAggregate;                
                 if(ArrayWashoff != null)
                 {
                     _node.BODOutput.FillWashoffMass(ArrayWashoff.FLT_Arr_EffectiveWashoff);
@@ -96,5 +106,94 @@ namespace USP_Hydrology
 
             }
         }
+
+        public static void SimulatePhosphorusTree(List<NodeExternal> Tree)
+        {
+            List<NodeExternal> OrderedTree = Tree.OrderBy(x => x.OBJ_Node.INT_Level).ToList();
+            foreach (NodeExternal _node in OrderedTree)
+            {
+                _node.POutput = new Pollutogram();
+                _node.POutput.FillPointLoadMass(_node.BaseLoad.PhosphorusLoad_kgd, _node.GetSimulationLength);
+                _node.POutput.FillDryNonPointLoadMass(_node.BaseLoad.DryNonPointPhosphorus_kgd, _node.GetSimulationLength);
+                Buildup_Washoff ArrayWashoff = _node.BuWoAggregate; 
+                if (ArrayWashoff != null)
+                {
+                    _node.POutput.FillWashoffMass(ArrayWashoff.FLT_Arr_EffectiveWashoff);
+                }
+                _node.POutput.FillTotalProducedMass();
+
+                Mass[] _upstreamLoad = new Mass[_node.GetSimulationLength];
+                if (_node.OBJ_Node.INT_Level > 1)
+                {
+                    for (int i = 0; i < OrderedTree.Count(); i++)
+                    {
+                        if (OrderedTree[i].OBJ_Node.INT_Level < _node.OBJ_Node.INT_Level)
+                        {
+                            if (OrderedTree[i].OBJ_Node.OBJ_Downstream != null)
+                            {
+                                if (OrderedTree[i].OBJ_Node.OBJ_Downstream.ID_Watershed == _node.OBJ_Node.ID_Watershed)
+                                {
+                                    _upstreamLoad = _upstreamLoad.Zip(OrderedTree[i].POutput.DownstreamMass, (x, y) => x + y).ToArray();
+                                }
+                            }
+                        }
+                    }
+                }
+                _node.POutput.UpstreamMass = _upstreamLoad;
+                _node.POutput.FillDownstreamMass();
+
+                if (_node.GetSMAP != null)
+                {
+                    VolumeFlow[] ArrayFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => x.Downstream).ToArray();
+                    _node.POutput.SimulateConcentration(ArrayFlow);
+                }
+
+            }
+        }
+
+        public static void SimulateNitrogenTree(List<NodeExternal> Tree)
+        {
+            List<NodeExternal> OrderedTree = Tree.OrderBy(x => x.OBJ_Node.INT_Level).ToList();
+            foreach (NodeExternal _node in OrderedTree)
+            {
+                _node.NOutput = new Pollutogram();
+                _node.NOutput.FillPointLoadMass(_node.BaseLoad.NitrogenLoad_kgd, _node.GetSimulationLength);
+                _node.NOutput.FillDryNonPointLoadMass(_node.BaseLoad.DryNonPointNitrogen_kgd, _node.GetSimulationLength);
+                Buildup_Washoff ArrayWashoff = _node.BuWoAggregate;
+                if (ArrayWashoff != null)
+                {
+                    _node.NOutput.FillWashoffMass(ArrayWashoff.FLT_Arr_EffectiveWashoff);
+                }
+                _node.NOutput.FillTotalProducedMass();
+
+                Mass[] _upstreamLoad = new Mass[_node.GetSimulationLength];
+                if (_node.OBJ_Node.INT_Level > 1)
+                {
+                    for (int i = 0; i < OrderedTree.Count(); i++)
+                    {
+                        if (OrderedTree[i].OBJ_Node.INT_Level < _node.OBJ_Node.INT_Level)
+                        {
+                            if (OrderedTree[i].OBJ_Node.OBJ_Downstream != null)
+                            {
+                                if (OrderedTree[i].OBJ_Node.OBJ_Downstream.ID_Watershed == _node.OBJ_Node.ID_Watershed)
+                                {
+                                    _upstreamLoad = _upstreamLoad.Zip(OrderedTree[i].NOutput.DownstreamMass, (x, y) => x + y).ToArray();
+                                }
+                            }
+                        }
+                    }
+                }
+                _node.NOutput.UpstreamMass = _upstreamLoad;
+                _node.NOutput.FillDownstreamMass();
+
+                if (_node.GetSMAP != null)
+                {
+                    VolumeFlow[] ArrayFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => x.Downstream).ToArray();
+                    _node.NOutput.SimulateConcentration(ArrayFlow);
+                }
+
+            }
+        }
+
     }
 } 

@@ -5,15 +5,78 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using OfficeOpenXml;
-using LabSid.Sabesp.Hydrology;
 using UnitsNet;
 using OfficeOpenXml.Drawing.Chart;
 using OfficeOpenXml.Drawing.Chart.Style;
+
 
 namespace USP_Hydrology
 {
     public partial class Tree
     {
+        public static Dictionary<string, string> DictPointHydrPrototype = new Dictionary<string, string>()
+        {
+            {"864997", "864995" },
+            {"864994", "864993" },
+            {"864992", "864991" },
+            {"864981", "864979" },
+            {"864978", "864977" },
+            {"864976", "864975" },
+            {"864974", "864973" },
+            {"864972", "864971" },
+            //{"864961", 10 },
+            //{"864958", 11 },
+            //{"864956", 12 },
+            //{"864954", 13 },
+            //{"864952", 14 },
+        };
+
+        public static Dictionary<string, int> DictDistrHydrPrototype = new Dictionary<string, int>()
+        {
+            {"864996", 3 },
+            {"864995", 4 },
+            {"864993", 5 },
+            {"864991", 6 },
+            {"864979", 7 },
+            {"864977", 8 },
+            {"864975", 9 },
+            {"864973", 10 },
+            {"864971", 11 },
+            //{"864959", 11 },
+            //{"864957", 12},
+            //{"864955", 13 },
+            //{"864953", 14 },
+            //{"864951", 15 },
+        };
+
+        public static Dictionary<string, int> DictResSummaryInputPrototype = new Dictionary<string, int>()
+        {
+            {"864957", 2 },
+            {"864956", 3 },
+            {"864955", 4 },
+            {"864954", 5 },
+            {"864953", 6 },
+            {"864952", 7 },
+            {"864951", 8 },
+            {"864945", 9 },
+            {"864944", 10 },
+            {"864943", 11 },
+            {"864942", 12 },
+            {"864941", 13 },
+            {"864939", 14 },
+            {"864938", 15 },
+            {"864937", 16 },
+            {"864936", 17 },
+            {"864935", 18 },
+            {"864934", 19 },
+            {"864933", 20 },
+            {"864932", 21 },
+            {"864931", 22 },
+            {"864923", 23 },
+            {"864922", 24 },
+            {"864921", 25 }
+        };
+
 
         public static List<NodeExternal> SMAPTreeFromExcel(FileInfo InputFile)
         {
@@ -468,7 +531,7 @@ namespace USP_Hydrology
                         "Bacia", "Jusante", "Area (km2)",
                         //"Frac_Imperm (%)", "Frac_Perm (%)",
                         //"CN_Medio", "Comp_Talv (km)", "Decliv_Media (%)",
-                        "Bacia_Cal", "Frac_Cal", "Nash_Sut"
+                        "Bacia_Cal"/*, "Frac_Cal", "Nash_Sut"*/
                     }
                 };
 
@@ -496,7 +559,7 @@ namespace USP_Hydrology
                         _node.STR_Watershed, strDown, _node.WatershedArea,
                         //_TopoParam.FLT_Imperv, _TopoParam.FLT_Perv,
                         //_TopoParam.FLT_AvgCN, _TopoParam.FLT_StreamLength, _TopoParam.FLT_AvgSlope,
-                        strCal, _node.TPL_CalibrationWS.Item2, IsNodeCal ? Math.Round(SMAPd_Network.SMAPNashSutcliffe(_node.GetSMAP),3).ToString() : ""
+                        strCal, /*_node.TPL_CalibrationWS.Item2, IsNodeCal ? Math.Round(SMAPd_Network.SMAPNashSutcliffe(_node.GetSMAP),3).ToString() : ""*/
                     });
                 }
                 worksheet.Cells[1, 1].LoadFromArrays(HeaderRowTopology);
@@ -608,7 +671,7 @@ namespace USP_Hydrology
                     chartResults.Series[1].Header = "Vazão básica";
                     chartResults.Series[2].Header = "Vazão total";
 
-                    chartResults.Title.Text = "Resumo";
+                    chartResults.Title.Text = $"Resumo bacia {_node.STR_Watershed}";
                     chartResults.DisplayBlanksAs = eDisplayBlanksAs.Gap;
                     chartResults.XAxis.MajorTickMark = eAxisTickMark.In;
                     chartResults.XAxis.MinorTickMark = eAxisTickMark.None;
@@ -1496,40 +1559,6 @@ namespace USP_Hydrology
             return lstNode;
         }
 
-        public static Dictionary<string, int> DictPointHydrPrototype = new Dictionary<string, int>()
-        {
-            {"864997", 2 },
-            {"864994", 3 },
-            {"864992", 4 },
-            {"864981", 5 },
-            {"864978", 6 },
-            {"864976", 7 },
-            {"864974", 8 },
-            {"864972", 9 },
-            //{"864961", 10 },
-            //{"864958", 11 },
-            //{"864956", 12 },
-            //{"864954", 13 },
-            //{"864952", 14 },
-        };
-
-        public static Dictionary<string, int> DictDistrHydrPrototype = new Dictionary<string, int>()
-        {
-            {"864996", 2 },
-            {"864995", 3 },
-            {"864993", 4 },
-            {"864991", 5 },
-            {"864979", 6 },
-            {"864977", 7 },
-            {"864975", 8 },
-            {"864973", 9 },
-            {"864971", 10 },
-            //{"864959", 11 },
-            //{"864957", 12},
-            //{"864955", 13 },
-            //{"864953", 14 },
-            //{"864951", 15 },
-        };
         
         public static List<NodeExternal> PrototypeTreeFromExcel(FileInfo InputFile)
         {
@@ -1662,8 +1691,15 @@ namespace USP_Hydrology
                     ConstantLoad _ctl = new ConstantLoad
                     {
                         BODLoad_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row, 15].Value)),
-                        //PhosporusLoad_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row, 16].Value)),
-                        //NitrogenLoad_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row, 17].Value))
+                        DryNonPointBOD_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row,16].Value)),
+                        EventNonPointBOD_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row, 17].Value)),
+                        PhosphorusLoad_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row, 15].Value)),
+                        DryNonPointPhosphorus_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row,16].Value)),
+                        EventNonPointPhosphorus_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row,17].Value)),
+                        NitrogenLoad_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row, 15].Value)),
+                        DryNonPointNitrogen_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row,16].Value)),
+                        EventNonPointNitrogen_kgd = Mass.FromKilograms(Convert.ToDouble(worksheet.Cells[row,17].Value))
+
                     };
                     DictConstLoad.Add(WSName, _ctl);
                 }
@@ -1814,118 +1850,362 @@ namespace USP_Hydrology
 
         }
         
-        public static void SavePrototypeTreeToExcel_SMAP(List<NodeExternal> Tree, FileInfo OutputFile)
-        {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        //public static void SavePrototypeTreeToExcel_SMAP(List<NodeExternal> Tree, FileInfo OutputFile)
+        //{
+        //    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            using (ExcelPackage package = new ExcelPackage(OutputFile))
-            {
+        //    using (ExcelPackage package = new ExcelPackage(OutputFile))
+        //    {
 
-                var worksheet = package.Workbook.Worksheets["HidPonto"];
+        //        var worksheet = package.Workbook.Worksheets["HidPonto"];
                 
 
-                foreach (KeyValuePair<string, int> entry in DictPointHydrPrototype)
-                {
-                    NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
-                    if (_node != null)
-                    {
-                        List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Downstream.CubicMetersPerSecond, 3) }).ToList();
-                        worksheet.Cells[3, entry.Value].LoadFromArrays(lstFlow);
-                    }
-                }
+        //        foreach (KeyValuePair<string, int> entry in DictPointHydrPrototype)
+        //        {
+        //            NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+        //            if (_node != null)
+        //            {
+        //                List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Downstream.CubicMetersPerSecond, 3) }).ToList();
+        //                worksheet.Cells[3, entry.Value].LoadFromArrays(lstFlow);
+        //            }
+        //        }
 
-                worksheet = package.Workbook.Worksheets["HidDistr"];
+        //        worksheet = package.Workbook.Worksheets["HidDistr"];
 
-                foreach (KeyValuePair<string, int> entry in DictDistrHydrPrototype)
-                {
-                    NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
-                    if (_node != null)
-                    {
-                        List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Produced.CubicMetersPerSecond, 3) }).ToList();
-                        worksheet.Cells[4, entry.Value].LoadFromArrays(lstFlow);
-                    }
-                }
-                package.SaveAsync();
-                //package.SaveAs(OutputFile);
-            }
+        //        foreach (KeyValuePair<string, int> entry in DictDistrHydrPrototype)
+        //        {
+        //            NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+        //            if (_node != null)
+        //            {
+        //                List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Produced.CubicMetersPerSecond, 3) }).ToList();
+        //                worksheet.Cells[4, entry.Value].LoadFromArrays(lstFlow);
+        //            }
+        //        }
+        //        package.SaveAsync();
+        //        //package.SaveAs(OutputFile);
+        //    }
             
-        }
-        
+        //}
+
         public static void SavePrototypeTreeToExcel_SMAP_Qual(List<NodeExternal> Tree, FileInfo OutputFile)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage package = new ExcelPackage(OutputFile))
             {
                 #region Hydrograms
-                var worksheet = package.Workbook.Worksheets["HidPonto"];                
-                foreach (KeyValuePair<string, int> entry in DictPointHydrPrototype)
+                var worksheet = package.Workbook.Worksheets["Hidrogramas"];
+                foreach(KeyValuePair<string, int> entry in DictDistrHydrPrototype)
                 {
                     NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
-                    if (_node != null)
-                    {
-                        List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Downstream.CubicMetersPerSecond, 3) }).ToList();
-                        worksheet.Cells[3, entry.Value].LoadFromArrays(lstFlow);
-                    }
-                }
-                worksheet = package.Workbook.Worksheets["HidDistr"];
-                foreach (KeyValuePair<string, int> entry in DictDistrHydrPrototype)
-                {
-                    NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
-                    if (_node != null)
-                    {
-                        List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Produced.CubicMetersPerSecond, 3) }).ToList();
-                        worksheet.Cells[4, entry.Value].LoadFromArrays(lstFlow);
-                    }
-                }
+                    string IDWatershedPoint = DictPointHydrPrototype.Where(x => x.Value == entry.Key).FirstOrDefault().Key;
+                    NodeExternal _nodePoint = Tree.Where(x => x.STR_Watershed == IDWatershedPoint).FirstOrDefault();
+                    int firstCoordinate = Convert.ToInt32(worksheet.Cells[3, entry.Value].Value);
+                    int lastCoordinate = Convert.ToInt32(worksheet.Cells[4, entry.Value].Value);
+                    Length streamLength = Length.FromMeters(lastCoordinate - firstCoordinate);
 
+                    if (_node != null) {
+                        VolumeFlow[] ArrayFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => x.Produced).ToArray();
+                        if(_nodePoint != null)
+                        {
+                            VolumeFlow[] ArrayFlowPoint = _nodePoint.GetSMAP.SMAPSimulation.GetSimulation.Select(x => x.Downstream).ToArray();
+                            ArrayFlow = ArrayFlow.Zip(ArrayFlowPoint, (x, y) => x.Addition(y)).ToArray();
+                        }
+                        List<object[]> lstFlow = ArrayFlow.Select(x => new object[] { x.CubicMetersPerSecond / streamLength.Meters }).ToList();
+                        worksheet.Cells[6, entry.Value].LoadFromArrays(lstFlow);
+                    }
+                }
                 #endregion Hydrograms
 
                 #region Loads
 
-                worksheet = package.Workbook.Worksheets["PolPonto"];
-                foreach(KeyValuePair<string, int> entry in DictPointHydrPrototype)
-                {
-                    NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
-                    if(_node != null)
-                    {
-                        List<object[]> lstLoad = (from _obj in _node.BODOutput.DownstreamMass select new object[] { Math.Round(_obj.Kilograms, 3) }).ToList();
-                        worksheet.Cells[3, entry.Value].LoadFromArrays(lstLoad);
-                    }
-                }
-                worksheet = package.Workbook.Worksheets["PolDistr"];
+                worksheet = package.Workbook.Worksheets["Cargas"];
                 foreach (KeyValuePair<string, int> entry in DictDistrHydrPrototype)
                 {
                     NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+                    string IDWatershedPoint = DictPointHydrPrototype.Where(x => x.Value == entry.Key).FirstOrDefault().Key;
+                    NodeExternal _nodePoint = Tree.Where(x => x.STR_Watershed == IDWatershedPoint).FirstOrDefault();
+                    int firstCoordinate = Convert.ToInt32(worksheet.Cells[3, entry.Value].Value);
+                    int lastCoordinate = Convert.ToInt32(worksheet.Cells[4, entry.Value].Value);
+                    Length streamLength = Length.FromMeters(lastCoordinate - firstCoordinate);
                     if (_node != null)
                     {
-                        List<object[]> lstLoad = (from _obj in _node.BODOutput.TotalProducedMass select new object[] { Math.Round(_obj.Kilograms, 3) }).ToList();
-                        worksheet.Cells[4, entry.Value].LoadFromArrays(lstLoad);
+                        Mass[] Load = _node.BODOutput.TotalProducedMass;
+                        if (_nodePoint != null)
+                        {
+                            Mass[] LoadPoint = _nodePoint.BODOutput.DownstreamMass;
+                            Load = Load.Zip(LoadPoint, (x, y) => x + y).ToArray();
+                        }
+                        List<object[]> lstLoad = Load.Select(x => new object[] { x.Kilograms / (streamLength.Meters * 86400) }).ToList();
+                        worksheet.Cells[6, entry.Value].LoadFromArrays(lstLoad);
                     }
                 }
 
                 #endregion Loads
 
-                List<NodeExternal> OrderedTree = Tree.OrderBy(x => x.STR_Watershed).ToList();
-
-                worksheet = package.Workbook.Worksheets["CalibrationBuWo"];
-
-                List<object[]> lstBuWo = new List<object[]>();
-
-                foreach(NodeExternal _node in OrderedTree)
-                {
-                    Buildup_Washoff _buwo = _node.GetBuWo.Where(x => x.GetParam.STR_UseName == Buildup_Washoff.LandUse.Aggregate).FirstOrDefault();
-                    lstBuWo.Add(new object[]
-                    {
-                        _buwo.FLT_Arr_Buildup.Average()
-                    });
-                }
-                worksheet.Cells[2, 2].LoadFromArrays(lstBuWo);
 
                 package.Save();
             }
         }
 
+        public static void SavePrototypeOverviewDataToExcel(List<NodeExternal> Tree, FileInfo OutputFile)
+        {
+            NodeExternal controlPoint = Tree.Where(x => x.STR_Watershed == "864979").FirstOrDefault();
+            List<NodeExternal> filteredTree = Tree.Where(x => x.TPL_CalibrationWS.Item1.ID_Watershed == controlPoint.OBJ_Node.ID_Watershed).ToList();
 
+            #region Daily Data
+
+            DateTime[] dates = controlPoint.GetSMAP.GetInput.Time;
+            double[] averageDailyPrecipitation = new double[controlPoint.GetSimulationLength];
+            for(int i = 0; i < averageDailyPrecipitation.Length; i++)
+            {
+                averageDailyPrecipitation[i] = filteredTree.Sum(x => x.GetSMAP.GetInput.Precipitation[i].Millimeters * x.GetSMAP.SMAPSimulation.GetSpatialFeatures.DrainageArea.SquareKilometers)
+                    / filteredTree.Sum(x => x.GetSMAP.SMAPSimulation.GetSpatialFeatures.DrainageArea.SquareKilometers);
+            }
+
+
+            double[] outletFlowCalculated = controlPoint.GetSMAP.SMAPSimulation.GetSimulation.Select(x => x.Downstream.CubicMetersPerSecond).ToArray();
+            double[] outletFlowObserved = controlPoint.GetSMAP.GetInput.ObservedFlow.Select(x => x.CubicMetersPerSecond).ToArray();
+            double[] outletPollutogram = controlPoint.BODOutput.DownstreamPollutogram.Select(x => x.MilligramsPerLiter).ToArray();
+
+            #endregion Daily Data
+
+            #region Permanence Curves
+
+            double[] PermanenceIndexes = new double[controlPoint.GetSimulationLength];
+            for(int i = 0; i < controlPoint.GetSimulationLength; i++)
+            {
+                PermanenceIndexes[i] = i / (controlPoint.GetSimulationLength + 1);
+            }
+            double[] outletFlowPermanenceCurve = outletFlowCalculated.OrderByDescending(x => x).ToArray();
+            double[] averageDailyPrecipitationPermanenceCurve = averageDailyPrecipitation.OrderByDescending(x => x).ToArray();
+
+            #endregion Permanence Curves
+
+            #region Monthly Data
+
+            DateTime firstMonth = new DateTime(dates[0].Year, dates[0].Month, 1);
+            DateTime lastMonth = new DateTime(dates[dates.Length].Year, dates[dates.Length].Month, 1);
+            List<DateTime> lstMonths = new List<DateTime>();
+            for (DateTime i = firstMonth; i <= lastMonth; i = i.AddMonths(1))
+            {
+                lstMonths.Add(i);
+            }
+
+            double[] outletFlowMonthlyCalculated = SMAPd_Network.AggregateSeriesMonthlyAverage(dates, outletFlowCalculated);
+            double[] outletFlowMonthlyObserved = SMAPd_Network.AggregateSeriesMonthlyAverage(dates, outletFlowObserved);
+            double[] cumulativeMonthlyPrecipitation = SMAPd_Network.AggregateSeriesMonthlySum(dates, averageDailyPrecipitation);
+            double[] outletPollutogramMonthly = SMAPd_Network.AggregateSeriesMonthlyAverage(dates, outletPollutogram);
+
+            #endregion Monthly Data
+
+            #region Load Data
+
+            Mass[][] matrixPointLoad = filteredTree.Select(x => x.BODOutput.PointLoadMass).ToArray();
+            double[] pointLoadAllWS = new double[controlPoint.GetSimulationLength];
+            for(int i = 0; i < pointLoadAllWS.Length; i++)
+            {
+                pointLoadAllWS[i] = matrixPointLoad.Sum(x => x[i].Kilograms);
+            }
+
+            double[] pointLoadMonthly = SMAPd_Network.AggregateSeriesMonthlySum(dates, pointLoadAllWS);
+
+            Mass[][] matrixNonPointLoad = filteredTree.Select(x => x.BODOutput.WashoffMass).ToArray();
+            double[] nonPointLoadAllWS = new double[controlPoint.GetSimulationLength];
+            for (int i = 0; i < nonPointLoadAllWS.Length; i++)
+            {
+                nonPointLoadAllWS[i] = matrixNonPointLoad.Sum(x => x[i].Kilograms);
+            }
+
+            double[] nonPointLoadMonthly = SMAPd_Network.AggregateSeriesMonthlySum(dates, nonPointLoadAllWS);
+            double[] nonPointLoadMonthlyCumulative = new double[nonPointLoadMonthly.Length];
+
+            for (int i = 0; i < nonPointLoadMonthlyCumulative.Length; i++)
+            {
+                if(i == 0)
+                {
+                    nonPointLoadMonthlyCumulative[i] = nonPointLoadMonthly[i];
+                }
+                else
+                {
+                    nonPointLoadMonthlyCumulative[i] = nonPointLoadMonthly[i] + nonPointLoadMonthlyCumulative[i - 1];
+                }
+            }
+
+            double[] totalLoadMonthly = pointLoadMonthly.Zip(nonPointLoadMonthly, (x, y) => x + y).ToArray();
+            double[] totalLoadMonthlyCumulative = new double[totalLoadMonthly.Length];
+
+            for (int i = 0; i < totalLoadMonthlyCumulative.Length; i++)
+            {
+                if(i == 0)
+                {
+                    totalLoadMonthlyCumulative[i] = totalLoadMonthly[i];
+                }
+                else
+                {
+                    totalLoadMonthlyCumulative[i] = totalLoadMonthly[i] + totalLoadMonthlyCumulative[i - 1];
+                }
+            }
+
+            Dictionary<string, double> dictNonpointLoadPerWS = new Dictionary<string, double>();
+            foreach(NodeExternal _node in filteredTree)
+            {
+                dictNonpointLoadPerWS.Add(_node.STR_Watershed, _node.BODOutput.WashoffMass.Select(x => x.Kilograms).Sum());
+            }
+
+            #endregion Load Data
+
+
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using (ExcelPackage package = new ExcelPackage(OutputFile))
+            {
+                #region Output
+                var worksheet = package.Workbook.Worksheets["ProcDiario"];
+                List<object[]> lstOutputDaily = new List<object[]>();
+                for (int i = 0; i < controlPoint.GetSimulationLength; i++)
+                {
+                    List<object> outputDaily = new List<object>();
+                    outputDaily.Add(dates[i]);
+                    outputDaily.Add(outletFlowCalculated[i]);
+                    if(outletFlowObserved[i] == 0)
+                    {
+                        outputDaily.Add(null);
+                    }
+                    else
+                    {
+                        outputDaily.Add(outletFlowObserved[i]);
+                    }
+                    outputDaily.Add(averageDailyPrecipitation[i]);
+                    outputDaily.Add(outletPollutogram[i]);
+                    lstOutputDaily.Add(outputDaily.ToArray());
+                }
+                worksheet.Cells[2, 1].LoadFromArrays(lstOutputDaily);
+
+                worksheet = package.Workbook.Worksheets["Permanencia"];
+                List<object[]> lstOutputPerm = new List<object[]>();
+                for(int i = 0; i < controlPoint.GetSimulationLength; i++)
+                {
+                    List<object> outputPerm = new List<object>();
+                    outputPerm.Add(PermanenceIndexes[i]);
+                    outputPerm.Add(outletFlowPermanenceCurve[i]);
+                    outputPerm.Add(averageDailyPrecipitationPermanenceCurve[i]);
+                    lstOutputPerm.Add(outputPerm.ToArray());
+                }
+                worksheet.Cells[2, 1].LoadFromArrays(lstOutputPerm);
+
+                worksheet = package.Workbook.Worksheets["ProcMensal"];
+                List<object[]> lstOutputMonthly = new List<object[]>();
+                for(int i = 0; i < outletFlowMonthlyCalculated.Length; i++)
+                {
+                    List<object> outputMonth = new List<object>();
+                    outputMonth.Add(lstMonths[i]);
+                    outputMonth.Add(outletFlowMonthlyCalculated[i]);
+                    if(outletFlowMonthlyObserved[i] != 0)
+                    {
+                        outputMonth.Add(outletFlowMonthlyObserved[i]);
+                    }
+                    else
+                    {
+                        outputMonth.Add(null);
+                    }
+                    outputMonth.Add(cumulativeMonthlyPrecipitation[i]);
+                    outputMonth.Add(pointLoadMonthly[i]);
+                    outputMonth.Add(nonPointLoadMonthly[i]);
+                    outputMonth.Add(totalLoadMonthlyCumulative[i]);
+                    outputMonth.Add(nonPointLoadMonthlyCumulative[i]);
+                    lstOutputMonthly.Add(outputMonth.ToArray());
+                }
+                worksheet.Cells[2, 1].LoadFromArrays(lstOutputMonthly);
+
+                worksheet = package.Workbook.Worksheets["Cargas"];
+                List<object[]> lstOutputLoads = new List<object[]>();
+                List<object> outputLoads = new List<object>();
+                foreach(KeyValuePair<string, double> entry in dictNonpointLoadPerWS)
+                {
+                    outputLoads.Add(entry.Value);
+                }
+                lstOutputLoads.Add(outputLoads.ToArray());
+                worksheet.Cells[2, 1].LoadFromArrays(lstOutputLoads);
+
+                #endregion Output
+
+                package.Save();
+            }
+        }
+
+        //public static void SavePrototypeTreeToExcel_SMAP_Qual(List<NodeExternal> Tree, FileInfo OutputFile)
+        //{
+        //    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        //    using (ExcelPackage package = new ExcelPackage(OutputFile))
+        //    {
+        //        #region Hydrograms
+        //        var worksheet = package.Workbook.Worksheets["HidPonto"];                
+        //        foreach (KeyValuePair<string, int> entry in DictPointHydrPrototype)
+        //        {
+        //            NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+        //            if (_node != null)
+        //            {
+        //                List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Downstream.CubicMetersPerSecond, 3) }).ToList();
+        //                worksheet.Cells[6, entry.Value].LoadFromArrays(lstFlow);
+        //            }
+        //        }
+        //        worksheet = package.Workbook.Worksheets["HidDistr"];
+        //        foreach (KeyValuePair<string, int> entry in DictDistrHydrPrototype)
+        //        {
+        //            NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+        //            if (_node != null)
+        //            {
+        //                List<object[]> lstFlow = _node.GetSMAP.SMAPSimulation.GetSimulation.Select(x => new object[] { Math.Round(x.Produced.CubicMetersPerSecond, 3) }).ToList();
+        //                worksheet.Cells[6, entry.Value].LoadFromArrays(lstFlow);
+        //            }
+        //        }
+
+        //        #endregion Hydrograms
+
+        //        #region Loads
+
+        //        worksheet = package.Workbook.Worksheets["PolPonto"];
+        //        foreach(KeyValuePair<string, int> entry in DictPointHydrPrototype)
+        //        {
+        //            NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+        //            if(_node != null)
+        //            {
+        //                List<object[]> lstLoad = (from _obj in _node.BODOutput.DownstreamMass select new object[] { Math.Round(_obj.Kilograms, 3) }).ToList();
+        //                worksheet.Cells[6, entry.Value].LoadFromArrays(lstLoad);
+        //            }
+        //        }
+        //        worksheet = package.Workbook.Worksheets["PolDistr"];
+        //        foreach (KeyValuePair<string, int> entry in DictDistrHydrPrototype)
+        //        {
+        //            NodeExternal _node = Tree.Where(x => x.STR_Watershed == entry.Key).FirstOrDefault();
+        //            if (_node != null)
+        //            {
+        //                List<object[]> lstLoad = (from _obj in _node.BODOutput.TotalProducedMass select new object[] { Math.Round(_obj.Kilograms, 3) }).ToList();
+        //                worksheet.Cells[6, entry.Value].LoadFromArrays(lstLoad);
+        //            }
+        //        }
+
+        //        #endregion Loads
+
+        //        List<NodeExternal> OrderedTree = Tree.OrderBy(x => x.STR_Watershed).ToList();
+
+        //        worksheet = package.Workbook.Worksheets["CalibrationBuWo"];
+
+        //        List<object[]> lstBuWo = new List<object[]>();
+
+        //        foreach(NodeExternal _node in OrderedTree)
+        //        {
+        //            Buildup_Washoff _buwo = _node.GetBuWo.Where(x => x.GetParam.STR_UseName == Buildup_Washoff.LandUse.Aggregate).FirstOrDefault();
+        //            lstBuWo.Add(new object[]
+        //            {
+        //                _buwo.FLT_Arr_Buildup.Average()
+        //            });
+        //        }
+        //        worksheet.Cells[2, 2].LoadFromArrays(lstBuWo);
+
+        //        package.Save();
+        //    }
+        //}
 
 
         public static void SaveQualityTreeToExcel(List<NodeExternal> Tree, FileInfo OutputFile)
@@ -1945,7 +2225,7 @@ namespace USP_Hydrology
                         "Bacia", "Jusante", "Area (km2)",
                         //"Frac_Imperm (%)", "Frac_Perm (%)",
                         //"CN_Medio", "Comp_Talv (km)", "Decliv_Media (%)",
-                        "Bacia_Cal", "Frac_Cal"
+                        /*"Bacia_Cal", "Frac_Cal"*/
                     }
                 };
 
@@ -1973,7 +2253,7 @@ namespace USP_Hydrology
                         _node.STR_Watershed, strDown, _node.WatershedArea,
                         //_TopoParam.FLT_Imperv, _TopoParam.FLT_Perv,
                         //_TopoParam.FLT_AvgCN, _TopoParam.FLT_StreamLength, _TopoParam.FLT_AvgSlope,
-                        strCal, _node.TPL_CalibrationWS.Item2
+                        /*strCal, _node.TPL_CalibrationWS.Item2*/
                     });
                 }
                 worksheet.Cells[1, 1].LoadFromArrays(HeaderRowTopology);
@@ -1989,85 +2269,194 @@ namespace USP_Hydrology
                     new string[]
                     {
                         "Data",
-                        "Carga base (kg/d)", "Carga lavagem (kg/d)", "Carga incremental (kg/d)", "Carga no exutório (kg/d)",
-                        "Polutograma base (mg/l)", "Polutograma lavagem (mg/l)", "Polutograma incremental (mg/l)", "Polutograma no exutório (mg/l)"
+                        "Vazão no exutório (m³/s)",
+                        "Carga pontual (kg/d)", "Carga difusa tempo seco (kg/d)", "Carga lavagem (kg/d)", "Carga incremental (kg/d)", "Carga no exutório (kg/d)",
+                        "Polutograma pontual (mg/l)", "Polutograma difuso tempo seco (mg/l)", "Polutograma lavagem (mg/l)", "Polutograma incremental (mg/l)", "Polutograma no exutório (mg/l)"
                     }
                 };
-
+                bool monthly = true;
                 foreach (NodeExternal _node in Tree)
                 {
+
                     package.Workbook.Worksheets.Add("Res" + _node.STR_Watershed);
                     worksheet = package.Workbook.Worksheets["Res" + _node.STR_Watershed];
                     List<object[]> cellDataResults = new List<object[]>();
                     var Simulation = _node.GetSMAP.SMAPSimulation.GetSimulation;
-                    var Dates = _node.GetSMAP.GetInput.Time;                    
-                    int _simlength = _node.GetSimulationLength;
-                    var NodeData = _node.BODOutput;
-                    for (int i = 0; i < _simlength; i++)
+                    var NodeData = _node.POutput;
+                    int _simlength;
+                    if (monthly)
                     {
-                        cellDataResults.Add(new object[]
+                        DateTime initialDate = _node.GetSMAP.GetInput.Time.Min();
+                        DateTime finalDate = _node.GetSMAP.GetInput.Time.Max();
+                        List<DateTime> lstDates = new List<DateTime>();
+                        for(DateTime i = initialDate; i <= finalDate; i = i.AddMonths(1))
                         {
+                            lstDates.Add(new DateTime(i.Year, i.Month,1));
+                        }
+                        _simlength = lstDates.Count();
+                        foreach(DateTime _date in lstDates)
+                        {
+                            int initialIndex = _node.GetSMAP.GetInput.Time.ToList().FindIndex(x => x == _date);
+                            int monthLength = DateTime.DaysInMonth(_date.Year, _date.Month);
+                            VolumeFlow flow = VolumeFlow.FromCubicMetersPerSecond(Simulation.Skip(initialIndex).Take(monthLength).ToList().Average(x => x.Downstream.CubicMetersPerSecond));
+                            Mass pointLoadMass = Mass.FromKilograms(NodeData.PointLoadMass.Skip(initialIndex).Take(monthLength).ToList().Sum(x => x.Kilograms));
+                            Mass dryNonpointLoadMass = Mass.FromKilograms(NodeData.DryNonPointMass.Skip(initialIndex).Take(monthLength).ToList().Sum(x => x.Kilograms));
+                            Mass washoffMass = Mass.FromKilograms(NodeData.WashoffMass.Skip(initialIndex).Take(monthLength).ToList().Sum(x => x.Kilograms));
+                            Mass totalProducedMass = Mass.FromKilograms(NodeData.TotalProducedMass.Skip(initialIndex).Take(monthLength).ToList().Sum(x => x.Kilograms));
+                            Mass downstreamMass = Mass.FromKilograms(NodeData.DownstreamMass.Skip(initialIndex).Take(monthLength).ToList().Sum(x => x.Kilograms));
+                            MassConcentration pointLoadPollutogram = MassConcentration.FromMilligramsPerLiter(NodeData.PointLoadPollutogram.Skip(initialIndex).Take(monthLength).ToList().Average(x => x.MilligramsPerLiter));
+                            MassConcentration dryNonpointLoadPollutogram = MassConcentration.FromMilligramsPerLiter(NodeData.DryNonPointLoadPollutogram.Skip(initialIndex).Take(monthLength).ToList().Average(x => x.MilligramsPerLiter));
+                            MassConcentration washoffPollutogram = MassConcentration.FromMilligramsPerLiter(NodeData.WashoffPollutogram.Skip(initialIndex).Take(monthLength).ToList().Average(x => x.MilligramsPerLiter));
+                            MassConcentration totalProducedPollutogram = MassConcentration.FromMilligramsPerLiter(NodeData.TotalProducedPollutogram.Skip(initialIndex).Take(monthLength).ToList().Average(x => x.MilligramsPerLiter));
+                            MassConcentration downstreamPollutogram = MassConcentration.FromMilligramsPerLiter(NodeData.DownstreamPollutogram.Skip(initialIndex).Take(monthLength).ToList().Average(x => x.MilligramsPerLiter));
+
+                            cellDataResults.Add(new object[]
+                            {
+                                _date,
+                                flow.CubicMetersPerSecond,
+                                pointLoadMass.Kilograms, dryNonpointLoadMass.Kilograms, washoffMass.Kilograms, totalProducedMass.Kilograms, downstreamMass.Kilograms,
+                                pointLoadPollutogram.MilligramsPerLiter, dryNonpointLoadPollutogram.MilligramsPerLiter, washoffPollutogram.MilligramsPerLiter, totalProducedPollutogram.MilligramsPerLiter, downstreamPollutogram.MilligramsPerLiter
+                            });
+                        }
+
+                    }
+                    else
+                    {
+                        var Dates = _node.GetSMAP.GetInput.Time;
+                        _simlength = _node.GetSimulationLength;
+
+                        for (int i = 0; i < _simlength; i++)
+                        {
+                            cellDataResults.Add(new object[]
+                            {
                             Dates[i],
-                            NodeData.ConstantLoadMass[i].Kilograms, NodeData.WashoffMass[i].Kilograms, NodeData.TotalProducedMass[i].Kilograms, NodeData.DownstreamMass[i].Kilograms,
-                            NodeData.ConstantLoadPollutogram[i].MilligramsPerLiter, NodeData.WashoffPollutogram[i].MilligramsPerLiter, NodeData.TotalProducedPollutogram[i].MilligramsPerLiter, NodeData.DownstreamPollutogram[i].MilligramsPerLiter
-                        });
+                            _node.GetSMAP.SMAPSimulation.GetSimulation[i].Downstream.CubicMetersPerSecond,
+                            NodeData.PointLoadMass[i].Kilograms, NodeData.DryNonPointMass[i].Kilograms, NodeData.WashoffMass[i].Kilograms, NodeData.TotalProducedMass[i].Kilograms, NodeData.DownstreamMass[i].Kilograms,
+                            NodeData.PointLoadPollutogram[i].MilligramsPerLiter, NodeData.DryNonPointLoadPollutogram[i].MilligramsPerLiter,  NodeData.WashoffPollutogram[i].MilligramsPerLiter, NodeData.TotalProducedPollutogram[i].MilligramsPerLiter, NodeData.DownstreamPollutogram[i].MilligramsPerLiter
+                            });
+                        }
+
                     }
 
-                    
                     worksheet.Cells[1, 1].LoadFromArrays(HeaderRowResults);
                     worksheet.Cells[2, 1].LoadFromArrays(cellDataResults);
-                    worksheet.Cells[2, 1, _simlength + 2, 1].Style.Numberformat.Format = "dd/mm/yyyy";
+
+                    
+                    worksheet.Cells[2, 1, _simlength + 2, 1].Style.Numberformat.Format = monthly ? "mm/yyyy" : "dd/mm/yyyy";
+
+
+
 
                     #endregion Resultados
 
                     #region Charts
 
-                    //ExcelRangeBase rangeXSeries = worksheet.Cells[2, 1, _simlength + 1, 1];
-                    //ExcelRangeBase rangeSeriesIncremental = worksheet.Cells[2, 13, _simlength + 1, 13];
-                    //ExcelRangeBase rangeSeriesBasic = worksheet.Cells[2, 16, _simlength + 1, 16];
-                    //ExcelRangeBase rangeSeriesTotal = worksheet.Cells[2, 17, _simlength + 1, 17];
-                    //ExcelRangeBase rangeSeriesObs = worksheet.Cells[2, 18, _simlength + 1, 18];
+                    ExcelRangeBase rangeXSeries = worksheet.Cells[2, 1, _simlength + 1, 1];
+                    ExcelRangeBase rangeFlow = worksheet.Cells[2, 2, _simlength + 1, 2];
+                    ExcelRangeBase rangeSeriesIncrementalLoad = worksheet.Cells[2, 6, _simlength + 1, 6];                    
+                    //ExcelRangeBase rangeSeriesTotalLoad = worksheet.Cells[2, 5, _simlength + 1, 5];
+
+                    //ExcelRangeBase rangeSeriesIncrementalConc = worksheet.Cells[2, 8, _simlength + 1, 8];
+
+                    ExcelRangeBase rangeSeriesTotalConc = worksheet.Cells[2, 12, _simlength + 1, 12];
 
 
-                    //var chartResults = worksheet.Drawings.AddScatterChart("Results", eScatterChartType.XYScatterSmoothNoMarkers);
-                    //var seriesQIncrement = chartResults.Series.Add(rangeSeriesIncremental, rangeXSeries);
-                    //var seriesQBasic = chartResults.Series.Add(rangeSeriesBasic, rangeXSeries);
-                    //var seriesQTotal = chartResults.Series.Add(rangeSeriesTotal, rangeXSeries);
+                    var chartResultsLoad = worksheet.Drawings.AddLineChart("ResultsLoad", eLineChartType.Line);
+                    var seriesIncrementLoad = chartResultsLoad.Series.Add(rangeSeriesIncrementalLoad, rangeXSeries);
+                    //var seriesTotalLoad = chartResultsLoad.Series.Add(rangeSeriesTotalLoad, rangeXSeries);
+                    
+                    var chartResultsConc = worksheet.Drawings.AddLineChart("ResultsConc", eLineChartType.Line);
+                    //var chartResultsConc = worksheet.Drawings.AddScatterChart("ResultsConc", eScatterChartType.XYScatterSmoothNoMarkers);
+                    //var seriesIncrementConc = chartResultsConc.Series.Add(rangeSeriesIncrementalConc, rangeXSeries);
+                    
+                    var seriesTotalConc = chartResultsConc.Series.Add(rangeSeriesTotalConc, rangeXSeries);
+                    //var seriesTotalConc = chartResultsConc.Series.Add(rangeSeriesTotalConc, rangeXSeries);
 
+                    var chartFlow = worksheet.Drawings.AddLineChart("ResultsFlow", eLineChartType.Line);
+                    var seriesFlow = chartFlow.Series.Add(rangeFlow, rangeXSeries);                    
+                    
+                    
                     //if (_node.OBJ_Node.ID_Watershed == _node.TPL_CalibrationWS.Item1.ID_Watershed)
                     //{
                     //    var seriesQObs = chartResults.Series.Add(rangeSeriesObs, rangeXSeries);
                     //    chartResults.Series[3].Header = "Vazão observada";
                     //}
 
-                    //chartResults.Series[0].Header = "Vazão incremental";
-                    //chartResults.Series[1].Header = "Vazão básica";
-                    //chartResults.Series[2].Header = "Vazão total";
+                    chartResultsLoad.Series[0].Header = "Carga incremental";                    
+                    //chartResultsLoad.Series[1].Header = "Carga no exutório";
 
-                    //chartResults.Title.Text = "Resumo";
-                    //chartResults.DisplayBlanksAs = eDisplayBlanksAs.Gap;
-                    //chartResults.XAxis.MajorTickMark = eAxisTickMark.In;
-                    //chartResults.XAxis.MinorTickMark = eAxisTickMark.None;
-                    //chartResults.XAxis.MajorUnit = null;
-                    //chartResults.XAxis.Title.Font.Size = 12;
-                    //chartResults.YAxis.MinorTickMark = eAxisTickMark.None;
-                    //chartResults.YAxis.MinValue = 0;
-                    //chartResults.YAxis.Format = "0.0";
-                    //chartResults.YAxis.Title.Text = "Vazão (m³/s)";
-                    //chartResults.YAxis.Title.Font.Size = 12;
-                    //chartResults.YAxis.Title.Rotation = 270;
-                    //chartResults.StyleManager.SetChartStyle(ePresetChartStyle.ScatterChartStyle1, ePresetChartColors.ColorfulPalette1);
-                    //chartResults.RoundedCorners = false;
-                    //chartResults.Legend.Position = eLegendPosition.Right;
+                    //chartResultsConc.Series[0].Header = "Carga incremental";
+                    chartResultsConc.Series[0].Header = "Concentração no exutório";
 
-                    //var Width = 1200;
-                    //var Height = 600;
+                    chartFlow.Series[0].Header = "Vazão";
 
-                    //var vOffset = 50;
-                    //var hOffset = 50;
-                    //chartResults.SetSize(Width, Height);
-                    //chartResults.SetPosition(vOffset, hOffset);
+                    chartResultsLoad.Title.Text = $"Cargas bacia {_node.STR_Watershed}";
+                    chartResultsLoad.DisplayBlanksAs = eDisplayBlanksAs.Gap;
+                    chartResultsLoad.XAxis.MajorTickMark = eAxisTickMark.In;
+                    chartResultsLoad.XAxis.MinorTickMark = eAxisTickMark.None;
+                    chartResultsLoad.XAxis.MajorUnit = null;
+                    chartResultsLoad.XAxis.Title.Font.Size = 12;
+                    chartResultsLoad.YAxis.MinorTickMark = eAxisTickMark.None;
+                    chartResultsLoad.YAxis.MinValue = 0;
+                    chartResultsLoad.YAxis.Format = "0.0";
+                    chartResultsLoad.YAxis.Title.Text = "Carga (kg/d)";
+                    chartResultsLoad.YAxis.Title.Font.Size = 12;
+                    chartResultsLoad.YAxis.Title.Rotation = 270;
+                    chartResultsLoad.StyleManager.SetChartStyle(ePresetChartStyle.ScatterChartStyle1, ePresetChartColors.ColorfulPalette1);
+                    chartResultsLoad.RoundedCorners = false;
+                    chartResultsLoad.Legend.Position = eLegendPosition.Right;
 
+                    chartResultsConc.Title.Text = $"Concentrações bacia {_node.STR_Watershed}";
+                    chartResultsConc.DisplayBlanksAs = eDisplayBlanksAs.Gap;
+                    chartResultsConc.XAxis.MajorTickMark = eAxisTickMark.In;
+                    chartResultsConc.XAxis.MinorTickMark = eAxisTickMark.None;
+                    chartResultsConc.XAxis.MajorUnit = null;
+                    chartResultsConc.XAxis.Title.Font.Size = 12;
+                    chartResultsConc.YAxis.MinorTickMark = eAxisTickMark.None;
+                    chartResultsConc.YAxis.MinValue = 0;
+                    chartResultsConc.YAxis.Format = "0.0";
+                    chartResultsConc.YAxis.Title.Text = "Concentração (mg/L)";
+                    chartResultsConc.YAxis.Title.Font.Size = 12;
+                    chartResultsConc.YAxis.Title.Rotation = 270;
+                    chartResultsConc.StyleManager.SetChartStyle(ePresetChartStyle.LineChartStyle1, ePresetChartColors.ColorfulPalette1);
+                    chartResultsConc.RoundedCorners = false;
+                    chartResultsConc.Legend.Position = eLegendPosition.Right;
+
+                    chartFlow.Title.Text = $"Vazão bacia {_node.STR_Watershed}";
+                    chartFlow.DisplayBlanksAs = eDisplayBlanksAs.Gap;
+                    chartFlow.XAxis.MajorTickMark = eAxisTickMark.In;
+                    chartFlow.XAxis.MinorTickMark = eAxisTickMark.None;
+                    chartFlow.XAxis.MajorUnit = null;
+                    chartFlow.XAxis.Title.Font.Size = 12;
+                    chartFlow.YAxis.MinorTickMark = eAxisTickMark.None;
+                    chartFlow.YAxis.MinValue = 0;
+                    chartFlow.YAxis.Format = "0.0";
+                    chartFlow.YAxis.Title.Text = "Vazão (m³/s)";
+                    chartFlow.YAxis.Title.Font.Size = 12;
+                    chartFlow.YAxis.Title.Rotation = 270;
+                    chartFlow.StyleManager.SetChartStyle(ePresetChartStyle.LineChartStyle1, ePresetChartColors.ColorfulPalette1);
+                    chartFlow.RoundedCorners = false;
+                    chartFlow.Legend.Position = eLegendPosition.Right;
+
+                    //chartType2.UseSecondaryAxis = true;
+                    ////chartType2.YAxis.Orientation = eAxisOrientation.MaxMin;
+                    //chartType2.YAxis.Title.Text = "Vazão (m³/s)";
+                    //chartType2.YAxis.Title.Rotation = 90;
+
+
+                    var Width = 1000;
+                    var Height = 400;
+
+                    var vOffset = 50;
+                    var hOffset = 50;
+                    chartResultsLoad.SetSize(Width, Height);
+                    chartResultsLoad.SetPosition(vOffset, hOffset);
+
+                    chartResultsConc.SetSize(Width, Height);
+                    chartResultsConc.SetPosition(vOffset + Height, hOffset);
+
+                    chartFlow.SetSize(Width, Height);
+                    chartFlow.SetPosition(vOffset + Height, hOffset + Width);
                     #endregion Charts                    
                 }
 
@@ -2079,6 +2468,45 @@ namespace USP_Hydrology
 
         }
 
+
+        public static void CreateSpreadsheetWashoffMatrix(FileInfo outputFilePath, List<List<object[]>> spreadsheetList, List<double> elapsedBuildupDaysList, List<double> buildupPercentageList, List<double> kbList)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet;
+                for(int i = 0; i < spreadsheetList.Count; i++)
+                {                      
+                    string tabName = $"t= {elapsedBuildupDaysList[i]};p={buildupPercentageList[i]};kb={Math.Round(kbList[i],2)}";
+                    package.Workbook.Worksheets.Add(tabName);
+                    worksheet = package.Workbook.Worksheets[tabName];
+                    worksheet.Cells[1, 1].LoadFromArrays(spreadsheetList[i]);
+                }
+
+                FileInfo excelFile = outputFilePath;
+                package.SaveAs(excelFile);
+
+            }
+        }
+
+        public static void CreateStatisticsSpreadsheetQuality(FileInfo outputFilePath, Dictionary<string, List<object[]>> dictSpreadsheets)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet;
+                foreach(var entry in dictSpreadsheets)
+                {
+                    package.Workbook.Worksheets.Add(entry.Key);
+                    worksheet = package.Workbook.Worksheets[entry.Key];
+                    worksheet.Cells[1, 1].LoadFromArrays(entry.Value);
+                }
+
+                FileInfo excelFile = outputFilePath;
+                package.SaveAs(excelFile);
+            }
+        }
 
 
 

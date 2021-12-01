@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis.csproj": {}
+  },
+  "projects": {
+    "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis.csproj",
+        "projectName": "BuildupWashoffAnalysis",
+        "projectPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis.csproj",
+        "packagesPath": "C:\\Users\\dmpas\\.nuget\\packages\\",
+        "outputPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dmpas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj": {
+                "projectPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj",
+        "projectName": "USP_Hydrology",
+        "projectPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.Sabesp.Hydrology\\LabSid.Sabesp.Hydrology.csproj": {
+                "projectPath": "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.Sabesp.Hydrology\\LabSid.Sabesp.Hydrology.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.AcquaNet\\LabSid.AcquaNet.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.AcquaNet\\LabSid.AcquaNet.csproj",
+        "projectName": "LabSid.AcquaNet",
+        "projectPath": "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.AcquaNet\\LabSid.AcquaNet.csproj"
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.Sabesp.Hydrology\\LabSid.Sabesp.Hydrology.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.Sabesp.Hydrology\\LabSid.Sabesp.Hydrology.csproj",
+        "projectName": "LabSid.Sabesp.Hydrology",
+        "projectPath": "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.Sabesp.Hydrology\\LabSid.Sabesp.Hydrology.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.AcquaNet\\LabSid.AcquaNet.csproj": {
+                "projectPath": "D:\\VisualStudio\\SSD3\\LabSid.SSD3.Modelo\\LabSid.AcquaNet\\LabSid.AcquaNet.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    }
+  }
+}

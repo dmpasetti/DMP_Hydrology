@@ -8,3 +8,13 @@ D:\VisualStudio_Mestrado\DMP_Hydrology\PrecipitationProcess\obj\Debug\Precipitat
 D:\VisualStudio_Mestrado\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.csproj.CopyComplete
 D:\VisualStudio_Mestrado\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.exe
 D:\VisualStudio_Mestrado\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.pdb
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\bin\Debug\PrecipitationProcess.exe.config
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\bin\Debug\PrecipitationProcess.exe
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\bin\Debug\PrecipitationProcess.pdb
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\bin\Debug\EPPlus.dll
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\bin\Debug\EPPlus.xml
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.csprojAssemblyReference.cache
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.csproj.CoreCompileInputs.cache
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.csproj.CopyComplete
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.exe
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\PrecipitationProcess\obj\Debug\PrecipitationProcess.pdb

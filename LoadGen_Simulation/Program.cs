@@ -18,7 +18,7 @@ namespace LoadGen_Simulation
             FileInfo inputPath = new FileInfo(CurrentDirectory + @"\input.xlsx");
             FileInfo outputPath = new FileInfo(CurrentDirectory + @"\output.xlsx");
             //List<NodeExternal> WSTree = Tree.BuWoTreeFromExcel(inputPath);
-            List<NodeExternal> WSTree = Tree.BuWoTreeFromExcel_Simplified(inputPath);
+            List<NodeExternal> WSTree = Tree.BuWoTreeFromExcel_Simplified(inputPath);            
             Buildup_Washoff.SimulateTree_NoTransport(WSTree);
             Tree.SaveBuWoTreeToExcel(WSTree, outputPath);
         }

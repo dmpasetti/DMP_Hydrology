@@ -13,8 +13,13 @@ namespace USP_Hydrology
         public Mass PhosphorusLoad_kgd;
         public Mass NitrogenLoad_kgd;
 
-        public Mass NonPointBOD_kgd;
-        public Mass NonPointPhosphorus_kgd;
-        public Mass NonPointNitrogen_kgd;
+        public Mass DryNonPointBOD_kgd;
+        public Mass DryNonPointPhosphorus_kgd;
+        public Mass DryNonPointNitrogen_kgd;
+
+        public Mass EventNonPointBOD_kgd;
+        public Mass EventNonPointPhosphorus_kgd;
+        public Mass EventNonPointNitrogen_kgd;
+
     }
 }

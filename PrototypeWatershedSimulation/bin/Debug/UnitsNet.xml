@@ -14373,6 +14373,11 @@
                 Get MassConcentration in CentigramsPerLiter.
             </summary>
         </member>
+        <member name="P:UnitsNet.MassConcentration.CentigramsPerMicroliter">
+            <summary>
+                Get MassConcentration in CentigramsPerMicroliter.
+            </summary>
+        </member>
         <member name="P:UnitsNet.MassConcentration.CentigramsPerMilliliter">
             <summary>
                 Get MassConcentration in CentigramsPerMilliliter.
@@ -14386,6 +14391,11 @@
         <member name="P:UnitsNet.MassConcentration.DecigramsPerLiter">
             <summary>
                 Get MassConcentration in DecigramsPerLiter.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.MassConcentration.DecigramsPerMicroliter">
+            <summary>
+                Get MassConcentration in DecigramsPerMicroliter.
             </summary>
         </member>
         <member name="P:UnitsNet.MassConcentration.DecigramsPerMilliliter">
@@ -14416,6 +14426,11 @@
         <member name="P:UnitsNet.MassConcentration.GramsPerLiter">
             <summary>
                 Get MassConcentration in GramsPerLiter.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.MassConcentration.GramsPerMicroliter">
+            <summary>
+                Get MassConcentration in GramsPerMicroliter.
             </summary>
         </member>
         <member name="P:UnitsNet.MassConcentration.GramsPerMilliliter">
@@ -14468,6 +14483,11 @@
                 Get MassConcentration in MicrogramsPerLiter.
             </summary>
         </member>
+        <member name="P:UnitsNet.MassConcentration.MicrogramsPerMicroliter">
+            <summary>
+                Get MassConcentration in MicrogramsPerMicroliter.
+            </summary>
+        </member>
         <member name="P:UnitsNet.MassConcentration.MicrogramsPerMilliliter">
             <summary>
                 Get MassConcentration in MicrogramsPerMilliliter.
@@ -14488,6 +14508,11 @@
                 Get MassConcentration in MilligramsPerLiter.
             </summary>
         </member>
+        <member name="P:UnitsNet.MassConcentration.MilligramsPerMicroliter">
+            <summary>
+                Get MassConcentration in MilligramsPerMicroliter.
+            </summary>
+        </member>
         <member name="P:UnitsNet.MassConcentration.MilligramsPerMilliliter">
             <summary>
                 Get MassConcentration in MilligramsPerMilliliter.
@@ -14503,6 +14528,11 @@
                 Get MassConcentration in NanogramsPerLiter.
             </summary>
         </member>
+        <member name="P:UnitsNet.MassConcentration.NanogramsPerMicroliter">
+            <summary>
+                Get MassConcentration in NanogramsPerMicroliter.
+            </summary>
+        </member>
         <member name="P:UnitsNet.MassConcentration.NanogramsPerMilliliter">
             <summary>
                 Get MassConcentration in NanogramsPerMilliliter.
@@ -14516,6 +14546,11 @@
         <member name="P:UnitsNet.MassConcentration.PicogramsPerLiter">
             <summary>
                 Get MassConcentration in PicogramsPerLiter.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.MassConcentration.PicogramsPerMicroliter">
+            <summary>
+                Get MassConcentration in PicogramsPerMicroliter.
             </summary>
         </member>
         <member name="P:UnitsNet.MassConcentration.PicogramsPerMilliliter">
@@ -14590,6 +14625,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.MassConcentration.FromCentigramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from CentigramsPerMicroliter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.MassConcentration.FromCentigramsPerMilliliter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from CentigramsPerMilliliter.
@@ -14605,6 +14646,12 @@
         <member name="M:UnitsNet.MassConcentration.FromDecigramsPerLiter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from DecigramsPerLiter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.MassConcentration.FromDecigramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from DecigramsPerMicroliter.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -14641,6 +14688,12 @@
         <member name="M:UnitsNet.MassConcentration.FromGramsPerLiter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from GramsPerLiter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.MassConcentration.FromGramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from GramsPerMicroliter.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -14704,6 +14757,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.MassConcentration.FromMicrogramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from MicrogramsPerMicroliter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.MassConcentration.FromMicrogramsPerMilliliter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from MicrogramsPerMilliliter.
@@ -14728,6 +14787,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.MassConcentration.FromMilligramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from MilligramsPerMicroliter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.MassConcentration.FromMilligramsPerMilliliter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from MilligramsPerMilliliter.
@@ -14746,6 +14811,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.MassConcentration.FromNanogramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from NanogramsPerMicroliter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.MassConcentration.FromNanogramsPerMilliliter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from NanogramsPerMilliliter.
@@ -14761,6 +14832,12 @@
         <member name="M:UnitsNet.MassConcentration.FromPicogramsPerLiter(UnitsNet.QuantityValue)">
             <summary>
                 Get MassConcentration from PicogramsPerLiter.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.MassConcentration.FromPicogramsPerMicroliter(UnitsNet.QuantityValue)">
+            <summary>
+                Get MassConcentration from PicogramsPerMicroliter.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -17941,6 +18018,9 @@
                 The numeric value this quantity was constructed with.
             </summary>
         </member>
+        <member name="P:UnitsNet.Power.UnitsNet#IDecimalQuantity#Value">
+            <inheritdoc cref="P:UnitsNet.IDecimalQuantity.Value"/>
+        </member>
         <member name="P:UnitsNet.Power.Unit">
             <inheritdoc />
         </member>
@@ -19178,6 +19258,11 @@
                 Get Pressure in DynesPerSquareCentimeter.
             </summary>
         </member>
+        <member name="P:UnitsNet.Pressure.FeetOfElevation">
+            <summary>
+                Get Pressure in FeetOfElevation.
+            </summary>
+        </member>
         <member name="P:UnitsNet.Pressure.FeetOfHead">
             <summary>
                 Get Pressure in FeetOfHead.
@@ -19266,6 +19351,11 @@
         <member name="P:UnitsNet.Pressure.Megapascals">
             <summary>
                 Get Pressure in Megapascals.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Pressure.MetersOfElevation">
+            <summary>
+                Get Pressure in MetersOfElevation.
             </summary>
         </member>
         <member name="P:UnitsNet.Pressure.MetersOfHead">
@@ -19409,6 +19499,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.Pressure.FromFeetOfElevation(UnitsNet.QuantityValue)">
+            <summary>
+                Get Pressure from FeetOfElevation.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.Pressure.FromFeetOfHead(UnitsNet.QuantityValue)">
             <summary>
                 Get Pressure from FeetOfHead.
@@ -19514,6 +19610,12 @@
         <member name="M:UnitsNet.Pressure.FromMegapascals(UnitsNet.QuantityValue)">
             <summary>
                 Get Pressure from Megapascals.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Pressure.FromMetersOfElevation(UnitsNet.QuantityValue)">
+            <summary>
+                Get Pressure from MetersOfElevation.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -25707,6 +25809,11 @@
                 Get Torque in NewtonMillimeters.
             </summary>
         </member>
+        <member name="P:UnitsNet.Torque.PoundalFeet">
+            <summary>
+                Get Torque in PoundalFeet.
+            </summary>
+        </member>
         <member name="P:UnitsNet.Torque.PoundForceFeet">
             <summary>
                 Get Torque in PoundForceFeet.
@@ -25840,6 +25947,12 @@
         <member name="M:UnitsNet.Torque.FromNewtonMillimeters(UnitsNet.QuantityValue)">
             <summary>
                 Get Torque from NewtonMillimeters.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Torque.FromPoundalFeet(UnitsNet.QuantityValue)">
+            <summary>
+                Get Torque from PoundalFeet.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -28014,6 +28127,16 @@
                 Get VolumeFlow in CentilitersPerMinute.
             </summary>
         </member>
+        <member name="P:UnitsNet.VolumeFlow.CentilitersPerSecond">
+            <summary>
+                Get VolumeFlow in CentilitersPerSecond.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.VolumeFlow.CubicCentimetersPerMinute">
+            <summary>
+                Get VolumeFlow in CubicCentimetersPerMinute.
+            </summary>
+        </member>
         <member name="P:UnitsNet.VolumeFlow.CubicDecimetersPerMinute">
             <summary>
                 Get VolumeFlow in CubicDecimetersPerMinute.
@@ -28089,6 +28212,11 @@
                 Get VolumeFlow in DecilitersPerMinute.
             </summary>
         </member>
+        <member name="P:UnitsNet.VolumeFlow.DecilitersPerSecond">
+            <summary>
+                Get VolumeFlow in DecilitersPerSecond.
+            </summary>
+        </member>
         <member name="P:UnitsNet.VolumeFlow.KilolitersPerDay">
             <summary>
                 Get VolumeFlow in KilolitersPerDay.
@@ -28097,6 +28225,11 @@
         <member name="P:UnitsNet.VolumeFlow.KilolitersPerMinute">
             <summary>
                 Get VolumeFlow in KilolitersPerMinute.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.VolumeFlow.KilolitersPerSecond">
+            <summary>
+                Get VolumeFlow in KilolitersPerSecond.
             </summary>
         </member>
         <member name="P:UnitsNet.VolumeFlow.KilousGallonsPerMinute">
@@ -28144,6 +28277,11 @@
                 Get VolumeFlow in MicrolitersPerMinute.
             </summary>
         </member>
+        <member name="P:UnitsNet.VolumeFlow.MicrolitersPerSecond">
+            <summary>
+                Get VolumeFlow in MicrolitersPerSecond.
+            </summary>
+        </member>
         <member name="P:UnitsNet.VolumeFlow.MillilitersPerDay">
             <summary>
                 Get VolumeFlow in MillilitersPerDay.
@@ -28152,6 +28290,11 @@
         <member name="P:UnitsNet.VolumeFlow.MillilitersPerMinute">
             <summary>
                 Get VolumeFlow in MillilitersPerMinute.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.VolumeFlow.MillilitersPerSecond">
+            <summary>
+                Get VolumeFlow in MillilitersPerSecond.
             </summary>
         </member>
         <member name="P:UnitsNet.VolumeFlow.MillionUsGallonsPerDay">
@@ -28167,6 +28310,11 @@
         <member name="P:UnitsNet.VolumeFlow.NanolitersPerMinute">
             <summary>
                 Get VolumeFlow in NanolitersPerMinute.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.VolumeFlow.NanolitersPerSecond">
+            <summary>
+                Get VolumeFlow in NanolitersPerSecond.
             </summary>
         </member>
         <member name="P:UnitsNet.VolumeFlow.OilBarrelsPerDay">
@@ -28280,6 +28428,18 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.VolumeFlow.FromCentilitersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from CentilitersPerSecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.VolumeFlow.FromCubicCentimetersPerMinute(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from CubicCentimetersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.VolumeFlow.FromCubicDecimetersPerMinute(UnitsNet.QuantityValue)">
             <summary>
                 Get VolumeFlow from CubicDecimetersPerMinute.
@@ -28370,6 +28530,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.VolumeFlow.FromDecilitersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from DecilitersPerSecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.VolumeFlow.FromKilolitersPerDay(UnitsNet.QuantityValue)">
             <summary>
                 Get VolumeFlow from KilolitersPerDay.
@@ -28379,6 +28545,12 @@
         <member name="M:UnitsNet.VolumeFlow.FromKilolitersPerMinute(UnitsNet.QuantityValue)">
             <summary>
                 Get VolumeFlow from KilolitersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.VolumeFlow.FromKilolitersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from KilolitersPerSecond.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -28436,6 +28608,12 @@
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
+        <member name="M:UnitsNet.VolumeFlow.FromMicrolitersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from MicrolitersPerSecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
         <member name="M:UnitsNet.VolumeFlow.FromMillilitersPerDay(UnitsNet.QuantityValue)">
             <summary>
                 Get VolumeFlow from MillilitersPerDay.
@@ -28445,6 +28623,12 @@
         <member name="M:UnitsNet.VolumeFlow.FromMillilitersPerMinute(UnitsNet.QuantityValue)">
             <summary>
                 Get VolumeFlow from MillilitersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.VolumeFlow.FromMillilitersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from MillilitersPerSecond.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -28463,6 +28647,12 @@
         <member name="M:UnitsNet.VolumeFlow.FromNanolitersPerMinute(UnitsNet.QuantityValue)">
             <summary>
                 Get VolumeFlow from NanolitersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.VolumeFlow.FromNanolitersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get VolumeFlow from NanolitersPerSecond.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -28864,7 +29054,7 @@
         </member>
         <member name="P:UnitsNet.Quantity.Names">
             <summary>
-            All enum value names of <see cref="T:UnitsNet.QuantityType"/>, such as "Length" and "Mass".
+            All enum value names of <see cref="P:UnitsNet.Quantity.Infos"/>, such as "Length" and "Mass".
             </summary>
         </member>
         <member name="P:UnitsNet.Quantity.Infos">
@@ -28913,11 +29103,24 @@
             </summary>
             <param name="baseDimensions">The base dimensions to match.</param>
         </member>
+        <member name="F:UnitsNet.Quantity.ByName">
+            <summary>
+            All QuantityInfo instances mapped by quantity name that are present in UnitsNet by default.
+            </summary>
+        </member>
         <member name="M:UnitsNet.Quantity.FromQuantityType(UnitsNet.QuantityType,UnitsNet.QuantityValue)">
             <summary>
             Dynamically constructs a quantity of the given <see cref="T:UnitsNet.QuantityType"/> with the value in the quantity's base units.
             </summary>
             <param name="quantityType">The <see cref="T:UnitsNet.QuantityType"/> of the quantity to create.</param>
+            <param name="value">The value to construct the quantity with.</param>
+            <returns>The created quantity.</returns>
+        </member>
+        <member name="M:UnitsNet.Quantity.FromQuantityInfo(UnitsNet.QuantityInfo,UnitsNet.QuantityValue)">
+            <summary>
+            Dynamically constructs a quantity of the given <see cref="T:UnitsNet.QuantityInfo"/> with the value in the quantity's base units.
+            </summary>
+            <param name="quantityInfo">The <see cref="T:UnitsNet.QuantityInfo"/> of the quantity to create.</param>
             <param name="value">The value to construct the quantity with.</param>
             <returns>The created quantity.</returns>
         </member>
@@ -30738,6 +30941,9 @@
             <summary>
                 The numeric value this quantity was constructed with.
             </summary>
+        </member>
+        <member name="P:UnitsNet.BitRate.UnitsNet#IDecimalQuantity#Value">
+            <inheritdoc cref="P:UnitsNet.IDecimalQuantity.Value"/>
         </member>
         <member name="P:UnitsNet.BitRate.Unit">
             <inheritdoc />
@@ -34723,6 +34929,21 @@
                 The <see cref="P:UnitsNet.ElectricCurrentGradient.BaseDimensions" /> of this quantity.
             </summary>
         </member>
+        <member name="P:UnitsNet.ElectricCurrentGradient.AmperesPerMicrosecond">
+            <summary>
+                Get ElectricCurrentGradient in AmperesPerMicrosecond.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.ElectricCurrentGradient.AmperesPerMillisecond">
+            <summary>
+                Get ElectricCurrentGradient in AmperesPerMillisecond.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.ElectricCurrentGradient.AmperesPerNanosecond">
+            <summary>
+                Get ElectricCurrentGradient in AmperesPerNanosecond.
+            </summary>
+        </member>
         <member name="P:UnitsNet.ElectricCurrentGradient.AmperesPerSecond">
             <summary>
                 Get ElectricCurrentGradient in AmperesPerSecond.
@@ -34742,6 +34963,24 @@
             <param name="unit">Unit to get abbreviation for.</param>
             <returns>Unit abbreviation string.</returns>
             <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.ElectricCurrentGradient.FromAmperesPerMicrosecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get ElectricCurrentGradient from AmperesPerMicrosecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.ElectricCurrentGradient.FromAmperesPerMillisecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get ElectricCurrentGradient from AmperesPerMillisecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.ElectricCurrentGradient.FromAmperesPerNanosecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get ElectricCurrentGradient from AmperesPerNanosecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
         <member name="M:UnitsNet.ElectricCurrentGradient.FromAmperesPerSecond(UnitsNet.QuantityValue)">
             <summary>
@@ -40592,6 +40831,11 @@
                 Get Frequency in BeatsPerMinute.
             </summary>
         </member>
+        <member name="P:UnitsNet.Frequency.BUnits">
+            <summary>
+                Get Frequency in BUnits.
+            </summary>
+        </member>
         <member name="P:UnitsNet.Frequency.CyclesPerHour">
             <summary>
                 Get Frequency in CyclesPerHour.
@@ -40655,6 +40899,12 @@
         <member name="M:UnitsNet.Frequency.FromBeatsPerMinute(UnitsNet.QuantityValue)">
             <summary>
                 Get Frequency from BeatsPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Frequency.FromBUnits(UnitsNet.QuantityValue)">
+            <summary>
+                Get Frequency from BUnits.
             </summary>
             <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
@@ -42504,6 +42754,9 @@
             <summary>
                 The numeric value this quantity was constructed with.
             </summary>
+        </member>
+        <member name="P:UnitsNet.Information.UnitsNet#IDecimalQuantity#Value">
+            <inheritdoc cref="P:UnitsNet.IDecimalQuantity.Value"/>
         </member>
         <member name="P:UnitsNet.Information.Unit">
             <inheritdoc />
@@ -46485,6 +46738,11 @@
                 The <see cref="P:UnitsNet.MagneticField.BaseDimensions" /> of this quantity.
             </summary>
         </member>
+        <member name="P:UnitsNet.MagneticField.Gausses">
+            <summary>
+                Get MagneticField in Gausses.
+            </summary>
+        </member>
         <member name="P:UnitsNet.MagneticField.Microteslas">
             <summary>
                 Get MagneticField in Microteslas.
@@ -46519,6 +46777,12 @@
             <param name="unit">Unit to get abbreviation for.</param>
             <returns>Unit abbreviation string.</returns>
             <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.MagneticField.FromGausses(UnitsNet.QuantityValue)">
+            <summary>
+                Get MagneticField from Gausses.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
         </member>
         <member name="M:UnitsNet.MagneticField.FromMicroteslas(UnitsNet.QuantityValue)">
             <summary>
@@ -54096,6 +54360,442 @@
             <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
             <returns>The string representation.</returns>
         </member>
+        <member name="T:UnitsNet.RelativeHumidity">
+            <inheritdoc />
+            <summary>
+                Relative humidity is a ratio of the actual water vapor present in the air to the maximum water vapor in the air at the given temperature.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.RelativeHumidity._value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.RelativeHumidity._unit">
+            <summary>
+                The unit this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.#ctor(System.Double,UnitsNet.Units.RelativeHumidityUnit)">
+            <summary>
+                Creates the quantity with the given numeric value and unit.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unit">The unit representation to construct this quantity with.</param>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.#ctor(System.Double,UnitsNet.UnitSystem)">
+            <summary>
+            Creates an instance of the quantity with the given numeric value in units compatible with the given <see cref="T:UnitsNet.UnitSystem"/>.
+            If multiple compatible units were found, the first match is used.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unitSystem">The unit system to create the quantity with.</param>
+            <exception cref="T:System.ArgumentNullException">The given <see cref="T:UnitsNet.UnitSystem"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">No unit was found for the given <see cref="T:UnitsNet.UnitSystem"/>.</exception>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Info">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.BaseDimensions">
+            <summary>
+                The <see cref="P:UnitsNet.RelativeHumidity.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.BaseUnit">
+            <summary>
+                The base unit of RelativeHumidity, which is Percent. All conversions go via this value.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.MaxValue">
+            <summary>
+            Represents the largest possible value of RelativeHumidity
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.MinValue">
+            <summary>
+            Represents the smallest possible value of RelativeHumidity
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.QuantityType">
+            <summary>
+                The <see cref="P:UnitsNet.RelativeHumidity.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Units">
+            <summary>
+                All units of measurement for the RelativeHumidity quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Zero">
+            <summary>
+                Gets an instance of this quantity with a value of 0 in the base unit Percent.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Unit">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.QuantityInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.UnitsNet#IQuantity#QuantityInfo">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Type">
+            <summary>
+                The <see cref="P:UnitsNet.RelativeHumidity.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Dimensions">
+            <summary>
+                The <see cref="P:UnitsNet.RelativeHumidity.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.RelativeHumidity.Percent">
+            <summary>
+                Get RelativeHumidity in Percent.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.GetAbbreviation(UnitsNet.Units.RelativeHumidityUnit)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.GetAbbreviation(UnitsNet.Units.RelativeHumidityUnit,System.IFormatProvider)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+            <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.FromPercent(UnitsNet.QuantityValue)">
+            <summary>
+                Get RelativeHumidity from Percent.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.From(UnitsNet.QuantityValue,UnitsNet.Units.RelativeHumidityUnit)">
+            <summary>
+                Dynamically convert from value and unit enum <see cref="T:UnitsNet.Units.RelativeHumidityUnit" /> to <see cref="T:UnitsNet.RelativeHumidity" />.
+            </summary>
+            <param name="value">Value to convert from.</param>
+            <param name="fromUnit">Unit to convert from.</param>
+            <returns>RelativeHumidity unit value.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.Parse(System.String)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.Parse(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.TryParse(System.String,UnitsNet.RelativeHumidity@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.TryParse(System.String,System.IFormatProvider,UnitsNet.RelativeHumidity@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ParseUnit(System.String)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ParseUnit(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.TryParseUnit(System.String,UnitsNet.Units.RelativeHumidityUnit@)">
+            <inheritdoc cref="M:UnitsNet.RelativeHumidity.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.RelativeHumidityUnit@)"/>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.RelativeHumidityUnit@)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="unit">The parsed unit if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.TryParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_UnaryNegation(UnitsNet.RelativeHumidity)">
+            <summary>Negate the value.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Addition(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Get <see cref="T:UnitsNet.RelativeHumidity"/> from adding two <see cref="T:UnitsNet.RelativeHumidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Subtraction(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Get <see cref="T:UnitsNet.RelativeHumidity"/> from subtracting two <see cref="T:UnitsNet.RelativeHumidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Multiply(System.Double,UnitsNet.RelativeHumidity)">
+            <summary>Get <see cref="T:UnitsNet.RelativeHumidity"/> from multiplying value and <see cref="T:UnitsNet.RelativeHumidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Multiply(UnitsNet.RelativeHumidity,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.RelativeHumidity"/> from multiplying value and <see cref="T:UnitsNet.RelativeHumidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Division(UnitsNet.RelativeHumidity,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.RelativeHumidity"/> from dividing <see cref="T:UnitsNet.RelativeHumidity"/> by value.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Division(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Get ratio value from dividing <see cref="T:UnitsNet.RelativeHumidity"/> by <see cref="T:UnitsNet.RelativeHumidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_LessThanOrEqual(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Returns true if less or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_GreaterThanOrEqual(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Returns true if greater than or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_LessThan(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Returns true if less than.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_GreaterThan(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Returns true if greater than.</summary>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Equality(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Returns true if exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.RelativeHumidity.Equals(UnitsNet.RelativeHumidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.op_Inequality(UnitsNet.RelativeHumidity,UnitsNet.RelativeHumidity)">
+            <summary>Returns true if not exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.RelativeHumidity.Equals(UnitsNet.RelativeHumidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.CompareTo(UnitsNet.RelativeHumidity)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.Equals(System.Object)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.RelativeHumidity.Equals(UnitsNet.RelativeHumidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.Equals(UnitsNet.RelativeHumidity)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.RelativeHumidity.Equals(UnitsNet.RelativeHumidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.Equals(UnitsNet.RelativeHumidity,System.Double,UnitsNet.ComparisonType)">
+            <summary>
+                <para>
+                Compare equality to another RelativeHumidity within the given absolute or relative tolerance.
+                </para>
+                <para>
+                Relative tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a percentage of this quantity's value. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison. A relative tolerance of 0.01 means the absolute difference must be within +/- 1% of
+                this quantity's value to be considered equal.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within +/- 1% of a (0.02m or 2cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Relative);
+                </code>
+                </example>
+                </para>
+                <para>
+                Absolute tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a fixed number in this quantity's unit. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within 0.01 of a (0.01m or 1cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Absolute);
+                </code>
+                </example>
+                </para>
+                <para>
+                Note that it is advised against specifying zero difference, due to the nature
+                of floating point operations and using System.Double internally.
+                </para>
+            </summary>
+            <param name="other">The other quantity to compare to.</param>
+            <param name="tolerance">The absolute or relative tolerance value. Must be greater than or equal to 0.</param>
+            <param name="comparisonType">The comparison type: either relative or absolute.</param>
+            <returns>True if the absolute difference between the two values is not greater than the specified relative or absolute tolerance.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.GetHashCode">
+            <summary>
+                Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current RelativeHumidity.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.As(UnitsNet.Units.RelativeHumidityUnit)">
+            <summary>
+                Convert to the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>Value converted to the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.As(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.As(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.UnitsNet#IQuantity#As(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToUnit(UnitsNet.Units.RelativeHumidityUnit)">
+            <summary>
+                Converts this RelativeHumidity to another RelativeHumidity with the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>A RelativeHumidity with the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.UnitsNet#IQuantity#ToUnit(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.ToUnit(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.UnitsNet#IQuantity#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.UnitsNet#IQuantity{UnitsNet#Units#RelativeHumidityUnit}#ToUnit(UnitsNet.Units.RelativeHumidityUnit)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.UnitsNet#IQuantity{UnitsNet#Units#RelativeHumidityUnit}#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.GetValueInBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToString">
+            <summary>
+                Gets the default string representation of value and unit.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToString(System.IFormatProvider)">
+            <summary>
+                Gets the default string representation of value and unit using the given format provider.
+            </summary>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToString(System.IFormatProvider,System.Int32)">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="significantDigitsAfterRadix">The number of significant digits after the radix point.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToString(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="format">String format to use. Default:  "{0:0.##} {1} for value and unit abbreviation respectively."</param>
+            <param name="args">Arguments for string format. Value and unit are implicitly included as arguments 0 and 1.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToString(System.String)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />.
+            </summary>
+            <param name="format">The format string.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:UnitsNet.RelativeHumidity.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <returns>The string representation.</returns>
+        </member>
         <member name="T:UnitsNet.RotationalAcceleration">
             <inheritdoc />
             <summary>
@@ -54557,6 +55257,442 @@
             <returns>The string representation.</returns>
         </member>
         <member name="M:UnitsNet.RotationalAcceleration.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="T:UnitsNet.Scalar">
+            <inheritdoc />
+            <summary>
+                A way of representing a number of items.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.Scalar._value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.Scalar._unit">
+            <summary>
+                The unit this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.#ctor(System.Double,UnitsNet.Units.ScalarUnit)">
+            <summary>
+                Creates the quantity with the given numeric value and unit.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unit">The unit representation to construct this quantity with.</param>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Scalar.#ctor(System.Double,UnitsNet.UnitSystem)">
+            <summary>
+            Creates an instance of the quantity with the given numeric value in units compatible with the given <see cref="T:UnitsNet.UnitSystem"/>.
+            If multiple compatible units were found, the first match is used.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unitSystem">The unit system to create the quantity with.</param>
+            <exception cref="T:System.ArgumentNullException">The given <see cref="T:UnitsNet.UnitSystem"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">No unit was found for the given <see cref="T:UnitsNet.UnitSystem"/>.</exception>
+        </member>
+        <member name="P:UnitsNet.Scalar.Info">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.Scalar.BaseDimensions">
+            <summary>
+                The <see cref="P:UnitsNet.Scalar.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.BaseUnit">
+            <summary>
+                The base unit of Scalar, which is Amount. All conversions go via this value.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.MaxValue">
+            <summary>
+            Represents the largest possible value of Scalar
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.MinValue">
+            <summary>
+            Represents the smallest possible value of Scalar
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.QuantityType">
+            <summary>
+                The <see cref="P:UnitsNet.Scalar.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.Units">
+            <summary>
+                All units of measurement for the Scalar quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.Zero">
+            <summary>
+                Gets an instance of this quantity with a value of 0 in the base unit Amount.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.Value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.Unit">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.Scalar.QuantityInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.Scalar.UnitsNet#IQuantity#QuantityInfo">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.Scalar.Type">
+            <summary>
+                The <see cref="P:UnitsNet.Scalar.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.Dimensions">
+            <summary>
+                The <see cref="P:UnitsNet.Scalar.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Scalar.Amount">
+            <summary>
+                Get Scalar in Amount.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.GetAbbreviation(UnitsNet.Units.ScalarUnit)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.GetAbbreviation(UnitsNet.Units.ScalarUnit,System.IFormatProvider)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+            <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.FromAmount(UnitsNet.QuantityValue)">
+            <summary>
+                Get Scalar from Amount.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Scalar.From(UnitsNet.QuantityValue,UnitsNet.Units.ScalarUnit)">
+            <summary>
+                Dynamically convert from value and unit enum <see cref="T:UnitsNet.Units.ScalarUnit" /> to <see cref="T:UnitsNet.Scalar" />.
+            </summary>
+            <param name="value">Value to convert from.</param>
+            <param name="fromUnit">Unit to convert from.</param>
+            <returns>Scalar unit value.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.Parse(System.String)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+        </member>
+        <member name="M:UnitsNet.Scalar.Parse(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.TryParse(System.String,UnitsNet.Scalar@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+        </member>
+        <member name="M:UnitsNet.Scalar.TryParse(System.String,System.IFormatProvider,UnitsNet.Scalar@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.ParseUnit(System.String)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.Scalar.ParseUnit(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.Scalar.TryParseUnit(System.String,UnitsNet.Units.ScalarUnit@)">
+            <inheritdoc cref="M:UnitsNet.Scalar.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.ScalarUnit@)"/>
+        </member>
+        <member name="M:UnitsNet.Scalar.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.ScalarUnit@)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="unit">The parsed unit if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.TryParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_UnaryNegation(UnitsNet.Scalar)">
+            <summary>Negate the value.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Addition(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Get <see cref="T:UnitsNet.Scalar"/> from adding two <see cref="T:UnitsNet.Scalar"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Subtraction(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Get <see cref="T:UnitsNet.Scalar"/> from subtracting two <see cref="T:UnitsNet.Scalar"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Multiply(System.Double,UnitsNet.Scalar)">
+            <summary>Get <see cref="T:UnitsNet.Scalar"/> from multiplying value and <see cref="T:UnitsNet.Scalar"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Multiply(UnitsNet.Scalar,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.Scalar"/> from multiplying value and <see cref="T:UnitsNet.Scalar"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Division(UnitsNet.Scalar,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.Scalar"/> from dividing <see cref="T:UnitsNet.Scalar"/> by value.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Division(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Get ratio value from dividing <see cref="T:UnitsNet.Scalar"/> by <see cref="T:UnitsNet.Scalar"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_LessThanOrEqual(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Returns true if less or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_GreaterThanOrEqual(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Returns true if greater than or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_LessThan(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Returns true if less than.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_GreaterThan(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Returns true if greater than.</summary>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Equality(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Returns true if exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.Scalar.Equals(UnitsNet.Scalar,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Scalar.op_Inequality(UnitsNet.Scalar,UnitsNet.Scalar)">
+            <summary>Returns true if not exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.Scalar.Equals(UnitsNet.Scalar,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Scalar.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.CompareTo(UnitsNet.Scalar)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.Equals(System.Object)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.Scalar.Equals(UnitsNet.Scalar,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Scalar.Equals(UnitsNet.Scalar)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.Scalar.Equals(UnitsNet.Scalar,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Scalar.Equals(UnitsNet.Scalar,System.Double,UnitsNet.ComparisonType)">
+            <summary>
+                <para>
+                Compare equality to another Scalar within the given absolute or relative tolerance.
+                </para>
+                <para>
+                Relative tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a percentage of this quantity's value. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison. A relative tolerance of 0.01 means the absolute difference must be within +/- 1% of
+                this quantity's value to be considered equal.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within +/- 1% of a (0.02m or 2cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Relative);
+                </code>
+                </example>
+                </para>
+                <para>
+                Absolute tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a fixed number in this quantity's unit. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within 0.01 of a (0.01m or 1cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Absolute);
+                </code>
+                </example>
+                </para>
+                <para>
+                Note that it is advised against specifying zero difference, due to the nature
+                of floating point operations and using System.Double internally.
+                </para>
+            </summary>
+            <param name="other">The other quantity to compare to.</param>
+            <param name="tolerance">The absolute or relative tolerance value. Must be greater than or equal to 0.</param>
+            <param name="comparisonType">The comparison type: either relative or absolute.</param>
+            <returns>True if the absolute difference between the two values is not greater than the specified relative or absolute tolerance.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.GetHashCode">
+            <summary>
+                Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current Scalar.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.As(UnitsNet.Units.ScalarUnit)">
+            <summary>
+                Convert to the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>Value converted to the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.As(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.As(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.Scalar.UnitsNet#IQuantity#As(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.ToUnit(UnitsNet.Units.ScalarUnit)">
+            <summary>
+                Converts this Scalar to another Scalar with the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>A Scalar with the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.UnitsNet#IQuantity#ToUnit(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.ToUnit(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.Scalar.UnitsNet#IQuantity#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.UnitsNet#IQuantity{UnitsNet#Units#ScalarUnit}#ToUnit(UnitsNet.Units.ScalarUnit)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.UnitsNet#IQuantity{UnitsNet#Units#ScalarUnit}#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Scalar.GetValueInBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToString">
+            <summary>
+                Gets the default string representation of value and unit.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToString(System.IFormatProvider)">
+            <summary>
+                Gets the default string representation of value and unit using the given format provider.
+            </summary>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToString(System.IFormatProvider,System.Int32)">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="significantDigitsAfterRadix">The number of significant digits after the radix point.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToString(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="format">String format to use. Default:  "{0:0.##} {1} for value and unit abbreviation respectively."</param>
+            <param name="args">Arguments for string format. Value and unit are implicitly included as arguments 0 and 1.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToString(System.String)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />.
+            </summary>
+            <param name="format">The format string.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Scalar.ToString(System.String,System.IFormatProvider)">
             <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
             <summary>
             Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
@@ -55520,6 +56656,530 @@
             <returns>The string representation.</returns>
         </member>
         <member name="M:UnitsNet.SpecificEntropy.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="T:UnitsNet.StandardVolumeFlow">
+            <inheritdoc />
+            <summary>
+                The molar flow rate of a gas corrected to standardized conditions of temperature and pressure thus representing a fixed number of moles of gas regardless of composition and actual flow conditions.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.StandardVolumeFlow._value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.StandardVolumeFlow._unit">
+            <summary>
+                The unit this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.#ctor(System.Double,UnitsNet.Units.StandardVolumeFlowUnit)">
+            <summary>
+                Creates the quantity with the given numeric value and unit.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unit">The unit representation to construct this quantity with.</param>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.#ctor(System.Double,UnitsNet.UnitSystem)">
+            <summary>
+            Creates an instance of the quantity with the given numeric value in units compatible with the given <see cref="T:UnitsNet.UnitSystem"/>.
+            If multiple compatible units were found, the first match is used.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unitSystem">The unit system to create the quantity with.</param>
+            <exception cref="T:System.ArgumentNullException">The given <see cref="T:UnitsNet.UnitSystem"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">No unit was found for the given <see cref="T:UnitsNet.UnitSystem"/>.</exception>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Info">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.BaseDimensions">
+            <summary>
+                The <see cref="P:UnitsNet.StandardVolumeFlow.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.BaseUnit">
+            <summary>
+                The base unit of StandardVolumeFlow, which is StandardCubicMeterPerSecond. All conversions go via this value.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.MaxValue">
+            <summary>
+            Represents the largest possible value of StandardVolumeFlow
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.MinValue">
+            <summary>
+            Represents the smallest possible value of StandardVolumeFlow
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.QuantityType">
+            <summary>
+                The <see cref="P:UnitsNet.StandardVolumeFlow.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Units">
+            <summary>
+                All units of measurement for the StandardVolumeFlow quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Zero">
+            <summary>
+                Gets an instance of this quantity with a value of 0 in the base unit StandardCubicMeterPerSecond.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Unit">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.QuantityInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.UnitsNet#IQuantity#QuantityInfo">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Type">
+            <summary>
+                The <see cref="P:UnitsNet.StandardVolumeFlow.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.Dimensions">
+            <summary>
+                The <see cref="P:UnitsNet.StandardVolumeFlow.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicCentimetersPerMinute">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicCentimetersPerMinute.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicFeetPerHour">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicFeetPerHour.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicFeetPerMinute">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicFeetPerMinute.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicFeetPerSecond">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicFeetPerSecond.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicMetersPerDay">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicMetersPerDay.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicMetersPerHour">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicMetersPerHour.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicMetersPerMinute">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicMetersPerMinute.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardCubicMetersPerSecond">
+            <summary>
+                Get StandardVolumeFlow in StandardCubicMetersPerSecond.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.StandardVolumeFlow.StandardLitersPerMinute">
+            <summary>
+                Get StandardVolumeFlow in StandardLitersPerMinute.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.GetAbbreviation(UnitsNet.Units.StandardVolumeFlowUnit)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.GetAbbreviation(UnitsNet.Units.StandardVolumeFlowUnit,System.IFormatProvider)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+            <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicCentimetersPerMinute(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicCentimetersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicFeetPerHour(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicFeetPerHour.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicFeetPerMinute(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicFeetPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicFeetPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicFeetPerSecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicMetersPerDay(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicMetersPerDay.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicMetersPerHour(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicMetersPerHour.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicMetersPerMinute(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicMetersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardCubicMetersPerSecond(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardCubicMetersPerSecond.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.FromStandardLitersPerMinute(UnitsNet.QuantityValue)">
+            <summary>
+                Get StandardVolumeFlow from StandardLitersPerMinute.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.From(UnitsNet.QuantityValue,UnitsNet.Units.StandardVolumeFlowUnit)">
+            <summary>
+                Dynamically convert from value and unit enum <see cref="T:UnitsNet.Units.StandardVolumeFlowUnit" /> to <see cref="T:UnitsNet.StandardVolumeFlow" />.
+            </summary>
+            <param name="value">Value to convert from.</param>
+            <param name="fromUnit">Unit to convert from.</param>
+            <returns>StandardVolumeFlow unit value.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.Parse(System.String)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.Parse(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.TryParse(System.String,UnitsNet.StandardVolumeFlow@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.TryParse(System.String,System.IFormatProvider,UnitsNet.StandardVolumeFlow@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ParseUnit(System.String)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ParseUnit(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.TryParseUnit(System.String,UnitsNet.Units.StandardVolumeFlowUnit@)">
+            <inheritdoc cref="M:UnitsNet.StandardVolumeFlow.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.StandardVolumeFlowUnit@)"/>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.StandardVolumeFlowUnit@)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="unit">The parsed unit if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.TryParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_UnaryNegation(UnitsNet.StandardVolumeFlow)">
+            <summary>Negate the value.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Addition(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Get <see cref="T:UnitsNet.StandardVolumeFlow"/> from adding two <see cref="T:UnitsNet.StandardVolumeFlow"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Subtraction(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Get <see cref="T:UnitsNet.StandardVolumeFlow"/> from subtracting two <see cref="T:UnitsNet.StandardVolumeFlow"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Multiply(System.Double,UnitsNet.StandardVolumeFlow)">
+            <summary>Get <see cref="T:UnitsNet.StandardVolumeFlow"/> from multiplying value and <see cref="T:UnitsNet.StandardVolumeFlow"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Multiply(UnitsNet.StandardVolumeFlow,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.StandardVolumeFlow"/> from multiplying value and <see cref="T:UnitsNet.StandardVolumeFlow"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Division(UnitsNet.StandardVolumeFlow,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.StandardVolumeFlow"/> from dividing <see cref="T:UnitsNet.StandardVolumeFlow"/> by value.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Division(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Get ratio value from dividing <see cref="T:UnitsNet.StandardVolumeFlow"/> by <see cref="T:UnitsNet.StandardVolumeFlow"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_LessThanOrEqual(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Returns true if less or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_GreaterThanOrEqual(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Returns true if greater than or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_LessThan(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Returns true if less than.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_GreaterThan(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Returns true if greater than.</summary>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Equality(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Returns true if exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.StandardVolumeFlow.Equals(UnitsNet.StandardVolumeFlow,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.op_Inequality(UnitsNet.StandardVolumeFlow,UnitsNet.StandardVolumeFlow)">
+            <summary>Returns true if not exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.StandardVolumeFlow.Equals(UnitsNet.StandardVolumeFlow,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.CompareTo(UnitsNet.StandardVolumeFlow)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.Equals(System.Object)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.StandardVolumeFlow.Equals(UnitsNet.StandardVolumeFlow,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.Equals(UnitsNet.StandardVolumeFlow)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.StandardVolumeFlow.Equals(UnitsNet.StandardVolumeFlow,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.Equals(UnitsNet.StandardVolumeFlow,System.Double,UnitsNet.ComparisonType)">
+            <summary>
+                <para>
+                Compare equality to another StandardVolumeFlow within the given absolute or relative tolerance.
+                </para>
+                <para>
+                Relative tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a percentage of this quantity's value. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison. A relative tolerance of 0.01 means the absolute difference must be within +/- 1% of
+                this quantity's value to be considered equal.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within +/- 1% of a (0.02m or 2cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Relative);
+                </code>
+                </example>
+                </para>
+                <para>
+                Absolute tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a fixed number in this quantity's unit. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within 0.01 of a (0.01m or 1cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Absolute);
+                </code>
+                </example>
+                </para>
+                <para>
+                Note that it is advised against specifying zero difference, due to the nature
+                of floating point operations and using System.Double internally.
+                </para>
+            </summary>
+            <param name="other">The other quantity to compare to.</param>
+            <param name="tolerance">The absolute or relative tolerance value. Must be greater than or equal to 0.</param>
+            <param name="comparisonType">The comparison type: either relative or absolute.</param>
+            <returns>True if the absolute difference between the two values is not greater than the specified relative or absolute tolerance.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.GetHashCode">
+            <summary>
+                Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current StandardVolumeFlow.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.As(UnitsNet.Units.StandardVolumeFlowUnit)">
+            <summary>
+                Convert to the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>Value converted to the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.As(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.As(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.UnitsNet#IQuantity#As(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToUnit(UnitsNet.Units.StandardVolumeFlowUnit)">
+            <summary>
+                Converts this StandardVolumeFlow to another StandardVolumeFlow with the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>A StandardVolumeFlow with the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.UnitsNet#IQuantity#ToUnit(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.ToUnit(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.UnitsNet#IQuantity#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.UnitsNet#IQuantity{UnitsNet#Units#StandardVolumeFlowUnit}#ToUnit(UnitsNet.Units.StandardVolumeFlowUnit)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.UnitsNet#IQuantity{UnitsNet#Units#StandardVolumeFlowUnit}#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.GetValueInBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToString">
+            <summary>
+                Gets the default string representation of value and unit.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToString(System.IFormatProvider)">
+            <summary>
+                Gets the default string representation of value and unit using the given format provider.
+            </summary>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToString(System.IFormatProvider,System.Int32)">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="significantDigitsAfterRadix">The number of significant digits after the radix point.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToString(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="format">String format to use. Default:  "{0:0.##} {1} for value and unit abbreviation respectively."</param>
+            <param name="args">Arguments for string format. Value and unit are implicitly included as arguments 0 and 1.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToString(System.String)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />.
+            </summary>
+            <param name="format">The format string.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:UnitsNet.StandardVolumeFlow.ToString(System.String,System.IFormatProvider)">
             <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
             <summary>
             Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
@@ -57649,6 +59309,445 @@
             <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
             <returns>The string representation.</returns>
         </member>
+        <member name="T:UnitsNet.Turbidity">
+            <inheritdoc />
+            <summary>
+                Turbidity is the cloudiness or haziness of a fluid caused by large numbers of individual particles that are generally invisible to the naked eye, similar to smoke in air. The measurement of turbidity is a key test of water quality.
+            </summary>
+            <remarks>
+                https://en.wikipedia.org/wiki/Turbidity
+            </remarks>
+        </member>
+        <member name="F:UnitsNet.Turbidity._value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.Turbidity._unit">
+            <summary>
+                The unit this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.#ctor(System.Double,UnitsNet.Units.TurbidityUnit)">
+            <summary>
+                Creates the quantity with the given numeric value and unit.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unit">The unit representation to construct this quantity with.</param>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Turbidity.#ctor(System.Double,UnitsNet.UnitSystem)">
+            <summary>
+            Creates an instance of the quantity with the given numeric value in units compatible with the given <see cref="T:UnitsNet.UnitSystem"/>.
+            If multiple compatible units were found, the first match is used.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unitSystem">The unit system to create the quantity with.</param>
+            <exception cref="T:System.ArgumentNullException">The given <see cref="T:UnitsNet.UnitSystem"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">No unit was found for the given <see cref="T:UnitsNet.UnitSystem"/>.</exception>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Info">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.Turbidity.BaseDimensions">
+            <summary>
+                The <see cref="P:UnitsNet.Turbidity.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.BaseUnit">
+            <summary>
+                The base unit of Turbidity, which is NTU. All conversions go via this value.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.MaxValue">
+            <summary>
+            Represents the largest possible value of Turbidity
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.MinValue">
+            <summary>
+            Represents the smallest possible value of Turbidity
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.QuantityType">
+            <summary>
+                The <see cref="P:UnitsNet.Turbidity.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Units">
+            <summary>
+                All units of measurement for the Turbidity quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Zero">
+            <summary>
+                Gets an instance of this quantity with a value of 0 in the base unit NTU.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Unit">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.Turbidity.QuantityInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.Turbidity.UnitsNet#IQuantity#QuantityInfo">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Type">
+            <summary>
+                The <see cref="P:UnitsNet.Turbidity.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.Dimensions">
+            <summary>
+                The <see cref="P:UnitsNet.Turbidity.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.Turbidity.NTU">
+            <summary>
+                Get Turbidity in NTU.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.GetAbbreviation(UnitsNet.Units.TurbidityUnit)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.GetAbbreviation(UnitsNet.Units.TurbidityUnit,System.IFormatProvider)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+            <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.FromNTU(UnitsNet.QuantityValue)">
+            <summary>
+                Get Turbidity from NTU.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.Turbidity.From(UnitsNet.QuantityValue,UnitsNet.Units.TurbidityUnit)">
+            <summary>
+                Dynamically convert from value and unit enum <see cref="T:UnitsNet.Units.TurbidityUnit" /> to <see cref="T:UnitsNet.Turbidity" />.
+            </summary>
+            <param name="value">Value to convert from.</param>
+            <param name="fromUnit">Unit to convert from.</param>
+            <returns>Turbidity unit value.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.Parse(System.String)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+        </member>
+        <member name="M:UnitsNet.Turbidity.Parse(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.TryParse(System.String,UnitsNet.Turbidity@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+        </member>
+        <member name="M:UnitsNet.Turbidity.TryParse(System.String,System.IFormatProvider,UnitsNet.Turbidity@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ParseUnit(System.String)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ParseUnit(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.Turbidity.TryParseUnit(System.String,UnitsNet.Units.TurbidityUnit@)">
+            <inheritdoc cref="M:UnitsNet.Turbidity.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.TurbidityUnit@)"/>
+        </member>
+        <member name="M:UnitsNet.Turbidity.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.TurbidityUnit@)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="unit">The parsed unit if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.TryParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_UnaryNegation(UnitsNet.Turbidity)">
+            <summary>Negate the value.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Addition(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Get <see cref="T:UnitsNet.Turbidity"/> from adding two <see cref="T:UnitsNet.Turbidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Subtraction(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Get <see cref="T:UnitsNet.Turbidity"/> from subtracting two <see cref="T:UnitsNet.Turbidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Multiply(System.Double,UnitsNet.Turbidity)">
+            <summary>Get <see cref="T:UnitsNet.Turbidity"/> from multiplying value and <see cref="T:UnitsNet.Turbidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Multiply(UnitsNet.Turbidity,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.Turbidity"/> from multiplying value and <see cref="T:UnitsNet.Turbidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Division(UnitsNet.Turbidity,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.Turbidity"/> from dividing <see cref="T:UnitsNet.Turbidity"/> by value.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Division(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Get ratio value from dividing <see cref="T:UnitsNet.Turbidity"/> by <see cref="T:UnitsNet.Turbidity"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_LessThanOrEqual(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Returns true if less or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_GreaterThanOrEqual(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Returns true if greater than or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_LessThan(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Returns true if less than.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_GreaterThan(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Returns true if greater than.</summary>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Equality(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Returns true if exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.Turbidity.Equals(UnitsNet.Turbidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Turbidity.op_Inequality(UnitsNet.Turbidity,UnitsNet.Turbidity)">
+            <summary>Returns true if not exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.Turbidity.Equals(UnitsNet.Turbidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Turbidity.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.CompareTo(UnitsNet.Turbidity)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.Equals(System.Object)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.Turbidity.Equals(UnitsNet.Turbidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Turbidity.Equals(UnitsNet.Turbidity)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.Turbidity.Equals(UnitsNet.Turbidity,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.Turbidity.Equals(UnitsNet.Turbidity,System.Double,UnitsNet.ComparisonType)">
+            <summary>
+                <para>
+                Compare equality to another Turbidity within the given absolute or relative tolerance.
+                </para>
+                <para>
+                Relative tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a percentage of this quantity's value. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison. A relative tolerance of 0.01 means the absolute difference must be within +/- 1% of
+                this quantity's value to be considered equal.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within +/- 1% of a (0.02m or 2cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Relative);
+                </code>
+                </example>
+                </para>
+                <para>
+                Absolute tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a fixed number in this quantity's unit. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within 0.01 of a (0.01m or 1cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Absolute);
+                </code>
+                </example>
+                </para>
+                <para>
+                Note that it is advised against specifying zero difference, due to the nature
+                of floating point operations and using System.Double internally.
+                </para>
+            </summary>
+            <param name="other">The other quantity to compare to.</param>
+            <param name="tolerance">The absolute or relative tolerance value. Must be greater than or equal to 0.</param>
+            <param name="comparisonType">The comparison type: either relative or absolute.</param>
+            <returns>True if the absolute difference between the two values is not greater than the specified relative or absolute tolerance.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.GetHashCode">
+            <summary>
+                Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current Turbidity.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.As(UnitsNet.Units.TurbidityUnit)">
+            <summary>
+                Convert to the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>Value converted to the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.As(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.As(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.Turbidity.UnitsNet#IQuantity#As(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToUnit(UnitsNet.Units.TurbidityUnit)">
+            <summary>
+                Converts this Turbidity to another Turbidity with the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>A Turbidity with the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.UnitsNet#IQuantity#ToUnit(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.ToUnit(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.Turbidity.UnitsNet#IQuantity#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.UnitsNet#IQuantity{UnitsNet#Units#TurbidityUnit}#ToUnit(UnitsNet.Units.TurbidityUnit)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.UnitsNet#IQuantity{UnitsNet#Units#TurbidityUnit}#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.Turbidity.GetValueInBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToString">
+            <summary>
+                Gets the default string representation of value and unit.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToString(System.IFormatProvider)">
+            <summary>
+                Gets the default string representation of value and unit using the given format provider.
+            </summary>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToString(System.IFormatProvider,System.Int32)">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="significantDigitsAfterRadix">The number of significant digits after the radix point.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToString(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="format">String format to use. Default:  "{0:0.##} {1} for value and unit abbreviation respectively."</param>
+            <param name="args">Arguments for string format. Value and unit are implicitly included as arguments 0 and 1.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToString(System.String)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />.
+            </summary>
+            <param name="format">The format string.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:UnitsNet.Turbidity.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <returns>The string representation.</returns>
+        </member>
         <member name="T:UnitsNet.VitaminA">
             <inheritdoc />
             <summary>
@@ -58587,6 +60686,497 @@
             <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
             <returns>The string representation.</returns>
         </member>
+        <member name="T:UnitsNet.WarpingMomentOfInertia">
+            <inheritdoc />
+            <summary>
+                A geometric property of an area that is used to determine the warping stress.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.WarpingMomentOfInertia._value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="F:UnitsNet.WarpingMomentOfInertia._unit">
+            <summary>
+                The unit this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.#ctor(System.Double,UnitsNet.Units.WarpingMomentOfInertiaUnit)">
+            <summary>
+                Creates the quantity with the given numeric value and unit.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unit">The unit representation to construct this quantity with.</param>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.#ctor(System.Double,UnitsNet.UnitSystem)">
+            <summary>
+            Creates an instance of the quantity with the given numeric value in units compatible with the given <see cref="T:UnitsNet.UnitSystem"/>.
+            If multiple compatible units were found, the first match is used.
+            </summary>
+            <param name="value">The numeric value to construct this quantity with.</param>
+            <param name="unitSystem">The unit system to create the quantity with.</param>
+            <exception cref="T:System.ArgumentNullException">The given <see cref="T:UnitsNet.UnitSystem"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">No unit was found for the given <see cref="T:UnitsNet.UnitSystem"/>.</exception>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Info">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.BaseDimensions">
+            <summary>
+                The <see cref="P:UnitsNet.WarpingMomentOfInertia.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.BaseUnit">
+            <summary>
+                The base unit of WarpingMomentOfInertia, which is MeterToTheSixth. All conversions go via this value.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.MaxValue">
+            <summary>
+            Represents the largest possible value of WarpingMomentOfInertia
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.MinValue">
+            <summary>
+            Represents the smallest possible value of WarpingMomentOfInertia
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.QuantityType">
+            <summary>
+                The <see cref="P:UnitsNet.WarpingMomentOfInertia.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Units">
+            <summary>
+                All units of measurement for the WarpingMomentOfInertia quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Zero">
+            <summary>
+                Gets an instance of this quantity with a value of 0 in the base unit MeterToTheSixth.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Value">
+            <summary>
+                The numeric value this quantity was constructed with.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Unit">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.QuantityInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.UnitsNet#IQuantity#QuantityInfo">
+            <inheritdoc cref="P:UnitsNet.IQuantity.QuantityInfo"/>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Type">
+            <summary>
+                The <see cref="P:UnitsNet.WarpingMomentOfInertia.QuantityType" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.Dimensions">
+            <summary>
+                The <see cref="P:UnitsNet.WarpingMomentOfInertia.BaseDimensions" /> of this quantity.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.CentimetersToTheSixth">
+            <summary>
+                Get WarpingMomentOfInertia in CentimetersToTheSixth.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.DecimetersToTheSixth">
+            <summary>
+                Get WarpingMomentOfInertia in DecimetersToTheSixth.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.FeetToTheSixth">
+            <summary>
+                Get WarpingMomentOfInertia in FeetToTheSixth.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.InchesToTheSixth">
+            <summary>
+                Get WarpingMomentOfInertia in InchesToTheSixth.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.MetersToTheSixth">
+            <summary>
+                Get WarpingMomentOfInertia in MetersToTheSixth.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.WarpingMomentOfInertia.MillimetersToTheSixth">
+            <summary>
+                Get WarpingMomentOfInertia in MillimetersToTheSixth.
+            </summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.GetAbbreviation(UnitsNet.Units.WarpingMomentOfInertiaUnit)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.GetAbbreviation(UnitsNet.Units.WarpingMomentOfInertiaUnit,System.IFormatProvider)">
+            <summary>
+                Get unit abbreviation string.
+            </summary>
+            <param name="unit">Unit to get abbreviation for.</param>
+            <returns>Unit abbreviation string.</returns>
+            <param name="provider">Format to use for localization. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.FromCentimetersToTheSixth(UnitsNet.QuantityValue)">
+            <summary>
+                Get WarpingMomentOfInertia from CentimetersToTheSixth.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.FromDecimetersToTheSixth(UnitsNet.QuantityValue)">
+            <summary>
+                Get WarpingMomentOfInertia from DecimetersToTheSixth.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.FromFeetToTheSixth(UnitsNet.QuantityValue)">
+            <summary>
+                Get WarpingMomentOfInertia from FeetToTheSixth.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.FromInchesToTheSixth(UnitsNet.QuantityValue)">
+            <summary>
+                Get WarpingMomentOfInertia from InchesToTheSixth.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.FromMetersToTheSixth(UnitsNet.QuantityValue)">
+            <summary>
+                Get WarpingMomentOfInertia from MetersToTheSixth.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.FromMillimetersToTheSixth(UnitsNet.QuantityValue)">
+            <summary>
+                Get WarpingMomentOfInertia from MillimetersToTheSixth.
+            </summary>
+            <exception cref="T:System.ArgumentException">If value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.From(UnitsNet.QuantityValue,UnitsNet.Units.WarpingMomentOfInertiaUnit)">
+            <summary>
+                Dynamically convert from value and unit enum <see cref="T:UnitsNet.Units.WarpingMomentOfInertiaUnit" /> to <see cref="T:UnitsNet.WarpingMomentOfInertia" />.
+            </summary>
+            <param name="value">Value to convert from.</param>
+            <param name="fromUnit">Unit to convert from.</param>
+            <returns>WarpingMomentOfInertia unit value.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.Parse(System.String)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.Parse(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:System.ArgumentException">
+                Expected string to have one or two pairs of quantity and unit in the format
+                "&lt;quantity&gt; &lt;unit&gt;". Eg. "5.5 m" or "1ft 2in"
+            </exception>
+            <exception cref="T:UnitsNet.AmbiguousUnitParseException">
+                More than one unit is represented by the specified unit abbreviation.
+                Example: Volume.Parse("1 cup") will throw, because it can refer to any of
+                <see cref="F:UnitsNet.Units.VolumeUnit.MetricCup" />, <see cref="F:UnitsNet.Units.VolumeUnit.UsLegalCup" /> and <see cref="F:UnitsNet.Units.VolumeUnit.UsCustomaryCup" />.
+            </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">
+                If anything else goes wrong, typically due to a bug or unhandled case.
+                We wrap exceptions in <see cref="T:UnitsNet.UnitsNetException" /> to allow you to distinguish
+                Units.NET exceptions from other exceptions.
+            </exception>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.TryParse(System.String,UnitsNet.WarpingMomentOfInertia@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.TryParse(System.String,System.IFormatProvider,UnitsNet.WarpingMomentOfInertia@)">
+            <summary>
+                Try to parse a string with one or two quantities of the format "&lt;quantity&gt; &lt;unit&gt;".
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="result">Resulting unit quantity if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.Parse("5.5 m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ParseUnit(System.String)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ParseUnit(System.String,System.IFormatProvider)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <example>
+                Length.ParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <exception cref="T:System.ArgumentNullException">The value of 'str' cannot be null. </exception>
+            <exception cref="T:UnitsNet.UnitsNetException">Error parsing string.</exception>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.TryParseUnit(System.String,UnitsNet.Units.WarpingMomentOfInertiaUnit@)">
+            <inheritdoc cref="M:UnitsNet.WarpingMomentOfInertia.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.WarpingMomentOfInertiaUnit@)"/>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.TryParseUnit(System.String,System.IFormatProvider,UnitsNet.Units.WarpingMomentOfInertiaUnit@)">
+            <summary>
+                Parse a unit string.
+            </summary>
+            <param name="str">String to parse. Typically in the form: {number} {unit}</param>
+            <param name="unit">The parsed unit if successful.</param>
+            <returns>True if successful, otherwise false.</returns>
+            <example>
+                Length.TryParseUnit("m", new CultureInfo("en-US"));
+            </example>
+            <param name="provider">Format to use when parsing number and unit. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_UnaryNegation(UnitsNet.WarpingMomentOfInertia)">
+            <summary>Negate the value.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Addition(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Get <see cref="T:UnitsNet.WarpingMomentOfInertia"/> from adding two <see cref="T:UnitsNet.WarpingMomentOfInertia"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Subtraction(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Get <see cref="T:UnitsNet.WarpingMomentOfInertia"/> from subtracting two <see cref="T:UnitsNet.WarpingMomentOfInertia"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Multiply(System.Double,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Get <see cref="T:UnitsNet.WarpingMomentOfInertia"/> from multiplying value and <see cref="T:UnitsNet.WarpingMomentOfInertia"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Multiply(UnitsNet.WarpingMomentOfInertia,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.WarpingMomentOfInertia"/> from multiplying value and <see cref="T:UnitsNet.WarpingMomentOfInertia"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Division(UnitsNet.WarpingMomentOfInertia,System.Double)">
+            <summary>Get <see cref="T:UnitsNet.WarpingMomentOfInertia"/> from dividing <see cref="T:UnitsNet.WarpingMomentOfInertia"/> by value.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Division(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Get ratio value from dividing <see cref="T:UnitsNet.WarpingMomentOfInertia"/> by <see cref="T:UnitsNet.WarpingMomentOfInertia"/>.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_LessThanOrEqual(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Returns true if less or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_GreaterThanOrEqual(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Returns true if greater than or equal to.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_LessThan(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Returns true if less than.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_GreaterThan(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Returns true if greater than.</summary>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Equality(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Returns true if exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.WarpingMomentOfInertia.Equals(UnitsNet.WarpingMomentOfInertia,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.op_Inequality(UnitsNet.WarpingMomentOfInertia,UnitsNet.WarpingMomentOfInertia)">
+            <summary>Returns true if not exactly equal.</summary>
+            <remarks>Consider using <see cref="M:UnitsNet.WarpingMomentOfInertia.Equals(UnitsNet.WarpingMomentOfInertia,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.CompareTo(UnitsNet.WarpingMomentOfInertia)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.Equals(System.Object)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.WarpingMomentOfInertia.Equals(UnitsNet.WarpingMomentOfInertia,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.Equals(UnitsNet.WarpingMomentOfInertia)">
+            <inheritdoc />
+            <remarks>Consider using <see cref="M:UnitsNet.WarpingMomentOfInertia.Equals(UnitsNet.WarpingMomentOfInertia,System.Double,UnitsNet.ComparisonType)"/> for safely comparing floating point values.</remarks>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.Equals(UnitsNet.WarpingMomentOfInertia,System.Double,UnitsNet.ComparisonType)">
+            <summary>
+                <para>
+                Compare equality to another WarpingMomentOfInertia within the given absolute or relative tolerance.
+                </para>
+                <para>
+                Relative tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a percentage of this quantity's value. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison. A relative tolerance of 0.01 means the absolute difference must be within +/- 1% of
+                this quantity's value to be considered equal.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within +/- 1% of a (0.02m or 2cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Relative);
+                </code>
+                </example>
+                </para>
+                <para>
+                Absolute tolerance is defined as the maximum allowable absolute difference between this quantity's value and
+                <paramref name="other"/> as a fixed number in this quantity's unit. <paramref name="other"/> will be converted into
+                this quantity's unit for comparison.
+                <example>
+                In this example, the two quantities will be equal if the value of b is within 0.01 of a (0.01m or 1cm).
+                <code>
+                var a = Length.FromMeters(2.0);
+                var b = Length.FromInches(50.0);
+                a.Equals(b, 0.01, ComparisonType.Absolute);
+                </code>
+                </example>
+                </para>
+                <para>
+                Note that it is advised against specifying zero difference, due to the nature
+                of floating point operations and using System.Double internally.
+                </para>
+            </summary>
+            <param name="other">The other quantity to compare to.</param>
+            <param name="tolerance">The absolute or relative tolerance value. Must be greater than or equal to 0.</param>
+            <param name="comparisonType">The comparison type: either relative or absolute.</param>
+            <returns>True if the absolute difference between the two values is not greater than the specified relative or absolute tolerance.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.GetHashCode">
+            <summary>
+                Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current WarpingMomentOfInertia.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.As(UnitsNet.Units.WarpingMomentOfInertiaUnit)">
+            <summary>
+                Convert to the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>Value converted to the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.As(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.As(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.UnitsNet#IQuantity#As(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToUnit(UnitsNet.Units.WarpingMomentOfInertiaUnit)">
+            <summary>
+                Converts this WarpingMomentOfInertia to another WarpingMomentOfInertia with the unit representation <paramref name="unit" />.
+            </summary>
+            <returns>A WarpingMomentOfInertia with the specified unit.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.UnitsNet#IQuantity#ToUnit(System.Enum)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc cref="M:UnitsNet.IQuantity.ToUnit(UnitsNet.UnitSystem)"/>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.UnitsNet#IQuantity#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.UnitsNet#IQuantity{UnitsNet#Units#WarpingMomentOfInertiaUnit}#ToUnit(UnitsNet.Units.WarpingMomentOfInertiaUnit)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.UnitsNet#IQuantity{UnitsNet#Units#WarpingMomentOfInertiaUnit}#ToUnit(UnitsNet.UnitSystem)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.GetValueInBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToBaseUnit">
+            <summary>
+                Converts the current value + unit to the base unit.
+                This is typically the first step in converting from one unit to another.
+            </summary>
+            <returns>The value in the base unit representation.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToString">
+            <summary>
+                Gets the default string representation of value and unit.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToString(System.IFormatProvider)">
+            <summary>
+                Gets the default string representation of value and unit using the given format provider.
+            </summary>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToString(System.IFormatProvider,System.Int32)">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="significantDigitsAfterRadix">The number of significant digits after the radix point.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToString(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+                Get string representation of value and unit.
+            </summary>
+            <param name="format">String format to use. Default:  "{0:0.##} {1} for value and unit abbreviation respectively."</param>
+            <param name="args">Arguments for string format. Value and unit are implicitly included as arguments 0 and 1.</param>
+            <returns>String representation.</returns>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToString(System.String)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />.
+            </summary>
+            <param name="format">The format string.</param>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:UnitsNet.WarpingMomentOfInertia.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:UnitsNet.QuantityFormatter.Format``1(UnitsNet.IQuantity{``0},System.String,System.IFormatProvider)"/>
+            <summary>
+            Gets the string representation of this instance in the specified format string using the specified format provider, or <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="provider">Format to use for localization and number formatting. Defaults to <see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> if null.</param>
+            <returns>The string representation.</returns>
+        </member>
         <member name="T:UnitsNet.QuantityType">
             <summary>
                 Lists all generated quantities with the same name as the quantity struct type,
@@ -58822,7 +61412,7 @@
                 convert from.
             </param>
             <param name="quantityName">
-                Name of quantity, such as "Length" and "Mass". <see cref="T:UnitsNet.QuantityType" /> for all
+                Name of quantity, such as "Length" and "Mass". <see cref="T:UnitsNet.QuantityInfo" /> for all
                 values.
             </param>
             <param name="fromUnitAbbrev">
@@ -59041,6 +61631,16 @@
                 The stone (abbreviation st) is a unit of mass equal to 14 pounds avoirdupois (about 6.35 kilograms) used in Great Britain and Ireland for measuring human body weight.
             </summary>
             <remarks>http://en.wikipedia.org/wiki/Stone_(unit)</remarks>
+        </member>
+        <member name="T:UnitsNet.IDecimalQuantity">
+            <summary>
+                Represents a quantity with a decimal value.
+            </summary>
+        </member>
+        <member name="P:UnitsNet.IDecimalQuantity.Value">
+            <summary>
+                The decimal value this quantity was constructed with.
+            </summary>
         </member>
         <member name="T:UnitsNet.InternalHelpers.Guard">
             <summary>
@@ -59327,6 +61927,20 @@
             <exception cref="T:System.ArgumentException">Quantity type can not be undefined.</exception>
             <exception cref="T:System.ArgumentNullException">If units -or- baseUnit -or- zero -or- baseDimensions is null.</exception>
         </member>
+        <member name="M:UnitsNet.QuantityInfo.#ctor(System.String,System.Type,UnitsNet.UnitInfo[],System.Enum,UnitsNet.IQuantity,UnitsNet.BaseDimensions,UnitsNet.QuantityType)">
+            <summary>
+                Constructs an instance.
+            </summary>
+            <param name="name">Name of the quantity.</param>
+            <param name="unitType">The unit enum type, such as <see cref="T:UnitsNet.Units.LengthUnit" />.</param>
+            <param name="unitInfos">The information about the units for this quantity.</param>
+            <param name="baseUnit">The base unit enum value.</param>
+            <param name="zero">The zero quantity.</param>
+            <param name="baseDimensions">The base dimensions of the quantity.</param>
+            <param name="quantityType">The the quantity type. Defaults to Undefined.</param>
+            <exception cref="T:System.ArgumentException">Quantity type can not be undefined.</exception>
+            <exception cref="T:System.ArgumentNullException">If units -or- baseUnit -or- zero -or- baseDimensions is null.</exception>
+        </member>
         <member name="P:UnitsNet.QuantityInfo.Name">
             <summary>
                 Quantity name, such as "Length" or "Mass".
@@ -59412,6 +62026,9 @@
             <typeparam name="TUnit">The unit enum type, such as <see cref="T:UnitsNet.Units.LengthUnit" />. </typeparam>
         </member>
         <member name="M:UnitsNet.QuantityInfo`1.#ctor(UnitsNet.QuantityType,UnitsNet.UnitInfo{`0}[],`0,UnitsNet.IQuantity{`0},UnitsNet.BaseDimensions)">
+            <inheritdoc cref="M:UnitsNet.QuantityInfo`1.#ctor(System.String,UnitsNet.UnitInfo{`0}[],`0,UnitsNet.IQuantity{`0},UnitsNet.BaseDimensions,UnitsNet.QuantityType)" />
+        </member>
+        <member name="M:UnitsNet.QuantityInfo`1.#ctor(System.String,UnitsNet.UnitInfo{`0}[],`0,UnitsNet.IQuantity{`0},UnitsNet.BaseDimensions,UnitsNet.QuantityType)">
             <inheritdoc />
         </member>
         <member name="P:UnitsNet.QuantityInfo`1.UnitInfos">
@@ -59752,6 +62369,14 @@
                 A set of extension methods for some of the most common Math operations, such as Min, Max, Sum and Average
             </summary>
         </member>
+        <member name="M:UnitsNet.UnitMath.Abs``1(``0)">
+            <summary>Returns the absolute value of a <typeparamref name="TQuantity" />.</summary>
+            <param name="value">
+                A quantity with a value that is greater than or equal to <see cref="F:System.Double.MinValue" />,
+                but less than or equal to <see cref="F:System.Double.MaxValue" />.
+            </param>
+            <returns>A quantity with a value, such that 0 ≤ value ≤ <see cref="F:System.Double.MaxValue" />.</returns>
+        </member>
         <member name="M:UnitsNet.UnitMath.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Enum)">
             <summary>Computes the sum of a sequence of <typeparamref name="TQuantity" /> values.</summary>
             <param name="source">A sequence of <typeparamref name="TQuantity" /> values to calculate the sum of.</param>
@@ -59781,6 +62406,13 @@
             <exception cref="T:System.ArgumentException">
                 <paramref name="source">source</paramref> contains quantity types different from <paramref name="unitType" />.
             </exception>
+        </member>
+        <member name="M:UnitsNet.UnitMath.Min``1(``0,``0)">
+            <summary>Returns the smaller of two <typeparamref name="TQuantity" /> values.</summary>
+            <typeparam name="TQuantity">The type of quantities to compare.</typeparam>
+            <param name="val1">The first of two <typeparamref name="TQuantity" /> values to compare.</param>
+            <param name="val2">The second of two <typeparamref name="TQuantity" /> values to compare.</param>
+            <returns>Parameter <paramref name="val1" /> or <paramref name="val2" />, whichever is smaller.</returns>
         </member>
         <member name="M:UnitsNet.UnitMath.Min``1(System.Collections.Generic.IEnumerable{``0},System.Enum)">
             <summary>Computes the min of a sequence of <typeparamref name="TQuantity" /> values.</summary>
@@ -59813,6 +62445,13 @@
             <exception cref="T:System.ArgumentException">
                 <paramref name="source">source</paramref> contains quantity types different from <paramref name="unitType" />.
             </exception>
+        </member>
+        <member name="M:UnitsNet.UnitMath.Max``1(``0,``0)">
+            <summary>Returns the larger of two <typeparamref name="TQuantity" /> values.</summary>
+            <typeparam name="TQuantity">The type of quantities to compare.</typeparam>
+            <param name="val1">The first of two <typeparamref name="TQuantity" /> values to compare.</param>
+            <param name="val2">The second of two <typeparamref name="TQuantity" /> values to compare.</param>
+            <returns>Parameter <paramref name="val1" /> or <paramref name="val2" />, whichever is larger.</returns>
         </member>
         <member name="M:UnitsNet.UnitMath.Max``1(System.Collections.Generic.IEnumerable{``0},System.Enum)">
             <summary>Computes the max of a sequence of <typeparamref name="TQuantity" /> values.</summary>

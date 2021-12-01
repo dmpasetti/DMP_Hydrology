@@ -162,7 +162,7 @@ namespace USP_Hydrology
         #endregion Washoff Equations
 
 
-
+        
         public static void ProcessBuWo(Buildup_Washoff Sim)
         {
             Sim.FLT_Arr_Washoff = new double[Sim.FLT_Arr_SurfaceFlow.Length];
@@ -275,25 +275,32 @@ namespace USP_Hydrology
             double[] TotalBuildup = new double[Arraylength];
             double[] TotalWashoff = new double[Arraylength];
             double[] TotalEffectiveWashoff = new double[Arraylength];
+            double[] AverageSurfaceFlowArray = new double[Arraylength];
+            double AverageThresholdFlow = 0;
 
             foreach(Buildup_Washoff _use in lstUses)
             {
                 TotalBuildup = TotalBuildup.Zip(_use.FLT_Arr_Buildup, (x, y) => x + y).ToArray();
                 TotalWashoff = TotalWashoff.Zip(_use.FLT_Arr_Washoff, (x, y) => x + y).ToArray();
                 TotalEffectiveWashoff = TotalEffectiveWashoff.Zip(_use.FLT_Arr_EffectiveWashoff, (x, y) => x + y).ToArray();
+                AverageSurfaceFlowArray = AverageSurfaceFlowArray.Zip(_use.FLT_Arr_SurfaceFlow, (x, y) => x + y * _use.GetParam.FLT_AreaFraction).ToArray();
+                AverageThresholdFlow += _use.GetParam.FLT_ThresholdFlow * _use.GetParam.FLT_AreaFraction;
             }
 
             Buildup_Washoff AggregateObj = new Buildup_Washoff()
             {                
                 FLT_Arr_Buildup = TotalBuildup,
                 FLT_Arr_Washoff = TotalWashoff,
-                FLT_Arr_EffectiveWashoff = TotalEffectiveWashoff
+                FLT_Arr_EffectiveWashoff = TotalEffectiveWashoff,
+                FLT_Arr_SurfaceFlow = AverageSurfaceFlowArray,
+                DTE_Arr_TimeSeries = lstUses[0].DTE_Arr_TimeSeries
             };
             AggregateObj.GetParam = new Parameters
             {
                 FLT_Area = FLT_WatershedArea,
                 BOOL_Aggregate = true,
-                STR_UseName = (LandUse)1000
+                STR_UseName = (LandUse)1000,
+                FLT_ThresholdFlow = AverageThresholdFlow
             };
             return AggregateObj;
         }
@@ -307,6 +314,16 @@ namespace USP_Hydrology
             };
         }
 
+        public static void SimulateNode(NodeExternal node)
+        {
+            double WatershedArea = 0;
+            foreach(Buildup_Washoff _use in node.GetBuWo)
+            {
+                ProcessBuWo(_use);
+                WatershedArea += _use.GetParam.FLT_Area * _use.GetParam.FLT_AreaFraction;
+            }
+            node.BuWoAggregate = AggregateUses(node.GetBuWo, WatershedArea);
+        }
         public static void SimulateTree_NoTransport(List<NodeExternal> Tree)
         {
             foreach(NodeExternal _node in Tree)
@@ -321,28 +338,16 @@ namespace USP_Hydrology
             }
         }
 
-        public static void AdjustBMax_CompleteTree(List<NodeExternal> Tree)
+        public static void SimulateTree_NoTransport_New(List<NodeExternal> Tree)
         {
-            foreach(NodeExternal _node in Tree)
+            foreach (NodeExternal _node in Tree)
             {
-                double WatershedArea = 0;
-                foreach(Buildup_Washoff _use in _node.GetBuWo)
-                {
-                    if(_use.GetParam.STR_UseName != LandUse.Aggregate)
-                    {
-                        double NonPointLoad = _node.BaseLoad.NonPointBOD_kgd.Kilograms * _use.GetParam.FLT_AreaFraction;
-                        _use.GetParam.FLT_BMax = 1;
-                        ProcessBuWo(_use);
-                        _use.GetParam.FLT_BMax = NonPointLoad / AveragePeriodLoad(_use);
-                        ProcessBuWo(_use);
-                        WatershedArea += _use.GetParam.FLT_Area * _use.GetParam.FLT_AreaFraction;
-                    }                    
-                }
-                _node.GetBuWo.Add(AggregateUses(_node.GetBuWo, WatershedArea));
+                SimulateNode(_node);
             }
         }
 
-        
+
+
         public enum LandUse
         {
             Urban = 1,

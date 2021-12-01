@@ -9,16 +9,21 @@ namespace USP_Hydrology
 {
     public partial class Pollutogram
     {
-        public MassConcentration[] ConstantLoadPollutogram;
+        public MassConcentration[] PointLoadPollutogram;
+        public MassConcentration[] DryNonPointLoadPollutogram;
         public MassConcentration[] WashoffPollutogram;
         public MassConcentration[] TotalProducedPollutogram;
         public MassConcentration[] UpstreamPollutogram;
         public MassConcentration[] DownstreamPollutogram;
 
-        public Mass[] ConstantLoadMass;
+        public Mass[] PointLoadMass;
+        public Mass[] DryNonPointMass;
         public Mass[] WashoffMass;
         public Mass[] TotalProducedMass;
         public Mass[] UpstreamMass;
         public Mass[] DownstreamMass;
+
+
+
     }
 }

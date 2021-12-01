@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LabSid.Sabesp.Hydrology;
+
 
 namespace USP_Hydrology
 {
@@ -33,6 +33,7 @@ namespace USP_Hydrology
         public PLASH GetPLASH;
         public Muskingum_Daniel GetMusk_OLD;
         public List<Buildup_Washoff> GetBuWo;
+        public Buildup_Washoff BuWoAggregate;
         public Model_Muskingum GetMusk;
         public SMAPd_Network GetSMAP;
         public int GetSimulationLength;
@@ -41,7 +42,7 @@ namespace USP_Hydrology
         public ConstantLoad BaseLoad;
         public Pollutogram BODOutput;
         public Pollutogram POutput;
-        public Pollutogram NOutput;
+        public Pollutogram NOutput;        
     }
 
     public partial class Tree
@@ -49,17 +50,17 @@ namespace USP_Hydrology
         public static HashSet<int> ID_Level1(List<NodeInternal> lstWS)
         {
             HashSet<int> all = new HashSet<int>();
-            HashSet<int> fathers = new HashSet<int>();
+            HashSet<int> children = new HashSet<int>();
 
             foreach (NodeInternal _node in lstWS)
             {
                 all.Add(_node.ID_Watershed);
                 if (_node.OBJ_Downstream != null)
                 {
-                    fathers.Add(_node.OBJ_Downstream.ID_Watershed);
+                    children.Add(_node.OBJ_Downstream.ID_Watershed);
                 }
             }
-            all.ExceptWith(fathers);
+            all.ExceptWith(children);
             return all;
         }
 

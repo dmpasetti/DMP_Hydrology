@@ -1,0 +1,4 @@
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\BuildupWashoffAnalysis\obj\Release\netcoreapp3.1\BuildupWashoffAnalysis_OLD.csprojAssemblyReference.cache
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\BuildupWashoffAnalysis\obj\Release\netcoreapp3.1\BuildupWashoffAnalysis_OLD.AssemblyInfoInputs.cache
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\BuildupWashoffAnalysis\obj\Release\netcoreapp3.1\BuildupWashoffAnalysis_OLD.AssemblyInfo.cs
+D:\VisualStudio\DMP_Hydrology\DMP_Hydrology\BuildupWashoffAnalysis\obj\Release\netcoreapp3.1\BuildupWashoffAnalysis_OLD.csproj.CoreCompileInputs.cache

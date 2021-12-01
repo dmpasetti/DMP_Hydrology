@@ -30,5 +30,39 @@ namespace USP_Hydrology
             return true;
         }
 
+        public static double[] AggregateSeriesMonthlyAverage(DateTime[] dates, double[] vector)
+        {
+            DateTime firstMonth = new DateTime(dates[0].Year, dates[0].Month, 1);
+            DateTime lastMonth = new DateTime(dates[dates.Length - 1].Year, dates[dates.Length - 1].Month, 1);
+
+            List<double> lstAggregate = new List<double>();
+            for(DateTime i = firstMonth; i <= lastMonth; i = i.AddMonths(1))
+            {
+                int firstIndex = Array.IndexOf(dates, i);
+                int lastIndex = Array.IndexOf(dates, i.AddMonths(1).AddDays(-1));
+
+                double[] vectorData = vector.Skip(firstIndex).Take(lastIndex).ToArray();
+                lstAggregate.Add(vectorData.Average());
+            }
+            return lstAggregate.ToArray();
+        }
+
+        public static double[] AggregateSeriesMonthlySum(DateTime[] dates, double[] vector)
+        {
+            DateTime firstMonth = new DateTime(dates[0].Year, dates[0].Month, 1);
+            DateTime lastMonth = new DateTime(dates[dates.Length - 1].Year, dates[dates.Length - 1].Month, 1);
+
+            List<double> lstAggregate = new List<double>();
+            for (DateTime i = firstMonth; i <= lastMonth; i = i.AddMonths(1))
+            {
+                int firstIndex = Array.IndexOf(dates, i);
+                int lastIndex = Array.IndexOf(dates, i.AddMonths(1).AddDays(-1));
+
+                double[] vectorData = vector.Skip(firstIndex).Take(lastIndex).ToArray();
+                lstAggregate.Add(vectorData.Sum());
+            }
+            return lstAggregate.ToArray();
+        }
+
     }
 }
