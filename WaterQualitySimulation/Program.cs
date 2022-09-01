@@ -25,9 +25,10 @@ namespace WaterQualitySimulation
         static void Main(string[] args)
         {
             //var rootDirectory = System.IO.Directory.GetCurrentDirectory();
-            var rootDirectory = @"D:\EstudoMQualBuWo\AT";
+            var rootDirectory = @"C:\EstudoMQualBuWo\AT";
             //D:\EstudoMQUALBuWo\AT
             FileInfo inputPath = new FileInfo( rootDirectory +  @"\input.xlsx");
+            FileInfo inputPathCal = new FileInfo(rootDirectory + @"\inputcal.xlsx");
             //FileInfo inputPath = new FileInfo(CurrentDirectory + @"\input.xlsx");
             DateTime now = DateTime.Now;
             string outputSystem = "_AT";
@@ -42,16 +43,20 @@ namespace WaterQualitySimulation
             //List<NodeExternal> WSTree = Tree.SMAPTreeFromExcel(inputPath);
             //Console.WriteLine("Lendo dados de entrada...");
             List<NodeExternal> WSTreePrototype = Tree.PrototypeTreeFromExcel(inputPath);
+            List<NodeExternal> WSTreeCalibration = Tree.PrototypeTreeFromExcel(inputPathCal);
+
 
             //SMAPd_Network.SimulateTree(WSTree);
             Console.WriteLine("Simulação do modelo hidrológico...");
             SMAPd_Network.SimulateTree(WSTreePrototype);
+            SMAPd_Network.SimulateTree(WSTreeCalibration);
             Tree.PrototypeIntegrateBuwoSMAP(WSTreePrototype);
+            Tree.PrototypeIntegrateBuwoSMAP(WSTreeCalibration);
 
             Tree.SaveSMAPTreeToExcel(WSTreePrototype, outputPath);
 
+            //Ajuste Kb
             double kb = Buildup_Washoff.GetAdjustedKb(totalBuildupPercentage /100D, elapsedDays);
-
             foreach (NodeExternal _node in WSTreePrototype)
             {
                 //Buildup_Washoff.SetThresholdFlow(_node.GetBuWo.ToArray(), PercentageFlow / 100D);
@@ -61,8 +66,22 @@ namespace WaterQualitySimulation
                 }
             }
 
+            foreach (NodeExternal _node in WSTreeCalibration)
+            {
+                //Buildup_Washoff.SetThresholdFlow(_node.GetBuWo.ToArray(), PercentageFlow / 100D);
+                foreach (Buildup_Washoff _use in _node.GetBuWo)
+                {
+                    _use.GetParam.FLT_Kb = kb;
+                }
+            }
 
-            
+            //rodar a calibration (com dados só de 2013-2016)
+            //Essa calibration vai ajustar valores de bmax
+            //definir os valores de bmax da wstree original iguais aos rodados na calibration
+
+
+
+
             List<object> firstLine = new List<object> { "t-p-kb-kw-nw" };
             foreach(NodeExternal _node in WSTreePrototype)
             {
@@ -95,7 +114,19 @@ namespace WaterQualitySimulation
                             _buwo.GetParam.FLT_Kw = _kw;
                         }
                     }
-                    Buildup_Washoff.AdjustBMax_CompleteTree(WSTreePrototype);
+
+                    foreach (NodeExternal _node in WSTreeCalibration)
+                    {
+                        foreach (Buildup_Washoff _buwo in _node.GetBuWo)
+                        {
+                            _buwo.GetParam.FLT_Nw = _nw;
+                            _buwo.GetParam.FLT_Kw = _kw;
+                        }
+                    }
+
+                    Buildup_Washoff.AdjustBMax_CompleteTree(WSTreeCalibration);
+                    Buildup_Washoff.SetBMaxTree_WithBaseTree(WSTreePrototype, WSTreeCalibration);
+                    Buildup_Washoff.SimulateBuWoTree(WSTreePrototype);
                     Pollutogram.SimulatePhosphorusTree(WSTreePrototype);
 
                     string qualityOutputValues = $"{elapsedDays}_{totalBuildupPercentage}_{Math.Round(kb, 3)}_{_nw}_{_kw}";
@@ -168,7 +199,7 @@ namespace WaterQualitySimulation
                     outputNumWash0.Add(lineNumWash0.ToArray());
                     outputNumWash0Rel.Add(lineNumWash0Rel.ToArray());
 
-                    //Tree.SaveQualityTreeToExcel(WSTreePrototype, new FileInfo(rootDirectory + outputPrefix + qualityOutputBase + qualityOutputValues + ".xlsx"));
+                    Tree.SaveQualityTreeToExcel(WSTreePrototype, new FileInfo(rootDirectory + outputPrefix + qualityOutputBase + qualityOutputValues + ".xlsx"));
                 }
             }
 

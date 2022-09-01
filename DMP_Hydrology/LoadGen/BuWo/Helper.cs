@@ -142,5 +142,35 @@ namespace USP_Hydrology
             }
         }
 
+        public static void SimulateBuWoTree(List<NodeExternal> Tree)
+        {
+            foreach(NodeExternal _node in Tree)
+            {
+                double WatershedArea = 0;
+                foreach(Buildup_Washoff _use in _node.GetBuWo)
+                {
+                    ProcessBuWo(_use);
+                    WatershedArea += _use.GetParam.FLT_Area * _use.GetParam.FLT_AreaFraction;
+                }
+                _node.BuWoAggregate = AggregateUses(_node.GetBuWo, WatershedArea);
+            }
+        }
+
+        public static void SetBMaxTree_WithBaseTree(List<NodeExternal> Tree, List<NodeExternal> BaseTree)
+        {
+            foreach (NodeExternal _node in Tree)
+            {
+                NodeExternal _baseNode = BaseTree.Where(x => x.STR_Watershed == _node.STR_Watershed).FirstOrDefault();
+                if (_baseNode != null)
+                {
+                    foreach(Buildup_Washoff _use in _node.GetBuWo)
+                    {
+                        Buildup_Washoff _baseUse = _baseNode.GetBuWo.Where(x => x.GetParam.STR_UseName == _use.GetParam.STR_UseName).FirstOrDefault();
+                        _use.GetParam.FLT_BMax = _baseUse.GetParam.FLT_BMax;
+                    }
+                }
+            }
+        }
+
     }
 }

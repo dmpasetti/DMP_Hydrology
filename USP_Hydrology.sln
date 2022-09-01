@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USP_Hydrology", "DMP_Hydrology\USP_Hydrology.csproj", "{E7253363-E67B-4CCC-B4F1-BF619ADF6577}"
 EndProject
@@ -19,13 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMAPSimulation", "SMAPSimul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeWatershedSimulation", "PrototypeWatershedSimulation\PrototypeWatershedSimulation.csproj", "{CCCA3428-8194-4D8E-AB6D-C626F7E1BB7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSid.AcquaNet", "..\..\SSD3\LabSid.SSD3.Modelo\LabSid.AcquaNet\LabSid.AcquaNet.csproj", "{9285A0B0-1BCD-4EE5-A31E-1022B18E2EB0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildupWashoffAnalysis_OLD", "BuildupWashoffAnalysis\BuildupWashoffAnalysis_OLD.csproj", "{71C74DF2-4ACE-4F16-8E00-6FDA828C95BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildupWashoffAnalysis_NetFramework", "BuildupWashoffAnalysis_NetFramework\BuildupWashoffAnalysis_NetFramework.csproj", "{6412E162-A7C9-4585-A23F-D1534E93A577}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSid.Sabesp.Hydrology", "..\..\SSD3\LabSid.SSD3.Modelo\LabSid.Sabesp.Hydrology\LabSid.Sabesp.Hydrology.csproj", "{7A39A303-E253-4648-B036-A612F40ADBD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterQualitySimulation", "WaterQualitySimulation\WaterQualitySimulation.csproj", "{A1E788A4-6BFB-404A-AC20-EAE4E1A1E0E3}"
 EndProject
@@ -67,10 +63,6 @@ Global
 		{CCCA3428-8194-4D8E-AB6D-C626F7E1BB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCCA3428-8194-4D8E-AB6D-C626F7E1BB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCCA3428-8194-4D8E-AB6D-C626F7E1BB7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9285A0B0-1BCD-4EE5-A31E-1022B18E2EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9285A0B0-1BCD-4EE5-A31E-1022B18E2EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9285A0B0-1BCD-4EE5-A31E-1022B18E2EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9285A0B0-1BCD-4EE5-A31E-1022B18E2EB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71C74DF2-4ACE-4F16-8E00-6FDA828C95BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71C74DF2-4ACE-4F16-8E00-6FDA828C95BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71C74DF2-4ACE-4F16-8E00-6FDA828C95BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,10 +71,6 @@ Global
 		{6412E162-A7C9-4585-A23F-D1534E93A577}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6412E162-A7C9-4585-A23F-D1534E93A577}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6412E162-A7C9-4585-A23F-D1534E93A577}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A39A303-E253-4648-B036-A612F40ADBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A39A303-E253-4648-B036-A612F40ADBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A39A303-E253-4648-B036-A612F40ADBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A39A303-E253-4648-B036-A612F40ADBD5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1E788A4-6BFB-404A-AC20-EAE4E1A1E0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1E788A4-6BFB-404A-AC20-EAE4E1A1E0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1E788A4-6BFB-404A-AC20-EAE4E1A1E0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU

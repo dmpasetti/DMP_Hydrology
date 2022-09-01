@@ -594,11 +594,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis_OLD.csproj",
+      "projectUniqueName": "C:\\Users\\dmpas\\source\\repos\\dmpasetti\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis_OLD.csproj",
       "projectName": "BuildupWashoffAnalysis_OLD",
-      "projectPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis_OLD.csproj",
+      "projectPath": "C:\\Users\\dmpas\\source\\repos\\dmpasetti\\DMP_Hydrology\\BuildupWashoffAnalysis\\BuildupWashoffAnalysis_OLD.csproj",
       "packagesPath": "C:\\Users\\dmpas\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\BuildupWashoffAnalysis\\obj\\",
+      "outputPath": "C:\\Users\\dmpas\\source\\repos\\dmpasetti\\DMP_Hydrology\\BuildupWashoffAnalysis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dmpas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -615,8 +615,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj": {
-              "projectPath": "D:\\VisualStudio\\DMP_Hydrology\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj"
+            "C:\\Users\\dmpas\\source\\repos\\dmpasetti\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj": {
+              "projectPath": "C:\\Users\\dmpas\\source\\repos\\dmpasetti\\DMP_Hydrology\\DMP_Hydrology\\USP_Hydrology.csproj"
             }
           }
         }
@@ -650,12 +650,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.27, 3.1.27]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
